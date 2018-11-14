@@ -1,6 +1,7 @@
 package com.TT.demo;
 
 import com.TT.demo.util.SuvengProperties;
+import com.TT.demo.util.TestProperties;
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,8 @@ public class WebConfiguration {
 
     @Resource
     SuvengProperties suvengProperties;
+    @Resource
+    TestProperties testProperties;
 
     @Bean
     public RemoteIpFilter remoteIpFilter(){
@@ -45,8 +48,6 @@ public class WebConfiguration {
         public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
             HttpServletRequest request = (HttpServletRequest) servletRequest;
             System.err.println("this is MyFilter,url :"+request.getRequestURI());
-            System.err.println(suvengProperties.getSex());
-            System.err.println(suvengProperties.getEmail());
             filterChain.doFilter(request, servletResponse);
         }
 

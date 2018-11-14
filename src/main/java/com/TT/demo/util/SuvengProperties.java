@@ -1,44 +1,16 @@
 package com.TT.demo.util;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
+@ConfigurationProperties(prefix = "com.su")
+@PropertySource("classpath:new.properties")
 public class SuvengProperties {
-    @Value("${com.neo.description}")
     private String name;
-    @Value(value = "22")
-    private String age;
-    @Value(value = "男")
     private String sex;
-    @Value("${com.neo.email}")
-    private String email;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 
     public String getSex() {
         return sex;
@@ -46,5 +18,13 @@ public class SuvengProperties {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

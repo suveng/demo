@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--2. 设置上下文名称-->
+    <contextName>logback</contextName>
+
+    <!--3. 设置变量-->
+    <property name="logback.logprefix" value="/projectLog/TT/Log"/>
+    <property name="logback.appname" value="demo"/>
+    <property name="logback.env" value="develop"/>
+    <property name="logback.logdir" value="${logback.logprefix}/${logback.appname}/${logback.env}"/>
+
+    <!--4. 格式化日志-->
+    <appender name="ConsoleAll" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--%black(%d) %yellow([%t]) %red(%-5level) %logger{36}.%red(%M\(%file:%line\)) - %green(%msg%n)-->
+            <pattern>%d [%t] %-5level %logger{36}.%M\(%file:%line\) - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="ConsoleInfoOnly" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--%black(%d) %yellow([%t]) %red(%-5level) %logger{36}.%red(%M\(%file:%line\)) - %green(%msg%n)-->
+            <pattern>%d [%t] %-5level %logger{36}.%M\(%file:%line\) - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--过滤 INFO一下-->
+            <level>INFO</level>
+            <!--匹配到就禁止-->
+            <onMatch>ACCEPT</onMatch>
+            <!--没有匹配到就允许-->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+
+            <!--INFO以上不要-->
+            <level>WARN</level>
+            <!--匹配到就禁止-->
+            <onMatch>DENY</onMatch>
+            <!--没有匹配到就允许-->
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--INFO以上不要-->
+            <level>ERROR</level>
+            <!--匹配到就禁止-->
+            <onMatch>DENY</onMatch>
+            <!--没有匹配到就允许-->
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+    </appender>
+
+    <appender name="ConsoleWarnOnly" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--%black(%d) %yellow([%t]) %red(%-5level) %logger{36}.%red(%M\(%file:%line\)) - %green(%msg%n)-->
+            <pattern>%d [%t] %-5level %logger{36}.%M\(%file:%line\) - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--过滤 Error-->
+            <level>WARN</level>
+            <!--匹配到就禁止-->
+            <onMatch>ACCEPT</onMatch>
+            <!--没有匹配到就允许-->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--过滤 Error-->
+            <level>ERROR</level>
+            <!--匹配到就禁止-->
+            <onMatch>DENY</onMatch>
+            <!--没有匹配到就允许-->
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+    </appender>
+
+    <appender name="ConsoleErrorUp" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--%black(%d) %yellow([%t]) %red(%-5level) %logger{36}.%red(%M\(%file:%line\)) - %green(%msg%n)-->
+            <pattern>%black(%d) %yellow([%t]) %red(%-5level) %logger{36}.%red(%M\(%file:%line\)) - %green(%msg%n)
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>Error</level>
+        </filter>
+    </appender>
+
+    <appender name="FileWarnDown" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高，
+        所以我们使用下面的策略，可以避免输出 Error 的日志-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--过滤 Error-->
+            <level>ERROR</level>
+            <!--匹配到就禁止-->
+            <onMatch>DENY</onMatch>
+            <!--没有匹配到就允许-->
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则
+        如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
+        的日志改名为今天的日期。即，<File> 的日志都是当天的。
+        -->
+        <File>${logback.logdir}/info.${logback.appname}.log</File>
+        <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            <FileNamePattern>${logback.logdir}/info.${logback.appname}.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <!--只保留最近90天的日志-->
+            <maxHistory>90</maxHistory>
+            <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
+            <!--<totalSizeCap>1GB</totalSizeCap>-->
+        </rollingPolicy>
+        <!--日志输出编码格式化-->
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FileErrorUp" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>Error</level>
+        </filter>
+        <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则
+        如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
+        的日志改名为今天的日期。即，<File> 的日志都是当天的。
+        -->
+        <File>${logback.logdir}/error.${logback.appname}.log</File>
+        <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            <FileNamePattern>${logback.logdir}/error.${logback.appname}.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <!--只保留最近90天的日志-->
+            <maxHistory>90</maxHistory>
+            <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
+            <!--<totalSizeCap>1GB</totalSizeCap>-->
+        </rollingPolicy>
+        <!--日志输出编码格式化-->
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--<appender name="ControllerErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+    <!--&lt;!&ndash;如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter&ndash;&gt;-->
+    <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+    <!--<level>Error</level>-->
+    <!--</filter>-->
+    <!--&lt;!&ndash;日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则-->
+    <!--如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天-->
+    <!--的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
+    <!--&ndash;&gt;-->
+    <!--<File>${logback.logdir}/Controller.error.${logback.appname}.log</File>-->
+    <!--&lt;!&ndash;滚动策略，按照时间滚动 TimeBasedRollingPolicy&ndash;&gt;-->
+    <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+    <!--&lt;!&ndash;文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间&ndash;&gt;-->
+    <!--<FileNamePattern>${logback.logdir}/error.${logback.appname}.%d{yyyy-MM-dd}.log</FileNamePattern>-->
+    <!--&lt;!&ndash;只保留最近90天的日志&ndash;&gt;-->
+    <!--<maxHistory>90</maxHistory>-->
+    <!--&lt;!&ndash;用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志&ndash;&gt;-->
+    <!--&lt;!&ndash;<totalSizeCap>1GB</totalSizeCap>&ndash;&gt;-->
+    <!--</rollingPolicy>-->
+    <!--&lt;!&ndash;日志输出编码格式化&ndash;&gt;-->
+    <!--<encoder>-->
+    <!--<charset>UTF-8</charset>-->
+    <!--<pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>-->
+    <!--</encoder>-->
+    <!--</appender>-->
+
+    <!--&lt;!&ndash;5. 设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。&ndash;&gt;-->
+
+    <!--<loger name="com.TT.demo.controller.HelloWorldController" level="ERROR" additivity="false">-->
+    <!--<appender-ref ref="ControllerErrorLog"/>-->
+    <!--</loger>-->
+
+
+    <!--1. root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性。-->
+    <root level="INFO">
+        <!--控制台打印-->
+        <!--<appender-ref ref="ConsoleInfoOnly"/>-->
+        <!--<appender-ref ref="ConsoleWarnOnly"/>-->
+        <!--<appender-ref ref="ConsoleErrorUp"/>-->
+        <appender-ref ref="ConsoleAll"/>
+        <appender-ref ref="FileWarnDown"/>
+        <appender-ref ref="FileErrorUp"/>
+    </root>
+
+</configuration>
