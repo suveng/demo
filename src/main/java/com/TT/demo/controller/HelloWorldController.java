@@ -16,7 +16,7 @@ public class HelloWorldController {
         log.error("测试出错===========");
         log.warn("测试警告========");
         log.info("测试信息=======");
-        return "Hello World,sgsdfg";
+        return "Hello World,";
     }
     @RequestMapping("/uid")
     public String uid(HttpSession session){
