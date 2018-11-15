@@ -1,9 +1,13 @@
 package com.TT.demo;
 
 import com.TT.demo.controller.HelloWorldController;
+import com.TT.demo.domain.User;
+import com.TT.demo.domain.UserRepository;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
@@ -14,6 +18,10 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.util.Date;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = MockServletContext.class)
@@ -33,4 +41,5 @@ public class HelloWorldControlerTests {
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
     }
+
 }
