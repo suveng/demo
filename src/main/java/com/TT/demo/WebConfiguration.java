@@ -2,6 +2,7 @@ package com.TT.demo;
 
 import com.TT.demo.util.SuvengProperties;
 import com.TT.demo.util.TestProperties;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-
+@Slf4j
 @Configuration
 public class WebConfiguration {
 
@@ -47,7 +48,7 @@ public class WebConfiguration {
         @Override
         public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
             HttpServletRequest request = (HttpServletRequest) servletRequest;
-            System.err.println("this is MyFilter,url :"+request.getRequestURI());
+            log.error("this is MyFilter,url :"+request.getRequestURI());
             filterChain.doFilter(request, servletResponse);
         }
 
