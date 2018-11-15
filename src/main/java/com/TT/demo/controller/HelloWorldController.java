@@ -23,9 +23,10 @@ public class HelloWorldController {
         UUID uid=(UUID) session.getAttribute("uid");
         if (null==uid){
             uid=UUID.randomUUID();
-            log.warn("uid 成功，sessionid为"+session.getId());
+            log.warn("uid 失败，sessionid为"+session.getId()+"开始设置uid");
+
         }
-        log.warn("uid 失败，sessionid为"+session.getId()+"开始设置uid");
+        log.warn("uid 成功，sessionid为"+session.getId());
         session.setAttribute("uid",uid);
         return session.getId();
     }
