@@ -12,6 +12,10 @@ import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+
+/**
+ * 配置properties
+ */
 @Slf4j
 @Configuration
 public class WebConfiguration {

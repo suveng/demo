@@ -11,6 +11,9 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 
 import java.lang.reflect.Method;
 
+/**
+ * 指定redis为spring的缓存管理的配置类
+ */
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {

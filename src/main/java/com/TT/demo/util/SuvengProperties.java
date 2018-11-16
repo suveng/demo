@@ -5,6 +5,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+/**
+ * 自定义properties
+ * 测试
+ */
 @Component
 @ConfigurationProperties(prefix = "com.su")
 @PropertySource("classpath:new.properties")

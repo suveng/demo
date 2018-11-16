@@ -7,10 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
+/**
+ * 测试类
+ */
 @Slf4j
 @RestController
-public class HelloWorldController {
+public class LogTestController {
 
+    /**
+     * 测试日志切分
+     * @return hello world
+     */
     @RequestMapping("/hello")
     public String index() {
         log.error("测试出错===========");
@@ -18,6 +25,12 @@ public class HelloWorldController {
         log.info("测试信息=======");
         return "Hello World,";
     }
+
+    /**
+     * 测试共享session
+     * @param session session
+     * @return uid
+     */
     @RequestMapping("/uid")
     public String uid(HttpSession session){
         UUID uid=(UUID) session.getAttribute("uid");

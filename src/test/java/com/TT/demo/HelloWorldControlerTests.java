@@ -1,6 +1,6 @@
 package com.TT.demo;
 
-import com.TT.demo.controller.HelloWorldController;
+import com.TT.demo.controller.LogTestController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,7 @@ public class HelloWorldControlerTests {
 
     @Before
     public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new HelloWorldController()).build();
+        mvc = MockMvcBuilders.standaloneSetup(new LogTestController()).build();
     }
 
     @Test

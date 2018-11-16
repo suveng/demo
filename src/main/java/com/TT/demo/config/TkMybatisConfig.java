@@ -15,10 +15,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * @author Loger
- * Date: 2018-08-13
- * TIme: 15:44
- * Description :
+ * tk.mybatis 配置类
+ * 配置 包扫描路径 ，分页插件
  */
 @Configuration
 public class TkMybatisConfig {
