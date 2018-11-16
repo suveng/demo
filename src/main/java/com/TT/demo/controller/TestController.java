@@ -25,7 +25,8 @@ public class TestController {
         entity.setEmail("adfa");
         entity.setPassWord("sdaf");
         entity.setUserName("dafsd");
-        userService.save(entity);
+//        userService.save(entity);
+
     }
 
 }

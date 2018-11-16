@@ -1,9 +1,8 @@
 package com.TT.demo.service.impl;
 
 import com.TT.demo.service.IServcie;
+import com.TT.demo.util.MyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
@@ -15,9 +14,9 @@ import java.util.List;
  */
 public abstract class BaseService<T> implements IServcie<T> {
     @Autowired
-    protected Mapper<T> mapper;
+    protected MyMapper<T> mapper;
 
-    public Mapper<T> getMapper() {
+    public MyMapper<T> getMapper() {
         return mapper;
     }
 
