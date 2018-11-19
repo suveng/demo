@@ -1,4 +1,4 @@
-package com.TT.demo.config;
+package com.TT.demo.config.rabbitmq;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;

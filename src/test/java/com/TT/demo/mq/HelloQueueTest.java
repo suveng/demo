@@ -3,6 +3,7 @@ package com.TT.demo.mq;
 import com.TT.demo.mq.rabbitmq.helloqueue.HelloSender;
 import com.TT.demo.mq.rabbitmq.一对多使用.NeoSender;
 import com.TT.demo.mq.rabbitmq.发送对象.ObjectSend;
+import com.TT.demo.mq.rabbitmq.测试topic.TopicSend;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +25,9 @@ public class HelloQueueTest {
     private NeoSender neoSender;
     @Autowired
     private ObjectSend objectSend;
+    @Autowired
+    private TopicSend topicSend;
+
     @Test
     public void testHelloQueue() {
         helloSender.send("你好啊");
@@ -36,11 +40,24 @@ public class HelloQueueTest {
     @Test
     public void testYiduiduo() {
         for (int i = 0; i < 100; i++) {
-            neoSender.send(i+"    ");
+            neoSender.send(i + "    ");
         }
     }
+
+    /**
+     * 测试发送对象
+     */
     @Test
-    public void testObject(){
+    public void testObject() {
         objectSend.send("hello");
+    }
+
+    /**
+     * 测试TopicExchange
+     */
+    @Test
+    public void testTopicExchange() {
+        topicSend.send1();
+        topicSend.send2();
     }
 }
