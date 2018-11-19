@@ -1,5 +1,6 @@
 package com.TT.demo.mq;
 
+import com.TT.demo.mq.rabbitmq.fanout.FanoutSender;
 import com.TT.demo.mq.rabbitmq.helloqueue.HelloSender;
 import com.TT.demo.mq.rabbitmq.一对多使用.NeoSender;
 import com.TT.demo.mq.rabbitmq.发送对象.ObjectSend;
@@ -28,6 +29,8 @@ public class HelloQueueTest {
     @Autowired
     private TopicSend topicSend;
 
+    @Autowired
+    private FanoutSender fanoutSender;
     @Test
     public void testHelloQueue() {
         helloSender.send("你好啊");
@@ -60,4 +63,13 @@ public class HelloQueueTest {
         topicSend.send1();
         topicSend.send2();
     }
+
+    /**
+     * 测试fanoutExchange
+     */
+    @Test
+    public  void testFabout(){
+        fanoutSender.send();
+    }
+
 }

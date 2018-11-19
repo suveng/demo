@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by 苏文广 on 2018/11/19
  */
 @Component
-@RabbitListener
+@RabbitListener(queues = "fanout.A")
 public class FanoutReceiverA {
     @RabbitHandler
     public void process(String msg){
