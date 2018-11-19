@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 /**
- * Created by summer on 2016/11/25.
+ * 副数据源
  */
 @Configuration
 @MapperScan(basePackages = "com.TT.demo.dao.springboot", sqlSessionTemplateRef  = "springbootSqlSessionTemplate")

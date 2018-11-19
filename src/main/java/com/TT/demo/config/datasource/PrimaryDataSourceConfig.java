@@ -15,7 +15,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
-
+/**
+ * 主数据源
+ */
 @Configuration
 @MapperScan(basePackages = "com.TT.demo.dao.spring", sqlSessionTemplateRef  = "springSqlSessionTemplate")
 public class PrimaryDataSourceConfig {
