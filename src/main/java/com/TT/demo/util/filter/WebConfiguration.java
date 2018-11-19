@@ -1,7 +1,7 @@
-package com.TT.demo;
+package com.TT.demo.util.filter;
 
-import com.TT.demo.util.SuvengProperties;
-import com.TT.demo.util.TestProperties;
+import com.TT.demo.util.properties.SuvengProperties;
+import com.TT.demo.util.properties.TestProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

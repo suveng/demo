@@ -1,6 +1,5 @@
-package com.TT.demo.util;
+package com.TT.demo.util.properties;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
