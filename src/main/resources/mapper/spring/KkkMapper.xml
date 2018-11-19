@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TT.demo.dao.spring.KkkMapper">
+  <resultMap id="BaseResultMap" type="com.TT.demo.domain.spring.Kkk">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="kkk" jdbcType="VARCHAR" property="kkk" />
+    <result column="asdfas" jdbcType="VARCHAR" property="asdfas" />
+  </resultMap>
+</mapper>

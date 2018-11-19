@@ -1,4 +1,4 @@
-package com.TT.demo.domain;
+package com.TT.demo.domain.springboot;
 
 import javax.persistence.*;
 

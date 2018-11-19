@@ -1,6 +1,9 @@
 package com.TT.demo.controller;
 
-import com.TT.demo.domain.User;
+import com.TT.demo.dao.spring.KkkMapper;
+import com.TT.demo.domain.spring.Kkk;
+import com.TT.demo.domain.springboot.User;
+import com.TT.demo.service.KkkService;
 import com.TT.demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
     @Autowired
-    UserService userService;
+    UserService<User> userService;
+    @Autowired
+    KkkService<Kkk> kkkService;
+    @Autowired
+    KkkMapper kkkMapper;
 
     /**
      * 测试tk.mybatis
@@ -25,13 +32,24 @@ public class TestController {
         log.error("测试tk.mybatis");
 
         User entity = new User();
-        entity.setId(144L);
-        entity.setNickName("suveng");
-        entity.setEmail("adfa");
-        entity.setPassWord("sdaf");
-        entity.setUserName("dafsd");
-        entity.setRegTime("fasdf");
+        entity.setId(154L);
+        entity.setNickName("suvenga");
+        entity.setEmail("adfaa");
+        entity.setPassWord("sdafa");
+        entity.setUserName("dafsda");
+        entity.setRegTime("fasdfa");
         userService.save(entity);
+    }
+
+    @RequestMapping("/multidatasource")
+    public void testMultidatasource(){
+        Kkk kkk = new Kkk();
+        kkk.setAsdfas("faf");
+        kkk.setKkk("fdaf");
+        kkkMapper.insert(kkk);
+//        int save = kkkService.save(kkk);
+        System.out.println("yes");
+
     }
 
 }
