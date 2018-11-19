@@ -9,6 +9,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * Created by 苏文广 on 2018/11/19
+ * 将JedisPool交给spring管理
  */
 @Configuration
 public class JedisPoolFactory {

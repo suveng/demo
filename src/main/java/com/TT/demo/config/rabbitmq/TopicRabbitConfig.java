@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by 苏文广 on 2018/11/19
+ * rabbitMq的TopicExchange的配置
  */
 @Configuration
 public class TopicRabbitConfig {

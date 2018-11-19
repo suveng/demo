@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by 苏文广 on 2018/11/19
+ * 简单的Rabbitmq的queue配置
  */
 @Configuration
 public class RabbitMQConfig {

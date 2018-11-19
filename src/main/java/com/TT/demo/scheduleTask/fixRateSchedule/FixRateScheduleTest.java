@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Created by 苏文广 on 2018/11/19
- * 使用cron表达式创建定时任务
+ * 使用fixRate创建定时任务
  */
 @Component
 public class FixRateScheduleTest {
