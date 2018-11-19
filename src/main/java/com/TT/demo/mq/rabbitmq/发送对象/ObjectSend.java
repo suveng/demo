@@ -19,8 +19,8 @@ public class ObjectSend {
         user.setNickName("dfs");
         user.setPassWord("sdaf");
         user.setUserName("sdfsa");
-        String s = user.toString();
-        System.out.println("object sender:测试发送对象"+msg+s);
-        rabbitmqTemplate.convertAndSend("object",s);
+//        String s = user.toString();
+        System.out.println("object sender:测试发送对象"+msg);
+        rabbitmqTemplate.convertAndSend("object",user);
     }
 }
