@@ -14,8 +14,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TestMail {
     @Autowired
     MailService mailService;
+
     @Test
-    public void testSendMail(){
-        mailService.sendSimpleMail("suveng@163.com", "test simple mail","hello" );
+    public void testSendMail() {
+        mailService.sendSimpleMail("suveng@163.com", "test simple mail", "hello");
+    }
+
+    @Test
+    public void testHtmlMail() {
+        String content = "<html>\n" + "<body>\n" + "    <h3>hello world ! 这是一封Html邮件!</h3>\n" + "</body>\n" + "</html>";
+        mailService.sendHtmlMail("suveng@163.com", "html邮件", content);
     }
 }
