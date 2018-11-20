@@ -36,8 +36,21 @@ public class TestMail {
      * 测试发送带附件的邮件
      */
     @Test
-    public void testAttachmentMail(){
+    public void testAttachmentMail() {
         mailService.sendAttachmentMail("suveng@163.com", "带附件邮件", "带附件",
                 "F:\\Mproject\\demo\\src\\main\\java\\com\\TT\\demo\\DemoApplication.java");
+    }
+
+    /**
+     * 测试带静态资源的邮件
+     */
+    @Test
+    public void testResourceMail() {
+        String rscId = "neo006";
+        String content = "<html><body>这是有图片的邮件：<img src=\'cid:" + rscId + "\' ></body></html>";
+
+
+        String imgPath = "C:\\Users\\Administrator.DESKTOP-72RDCCB\\Pictures\\wallheaven\\wallhaven-14013.jpg";
+        mailService.sendInlineResourceMail("suveng@163.com", "带静态资源的邮件", content,imgPath ,rscId );
     }
 }

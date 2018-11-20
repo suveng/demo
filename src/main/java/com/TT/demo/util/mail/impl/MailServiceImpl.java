@@ -75,7 +75,13 @@ public class MailServiceImpl implements MailService {
     }
 
 
-
+    /**
+     * 发送带附件邮件
+     * @param to 收件人
+     * @param subject 主题
+     * @param content 内容
+     * @param filepath 文件路径
+     */
     @Override
     public void sendAttachmentMail(String to, String subject, String content, String filepath) {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
@@ -97,5 +103,33 @@ public class MailServiceImpl implements MailService {
         }
     }
 
+    /**
+     * 发送带静态资源邮件
+     * @param to 收件人
+     * @param subject 主题
+     * @param content 内容
+     * @param resourcePath 文件路径
+     * @param resouceId 资源ID
+     */
+    @Override
+    public void sendInlineResourceMail(String to, String subject, String content, String resourcePath,
+                                       String resouceId) {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        try {
+            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+            mimeMessageHelper.setTo(to);
+            mimeMessageHelper.setSubject(subject);
+            mimeMessageHelper.setFrom(from);
+            mimeMessageHelper.setText(content,true);
+            FileSystemResource fileSystemResource = new FileSystemResource(new File(resourcePath));
+            mimeMessageHelper.addInline(resouceId, fileSystemResource );
+
+            mailSender.send(mimeMessage);
+            log.info("发送带附件的邮件成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("发送带附件的邮件失败");
+        }
+    }
 
 }
