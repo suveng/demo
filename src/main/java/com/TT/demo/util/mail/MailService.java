@@ -8,4 +8,9 @@ public interface MailService {
     void sendSimpleMail(String to, String subject, String content);
 
     void sendHtmlMail(String to, String subject, String content);
+
+    void sendAttachmentMail(String to, String subject, String content, String filepath);
+
+    void sendInlineResourceMail(String to, String subject, String content, String resourcePath,
+                                String resouceId);
 }

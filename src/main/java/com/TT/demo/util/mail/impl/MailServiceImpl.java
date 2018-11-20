@@ -4,12 +4,14 @@ import com.TT.demo.util.mail.MailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
 import javax.mail.internet.MimeMessage;
+import java.io.File;
 
 /**
  * Created by 苏文广 on 2018/11/19
@@ -17,7 +19,7 @@ import javax.mail.internet.MimeMessage;
  */
 @Component("MailService")
 @Slf4j
-public class MailServiceImpl  implements MailService {
+public class MailServiceImpl implements MailService {
     @Autowired
     private JavaMailSender mailSender;
 
@@ -26,13 +28,14 @@ public class MailServiceImpl  implements MailService {
 
     /**
      * 发送简单邮件
-     * @param to 收件人
+     *
+     * @param to      收件人
      * @param subject 主题
      * @param content 内容
      */
     @Override
-    public void sendSimpleMail(String to, String subject, String content){
-        SimpleMailMessage message=new SimpleMailMessage();
+    public void sendSimpleMail(String to, String subject, String content) {
+        SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(from);
         message.setTo(to);
         message.setSubject(subject);
@@ -40,19 +43,20 @@ public class MailServiceImpl  implements MailService {
         try {
             mailSender.send(message);
             log.info("邮件已发送");
-        }catch (Exception e){
-                  log.error("邮件发送失败");
+        } catch (Exception e) {
+            log.error("邮件发送失败");
         }
     }
 
     /**
      * 发送html邮件
-     * @param to 收件人
+     *
+     * @param to      收件人
      * @param subject 主题
      * @param content 内容
      */
     @Override
-    public void sendHtmlMail(String to,String subject,String content){
+    public void sendHtmlMail(String to, String subject, String content) {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
 
         try {
@@ -61,7 +65,7 @@ public class MailServiceImpl  implements MailService {
             mimeMessageHelper.setFrom(from);
             mimeMessageHelper.setTo(to);
             mimeMessageHelper.setSubject(subject);
-            mimeMessageHelper.setText(content,true);
+            mimeMessageHelper.setText(content, true);
             mailSender.send(mimeMessage);
             log.info("html邮件发送成功");
         } catch (Exception e) {
@@ -69,4 +73,29 @@ public class MailServiceImpl  implements MailService {
             log.error("html邮件发送失败");
         }
     }
+
+
+
+    @Override
+    public void sendAttachmentMail(String to, String subject, String content, String filepath) {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        try {
+            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+            mimeMessageHelper.setTo(to);
+            mimeMessageHelper.setSubject(subject);
+            mimeMessageHelper.setFrom(from);
+            mimeMessageHelper.setText(content);
+            String fileName = filepath.substring(filepath.lastIndexOf(File.separator));
+            FileSystemResource fileSystemResource = new FileSystemResource(new File(filepath));
+            mimeMessageHelper.addAttachment(fileName,fileSystemResource);
+
+            mailSender.send(mimeMessage);
+            log.info("发送带附件的邮件成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("发送带附件的邮件失败");
+        }
+    }
+
+
 }
