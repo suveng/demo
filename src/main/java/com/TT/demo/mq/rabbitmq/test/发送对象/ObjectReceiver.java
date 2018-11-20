@@ -1,6 +1,6 @@
 package com.TT.demo.mq.rabbitmq.test.发送对象;
 
-import com.TT.demo.domain.springboot.User;
+import com.TT.demo.domain.mysql.springboot.User;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

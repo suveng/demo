@@ -1,7 +1,7 @@
 package com.TT.demo.service.impl;
 
-import com.TT.demo.dao.spring.KkkMapper;
-import com.TT.demo.domain.spring.Kkk;
+import com.TT.demo.dao.mysql.spring.KkkMapper;
+import com.TT.demo.domain.mysql.spring.Kkk;
 import com.TT.demo.service.KkkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

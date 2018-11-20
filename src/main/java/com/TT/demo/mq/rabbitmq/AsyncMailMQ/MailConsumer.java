@@ -1,4 +1,4 @@
-package com.TT.demo.mq.rabbitmq.mailMQ;
+package com.TT.demo.mq.rabbitmq.AsyncMailMQ;
 
 import com.TT.demo.util.mail.MailService;
 import com.TT.demo.util.vo.Mail;
