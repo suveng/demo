@@ -22,7 +22,7 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue objectQueue() {
-        return new Queue("object");
+        return new Queue("mailObject");
     }
 
 

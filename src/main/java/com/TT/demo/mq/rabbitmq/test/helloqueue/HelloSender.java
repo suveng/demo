@@ -1,4 +1,4 @@
-package com.TT.demo.mq.rabbitmq.helloqueue;
+package com.TT.demo.mq.rabbitmq.test.helloqueue;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

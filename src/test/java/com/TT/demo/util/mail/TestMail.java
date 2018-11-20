@@ -1,5 +1,6 @@
 package com.TT.demo.util.mail;
 
+import com.TT.demo.util.vo.Mail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,12 @@ public class TestMail {
         context.setVariable("id", "1111");
         String emailTemplate = templateEngine.process("emailTemplate.html", context);
         mailService.sendHtmlMail("suveng@163.com", "模板", emailTemplate);
+    }
+    @Test
+    public void testAsyncMail(){
+        Context context = new Context();
+        context.setVariable("id", "1111");
+        String emailTemplate = templateEngine.process("emailTemplate.html", context);
+        mailService.sendAsyncSendMail(new Mail("suveng@163.com","模板",emailTemplate));
     }
 }

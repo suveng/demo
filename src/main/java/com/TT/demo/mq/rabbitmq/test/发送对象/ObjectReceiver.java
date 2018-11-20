@@ -1,4 +1,4 @@
-package com.TT.demo.mq.rabbitmq.发送对象;
+package com.TT.demo.mq.rabbitmq.test.发送对象;
 
 import com.TT.demo.domain.springboot.User;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;

@@ -1,4 +1,4 @@
-package com.TT.demo.mq.rabbitmq.一对多使用;
+package com.TT.demo.mq.rabbitmq.test.helloqueue;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
  * Created by 苏文广 on 2018/11/19
  */
 @Component
-@RabbitListener(queues = "neo")
-public class NeoConsumerB {
+@RabbitListener(queues = "hello")
+public class HelloReceiver {
     @RabbitHandler
-    public void process(String msg){
-        System.err.println("neo receiverBBB:"+msg);
+    public void process(String hello){
+        System.err.println("Receiveer :"+ hello);
     }
 }

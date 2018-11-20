@@ -1,7 +1,9 @@
 package com.TT.demo.util.mail.impl;
 
 import com.TT.demo.util.mail.MailService;
+import com.TT.demo.util.vo.Mail;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
@@ -25,6 +27,8 @@ public class MailServiceImpl implements MailService {
 
     @Value("${mail.from.addr}")
     private String from;
+    @Autowired
+    AmqpTemplate rabbitMQTemplate;
 
     /**
      * 发送简单邮件
@@ -77,9 +81,10 @@ public class MailServiceImpl implements MailService {
 
     /**
      * 发送带附件邮件
-     * @param to 收件人
-     * @param subject 主题
-     * @param content 内容
+     *
+     * @param to       收件人
+     * @param subject  主题
+     * @param content  内容
      * @param filepath 文件路径
      */
     @Override
@@ -93,7 +98,7 @@ public class MailServiceImpl implements MailService {
             mimeMessageHelper.setText(content);
             String fileName = filepath.substring(filepath.lastIndexOf(File.separator));
             FileSystemResource fileSystemResource = new FileSystemResource(new File(filepath));
-            mimeMessageHelper.addAttachment(fileName,fileSystemResource);
+            mimeMessageHelper.addAttachment(fileName, fileSystemResource);
 
             mailSender.send(mimeMessage);
             log.info("发送带附件的邮件成功");
@@ -105,11 +110,12 @@ public class MailServiceImpl implements MailService {
 
     /**
      * 发送带静态资源邮件
-     * @param to 收件人
-     * @param subject 主题
-     * @param content 内容
+     *
+     * @param to           收件人
+     * @param subject      主题
+     * @param content      内容
      * @param resourcePath 文件路径
-     * @param resouceId 资源ID
+     * @param resouceId    资源ID
      */
     @Override
     public void sendInlineResourceMail(String to, String subject, String content, String resourcePath,
@@ -120,16 +126,25 @@ public class MailServiceImpl implements MailService {
             mimeMessageHelper.setTo(to);
             mimeMessageHelper.setSubject(subject);
             mimeMessageHelper.setFrom(from);
-            mimeMessageHelper.setText(content,true);
+            mimeMessageHelper.setText(content, true);
             FileSystemResource fileSystemResource = new FileSystemResource(new File(resourcePath));
-            mimeMessageHelper.addInline(resouceId, fileSystemResource );
+            mimeMessageHelper.addInline(resouceId, fileSystemResource);
 
             mailSender.send(mimeMessage);
-            log.info("发送带附件的邮件成功");
+            log.info("发送邮件成功");
         } catch (Exception e) {
             e.printStackTrace();
-            log.error("发送带附件的邮件失败");
+            log.error("发送邮件失败");
         }
+    }
+
+    /**
+     * 异步发送邮件
+     */
+    @Override
+    public void sendAsyncSendMail(Mail mail) {
+        //把com.TT.demo.util.vo.Mail对象发送到rabbitmq
+        rabbitMQTemplate.convertAndSend("mailObject", mail);
     }
 
 }

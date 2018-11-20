@@ -1,4 +1,4 @@
-package com.TT.demo.mq.rabbitmq.一对多使用;
+package com.TT.demo.mq.rabbitmq.test.一对多使用;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

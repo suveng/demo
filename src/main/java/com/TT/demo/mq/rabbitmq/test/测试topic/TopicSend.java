@@ -1,4 +1,4 @@
-package com.TT.demo.mq.rabbitmq.测试topic;
+package com.TT.demo.mq.rabbitmq.test.测试topic;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

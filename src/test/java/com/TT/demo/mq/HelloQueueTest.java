@@ -1,10 +1,10 @@
 package com.TT.demo.mq;
 
-import com.TT.demo.mq.rabbitmq.fanout.FanoutSender;
-import com.TT.demo.mq.rabbitmq.helloqueue.HelloSender;
-import com.TT.demo.mq.rabbitmq.一对多使用.NeoSender;
-import com.TT.demo.mq.rabbitmq.发送对象.ObjectSend;
-import com.TT.demo.mq.rabbitmq.测试topic.TopicSend;
+import com.TT.demo.mq.rabbitmq.test.fanout.FanoutSender;
+import com.TT.demo.mq.rabbitmq.test.helloqueue.HelloSender;
+import com.TT.demo.mq.rabbitmq.test.一对多使用.NeoSender;
+import com.TT.demo.mq.rabbitmq.test.发送对象.ObjectSend;
+import com.TT.demo.mq.rabbitmq.test.测试topic.TopicSend;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
