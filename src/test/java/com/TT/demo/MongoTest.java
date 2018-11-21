@@ -19,7 +19,7 @@ public class MongoTest {
     @Test
     public void testMongo(){
         UserEntity userEntity = new UserEntity();
-        userEntity.setId(123123L);
+        userEntity.setId(1231233L);
         userEntity.setPassword("sdfa");
         userEntity.setUserName("suveng");
         userDao.saveUser(userEntity);

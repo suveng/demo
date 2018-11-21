@@ -3,6 +3,7 @@ package com.TT.demo.dao.mongo.impl;
 import com.TT.demo.dao.mongo.UserDao;
 import com.TT.demo.domain.mongo.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -15,8 +16,11 @@ import org.springframework.stereotype.Component;
 @Component("userDao")
 public class UserDaoImpl implements UserDao {
     @Autowired
-    MongoTemplate mongoTemplate;
-
+            @Qualifier(value = "test1MongoTemplate")
+    MongoTemplate test1MongoTemplate;
+    @Autowired
+    @Qualifier(value = "test2MongoTemplate")
+    MongoTemplate test2MongoTemplate;
 
     /**
      * 创建对象
@@ -24,7 +28,8 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public void saveUser(UserEntity user) {
-        mongoTemplate.insert(user);
+        test1MongoTemplate.insert(user);
+        test2MongoTemplate.insert(user);
     }
 
     /**
@@ -35,7 +40,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public  UserEntity findUserByUserName(String userName){
     Query query=new Query(Criteria.where("userName").is(userName));
-    return mongoTemplate.findOne(query, UserEntity.class);
+    return test1MongoTemplate.findOne(query, UserEntity.class);
     }
 
     /**
@@ -48,9 +53,9 @@ public class UserDaoImpl implements UserDao {
         Update update=new Update().set("userName",userEntity.getUserName() )
                 .set("password", userEntity.getPassword());
 //        更新一条
-        mongoTemplate.updateFirst(query, update, UserEntity.class);
+        test1MongoTemplate.updateFirst(query, update, UserEntity.class);
 //        更新所有
-        mongoTemplate.updateMulti(query, update, UserEntity.class);
+        test1MongoTemplate.updateMulti(query, update, UserEntity.class);
     }
 
     /**
@@ -60,7 +65,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void deleteUserById(Long id){
         Query query = new Query(Criteria.where("id").is(id));
-        mongoTemplate.remove(query,UserEntity.class);
+        test1MongoTemplate.remove(query,UserEntity.class);
     }
 
 }
