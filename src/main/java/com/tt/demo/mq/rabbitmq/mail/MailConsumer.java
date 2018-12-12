@@ -1,7 +1,7 @@
 package com.tt.demo.mq.rabbitmq.mail;
 
 import com.tt.demo.util.mail.MailService;
-import com.tt.demo.util.vo.Mail;
+import com.tt.demo.domain.vo.Mail;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;

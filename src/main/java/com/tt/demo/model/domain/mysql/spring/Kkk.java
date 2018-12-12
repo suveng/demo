@@ -1,4 +1,4 @@
-package com.tt.demo.domain.mysql.spring;
+package com.tt.demo.model.domain.mysql.spring;
 
 import javax.persistence.*;
 

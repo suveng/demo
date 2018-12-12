@@ -1,7 +1,7 @@
 package com.tt.demo;
 
 import com.tt.demo.dao.mongo.UserDao;
-import com.tt.demo.domain.mongo.UserEntity;
+import com.tt.demo.model.domain.mongo.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

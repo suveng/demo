@@ -1,4 +1,4 @@
-package com.tt.demo.domain.mongo;
+package com.tt.demo.model.domain.mongo;
 
 import lombok.Data;
 

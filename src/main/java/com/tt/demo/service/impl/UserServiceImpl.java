@@ -1,7 +1,7 @@
 package com.tt.demo.service.impl;
 
 import com.tt.demo.dao.mysql.springboot.UserMapper;
-import com.tt.demo.domain.mysql.springboot.User;
+import com.tt.demo.model.domain.mysql.springboot.User;
 import com.tt.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.tt.demo.domain.mysql.springboot;
+package com.tt.demo.model.domain.mysql.springboot;
 
 import javax.persistence.*;
 import java.io.Serializable;

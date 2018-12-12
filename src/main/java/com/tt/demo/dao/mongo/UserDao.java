@@ -1,6 +1,6 @@
 package com.tt.demo.dao.mongo;
 
-import com.tt.demo.domain.mongo.UserEntity;
+import com.tt.demo.model.domain.mongo.UserEntity;
 
 /**
  * Created by 苏文广 on 2018/11/20

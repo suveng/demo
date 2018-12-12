@@ -1,6 +1,6 @@
 package com.tt.demo.mq.rabbitmq.mail;
 
-import com.tt.demo.util.vo.Mail;
+import com.tt.demo.domain.vo.Mail;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

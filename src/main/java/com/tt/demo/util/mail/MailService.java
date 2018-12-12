@@ -1,6 +1,6 @@
 package com.tt.demo.util.mail;
 
-import com.tt.demo.util.vo.Mail;
+import com.tt.demo.domain.vo.Mail;
 
 /**
  * Created by 苏文广 on 2018/11/19

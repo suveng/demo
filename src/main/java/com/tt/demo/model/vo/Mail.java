@@ -1,4 +1,4 @@
-package com.tt.demo.util.vo;
+package com.tt.demo.model.vo;
 
 import lombok.Data;
 
@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * Created by 苏文广 on 2018/11/20
+ * @author Administrator
  */
 @Data
 public class Mail implements Serializable {

@@ -1,8 +1,8 @@
 package com.tt.demo.controller;
 
 import com.tt.demo.dao.mysql.spring.KkkMapper;
-import com.tt.demo.domain.mysql.spring.Kkk;
-import com.tt.demo.domain.mysql.springboot.User;
+import com.tt.demo.model.domain.mysql.spring.Kkk;
+import com.tt.demo.model.domain.mysql.springboot.User;
 import com.tt.demo.service.KkkService;
 import com.tt.demo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
