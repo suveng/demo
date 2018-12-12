@@ -174,13 +174,13 @@
     </appender>
 
     <!--5. 设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。-->
-    <logger name="com.tt.demo.controller.*" level="WARN" additivity="true">
-        <appender-ref ref="ControllerErrorLog"/>
-    </logger>
+    <!--<logger name="com.tt.demo.controller.*" level="WARN" additivity="true">-->
+        <!--<appender-ref ref="ControllerErrorLog"/>-->
+    <!--</logger>-->
 
 
     <!--1. root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性。-->
-    <root level="INFO">
+    <root level="DEBUG">
         <!--控制台打印-->
         <!--<appender-ref ref="ConsoleInfoOnly"/>-->
         <!--<appender-ref ref="ConsoleWarnOnly"/>-->

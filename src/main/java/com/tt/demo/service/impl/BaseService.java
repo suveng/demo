@@ -29,7 +29,7 @@ public abstract class BaseService<T> implements IServcie<T> {
     @Override
     public int save(T entity) {
         //说明：保存一个实体，null的属性也会保存，不会使用数据库默认值
-        return mapper.insert(entity);
+        return mapper.insertSelective(entity);
     }
 
     @Override
