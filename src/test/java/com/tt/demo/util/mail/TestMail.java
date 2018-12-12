@@ -1,6 +1,7 @@
 package com.tt.demo.util.mail;
 
-import com.tt.demo.domain.vo.Mail;
+
+import com.tt.demo.model.vo.Mail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

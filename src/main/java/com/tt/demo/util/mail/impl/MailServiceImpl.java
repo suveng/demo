@@ -1,7 +1,7 @@
 package com.tt.demo.util.mail.impl;
 
+import com.tt.demo.model.vo.Mail;
 import com.tt.demo.util.mail.MailService;
-import com.tt.demo.domain.vo.Mail;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
