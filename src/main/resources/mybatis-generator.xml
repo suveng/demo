@@ -9,7 +9,7 @@
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.tt.demo.util.MyMapper" />
+            <property name="mappers" value="my.suvneg.demo.util.MyMapper" />
             <!--caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true-->
             <property name="caseSensitive" value="true"/>
         </plugin>
@@ -33,13 +33,13 @@
         </javaTypeResolver>
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.tt.demo.domain.mysql.spring" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="my.suvneg.demo.dao.mysql" targetProject="/">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="mapper/spring" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="my.suvneg.demo.dao.mysql" targetProject="/">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
@@ -48,14 +48,16 @@
                 type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tt.demo.dao.mysql.spring" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="my.suvneg.demo.dao.mysql" targetProject="/">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--生成对应表及类名
         去掉Mybatis Generator生成的一堆 example
         -->
+
         <table tableName="kkk" domainObjectName="Kkk" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
     </context>
