@@ -74,7 +74,7 @@ public class TestMail {
     public void testAsyncMail(){
         Context context = new Context();
         context.setVariable("id", "1111");
-        String emailTemplate = templateEngine.process("emailTemplate.html", context);
+        String emailTemplate = templateEngine.process("views/templates/emailTemplate.html", context);
         mailService.sendAsyncSendMail(new Mail("suveng@163.com","模板",emailTemplate));
     }
 }

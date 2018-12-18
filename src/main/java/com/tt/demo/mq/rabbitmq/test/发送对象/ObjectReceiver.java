@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Created by 苏文广 on 2018/11/19
  */
 @Component
-@RabbitListener(queues = "object")
+@RabbitListener(queues = "mailObject")
 public class ObjectReceiver {
     @RabbitHandler
     public void process(User msg){

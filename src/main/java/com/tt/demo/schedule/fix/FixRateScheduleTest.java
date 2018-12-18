@@ -1,14 +1,13 @@
 package com.tt.demo.schedule.fix;
 
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by 苏文广 on 2018/11/19
  * 使用fixRate创建定时任务
  * @author 苏文广
  */
-@Component
+//@Component
 public class FixRateScheduleTest {
     private int count =0;
 
