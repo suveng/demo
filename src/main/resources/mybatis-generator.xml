@@ -9,7 +9,7 @@
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="my.suvneg.demo.util.MyMapper" />
+            <property name="mappers" value="my.suveng.demo.util.MyMapper" />
             <!--caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true-->
             <property name="caseSensitive" value="true"/>
         </plugin>
@@ -23,7 +23,7 @@
 
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="${spring.datasource.spring.driver-class-name}"
-                        connectionURL="${spring.datasource.spring.url}"
+                        connectionURL="jdbc:mysql://localhost:3306/demo"
                         userId="${spring.datasource.spring.username}"
                         password="${spring.datasource.spring.password}">
         </jdbcConnection>
@@ -33,13 +33,13 @@
         </javaTypeResolver>
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="my.suvneg.demo.dao.mysql" targetProject="/">
+        <javaModelGenerator targetPackage="my.suveng.demo.dao.mysql" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="my.suvneg.demo.dao.mysql" targetProject="/">
+        <sqlMapGenerator targetPackage="my.suveng.demo.dao.mysql" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
@@ -48,7 +48,7 @@
                 type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="my.suvneg.demo.dao.mysql" targetProject="/">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="my.suveng.demo.dao.mysql" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -56,7 +56,7 @@
         去掉Mybatis Generator生成的一堆 example
         -->
 
-        <table tableName="kkk" domainObjectName="Kkk" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="sys_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="false"/>
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
