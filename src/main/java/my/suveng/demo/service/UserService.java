@@ -1,5 +1,6 @@
 package my.suveng.demo.service;
 
+import com.github.pagehelper.PageInfo;
 import my.suveng.demo.model.domain.User;
 
 /**
@@ -7,4 +8,6 @@ import my.suveng.demo.model.domain.User;
  * @Description:
  */
 public interface UserService extends IService<User> {
+  PageInfo selectByPageNumSize(User user, int pageNum, int pageSize);
+
 }

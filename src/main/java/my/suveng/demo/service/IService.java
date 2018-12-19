@@ -1,8 +1,7 @@
 package my.suveng.demo.service;
 
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  * 通用service接口
@@ -22,9 +21,9 @@ public interface IService<T> {
 
     List<T> selectByExample(Object example);
 
-    /**
-     * 查询所有
-     * @return list
-     */
-    List<T> selectAll();
+
+
+
+    List<T> SelectRowBounds(T entity, int offset, int limit);
+
 }

@@ -25,9 +25,31 @@ $("#t1").dataTable({
   ordering: true,//使用排序
   bStateSave: true,//记录cookie
   paging: true,//是否分页
-  pagingType: "full_numbers",//除首页、上一页、下一页、末页四个按钮还有页数按钮
+  pagingType: "full_numbers",//除首页、上一·页、下一页、末页四个按钮还有页数按钮
   searching: false,//是否开始本地搜索
   stateSave: false,//刷新时是否保存状态
   autoWidth: true,//自动计算宽度
   deferRender: true,//延迟渲染
+  serverSide: true,//开启服务器模式
+  //获取数据
+  ajax: {
+    "url": ctx + "/getList",
+    "type": 'POST',
+    //绑定额外参数
+    "data": function (d) {
+      return $.extend({}, d,
+          {
+            "id":$("#user_id").val()
+          });
+    }
+  },
+  //设置数据
+  columns: [
+    {data: "userId", defaltContent:"空"},
+    {data: "name", defaultContent:"空"},
+    {data: "sex", defaultContent: "未知性别"},
+    {data: "age", defaultContent: 0},
+    {data: "birth", defaultContent: "未知",render:function (date) { return moment(date).format("yyyy-mm-dd hh:mm:ss") }}
+  ]
+
 });

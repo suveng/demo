@@ -1,10 +1,10 @@
 package my.suveng.demo.service.impl;
 
+import java.util.List;
 import my.suveng.demo.service.IService;
 import my.suveng.demo.util.MyMapper;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
 
 /**
  * 通用service实现类，用于service层的基类
@@ -57,13 +57,12 @@ public abstract class BaseService<T> implements IService<T> {
         return mapper.selectByExample(example);
     }
 
-    /**
-     * 查询所有
-     *
-     * @return list
-     */
+
+
     @Override
-    public List<T> selectAll() {
-        return mapper.selectAll();
+    public List<T> SelectRowBounds(T entity, int offset, int limit) {
+        return mapper.selectByRowBounds(entity, new RowBounds(offset,limit));
     }
+
+
 }

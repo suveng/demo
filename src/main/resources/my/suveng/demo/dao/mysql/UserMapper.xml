@@ -11,4 +11,8 @@
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="birth" jdbcType="TIMESTAMP" property="birth" />
   </resultMap>
+  <select id="selectByPageNumSize" resultType="my.suveng.demo.model.domain.User">
+    select * from sys_user
+  </select>
+
 </mapper>

@@ -1,13 +1,14 @@
 <head>
-  <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+  <!-- DataTables CSS -->
   <link rel="stylesheet" type="text/css"
-        href="/webjars/datatables/1.10.16/css/jquery.dataTables.css">
-  <script src="/webjars/jquery/1.12.3/jquery.min.js"></script>
-  <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script type="text/javascript" charset="utf8"
-          src="/webjars/datatables/1.10.16/js/jquery.dataTables.js"></script>
+        href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+
   <#--设置request变量-->
   <script>
     var ctx = "${request.contextPath}";
   </script>
+
 </head>

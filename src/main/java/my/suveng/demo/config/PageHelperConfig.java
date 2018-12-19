@@ -23,6 +23,7 @@ public class PageHelperConfig {
         properties.setProperty("offsetAsPageNum","true");
         properties.setProperty("rowBoundsWithCount","true");
         properties.setProperty("reasonable","true");
+        properties.setProperty("supportMethodsArguments", "true");
         //指定为MySQL数据库
         properties.setProperty("helperDialect","mysql");
         pageHelper.setProperties(properties);

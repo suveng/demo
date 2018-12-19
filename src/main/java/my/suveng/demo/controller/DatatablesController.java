@@ -1,16 +1,19 @@
 package my.suveng.demo.controller;
 
+import com.github.pagehelper.PageInfo;
+import java.util.Date;
+import java.util.List;
 import my.suveng.demo.model.domain.User;
 import my.suveng.demo.service.UserService;
+import my.suveng.demo.util.datatable.DataTable;
+import my.suveng.demo.util.datatable.DataTableBulid;
+import my.suveng.demo.util.datatable.Order;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.Date;
-import java.util.List;
 
 /**
  * @author 苏文广 created at 2018/12/18
@@ -38,11 +41,13 @@ public class DatatablesController {
      * 获取全部数据
      * @return list
      */
-    @RequestMapping("getList")
+    @RequestMapping("/getList")
     @ResponseBody
-    public List getList(){
-        List<User> users = userService.selectAll();
-        return users;
+    public DataTable getList(User user,Order order, Integer start,Integer length, Integer draw){
+        PageInfo pageInfo = userService.selectByPageNumSize(user, start, length);
+        List<User> users =  pageInfo.getList();
+        long total = pageInfo.getTotal();
+        return DataTableBulid.build(draw, (int) total,users);
     }
 
     /**
@@ -52,7 +57,7 @@ public class DatatablesController {
     @RequestMapping("/insert")
     @ResponseBody
     public String insert(){
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 1000; i++) {
             String s = RandomStringUtils.randomAscii(8);
                     User user = new User();
                     user.setName(s);
