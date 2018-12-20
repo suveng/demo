@@ -20,7 +20,7 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
   UserMapper userMapper;
   @Override
   public PageInfo selectByPageNumSize(User user, int pageNum, int pageSize) {
-    PageHelper.startPage(pageNum, pageSize);
+    PageHelper.offsetPage(pageNum, pageSize);
     List<User> users = userMapper.selectByPageNumSize(user);
     return new PageInfo<>(users);
   }
