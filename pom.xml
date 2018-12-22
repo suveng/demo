@@ -9,7 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>springboot_demo</name>
+  <name>sitemapGen</name>
   <description>springboot_demo Demo project</description>
 
   <parent>
@@ -155,41 +155,6 @@
           <source>8</source>
           <target>8</target>
           <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.mybatis.generator</groupId>
-        <artifactId>mybatis-generator-maven-plugin</artifactId>
-        <version>1.3.5</version>
-        <dependencies>
-          <!--配置这个依赖主要是为了等下在配置mybatis-generator.xml的时候可以不用配置classPathEntry这样的一个属性，避免代码的耦合度太高-->
-          <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.44</version>
-          </dependency>
-          <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper</artifactId>
-            <version>3.4.0</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <id>Generate MyBatis Artifacts</id>
-            <phase>package</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <!--允许移动生成的文件 -->
-          <verbose>true</verbose>
-          <!-- 是否覆盖 -->
-          <overwrite>true</overwrite>
-          <!-- 自动生成的配置 -->
-          <configurationFile>src/main/resources/mybatis-generator.xml</configurationFile>
         </configuration>
       </plugin>
     </plugins>

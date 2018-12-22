@@ -13,9 +13,9 @@ import org.apache.commons.io.FileUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.dom4j.Namespace;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
-import org.junit.Test;
 
 /**
  * @author 苏文广 created at 2018/12/22
@@ -24,16 +24,10 @@ import org.junit.Test;
 public class SiteMapXML {
 
 
-  @Test
-  public void test() throws IOException {
-    this.createSiteMap("links.log");
-    FileUtils.deleteQuietly(new File("links.log"));
-  }
-
-  private void createSiteMap(String linksPath) throws IOException {
+  public void createSiteMap(String linksPath) throws IOException {
     Document document = DocumentHelper.createDocument();
-    Element locs = document.addElement("urlset").addAttribute("xmlns",
-        "http://www.sitemaps.org/schemas/sitemap/0.9");
+    Element locs = document.addElement("urlset");
+    locs.add(new Namespace("","http://www.sitemaps.org/schemas/sitemap/0.9"));
     List<String> strings = FileUtils.readLines(new File(linksPath), Charset.forName("utf-8"));
     for (String url : strings) {
       Element loc = locs.addElement("url");
@@ -44,7 +38,7 @@ public class SiteMapXML {
     writeAndFlush(document);
   }
 
-  private void writeAndFlush(Document document) {
+  public void writeAndFlush(Document document) {
     try {
       OutputFormat format = OutputFormat.createPrettyPrint();
       format.setEncoding(document.getXMLEncoding());

@@ -9,6 +9,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.dom4j.Namespace;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.junit.Test;
@@ -21,8 +22,8 @@ public class Dom4jDemo{
 
   public void createXml(String fileName) {
     Document document = DocumentHelper.createDocument();
-    Element employees = document.addElement("employees").addAttribute("xlns",
-        "http://www.sitemaps.org/schemas/sitemap/0.9");
+    Element employees = document.addElement("employees");
+    employees.add(new Namespace("","http://www.sitemaps.org/schemas/sitemap/0.9"));
     Element employee = employees.addElement("employee");
     Element name = employee.addElement("name");
     name.setText("活这么大就没饱过");
