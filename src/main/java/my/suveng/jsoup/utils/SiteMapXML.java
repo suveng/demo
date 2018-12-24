@@ -13,7 +13,6 @@ import org.apache.commons.io.FileUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.Namespace;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
@@ -26,11 +25,10 @@ public class SiteMapXML {
 
   public void createSiteMap(String linksPath) throws IOException {
     Document document = DocumentHelper.createDocument();
-    Element locs = document.addElement("urlset");
-    locs.add(new Namespace("","http://www.sitemaps.org/schemas/sitemap/0.9"));
+    Element locs = document.addElement("urlset","http://www.sitemaps.org/schemas/sitemap/0.9");
     List<String> strings = FileUtils.readLines(new File(linksPath), Charset.forName("utf-8"));
     for (String url : strings) {
-      Element loc = locs.addElement("url");
+      Element loc = locs.addElement("url","http://www.sitemaps.org/schemas/sitemap/0.9");
       loc.addElement("loc").setText(url);
       loc.addElement("lastmod")
           .setText(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE));

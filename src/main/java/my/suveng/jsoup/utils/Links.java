@@ -1,8 +1,5 @@
 package my.suveng.jsoup.utils;
 
-import static my.suveng.jsoup.utils.ProtocalType.HTTPS_PROTOCAL;
-import static my.suveng.jsoup.utils.ProtocalType.HTTP_PROTOCAL;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -84,27 +81,17 @@ public class Links {
    * 处理连接
    */
   private void dealwithHref(Element element) {
+
+    targetHref=element.attr("abs:href");
     //处理编码
     try {
-      this.href = URLDecoder.decode(element.attr("href"), "utf-8");
+      this.targetHref = URLDecoder.decode(targetHref, "utf-8");
     } catch (UnsupportedEncodingException e) {
       System.err.println("不支持的编码，建议换成utf-8");
       this.targetHref = null;
       return;
     }
-    getTypeOfHref(element);
-    switch (this.hrefType) {
-      case HrefType.LONG:
-        //只有当前域名才支持爬取，不支持跨域
-        this.targetHref = this.href;
-        dealwithDomain();
-        break;
-      case HrefType.SHORT:
-        this.targetHref = targetDomain + this.href;
-        break;
-      default:
-        this.targetHref = null;
-    }
+    dealwithDomain();
   }
 
   /**
@@ -113,18 +100,6 @@ public class Links {
   private void dealwithDomain() {
     if (!this.targetHref.contains(this.targetDomain)){
       this.targetHref=null;
-    }
-  }
-
-  /**
-   * 判断长链还是短链
-   */
-  private void getTypeOfHref(Element a) {
-    String href = a.attr("href");
-    if (href.contains(HTTP_PROTOCAL) || href.contains(HTTPS_PROTOCAL)) {
-      this.setHrefType(HrefType.LONG);
-    } else {
-      this.setHrefType(HrefType.SHORT);
     }
   }
 
