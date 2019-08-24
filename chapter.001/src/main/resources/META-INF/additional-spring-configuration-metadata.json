@@ -1,0 +1,18 @@
+{
+    "properties": [
+        {
+            "name": "env.message.dingtalk.phone",
+            "type": "java.lang.String",
+            "description": "@人通知的手机号, 一般填该项目的负责人"
+        },
+        {
+            "name": "env.message.dingtalk.link",
+            "type": "java.lang.String",
+            "description": "钉钉告警群的自定义告警机器人的链接"
+        },
+        {
+            "name": "env.profile",
+            "type": "java.lang.String",
+            "description": "环境的描述"
+        }
+    ] }

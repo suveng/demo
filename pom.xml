@@ -6,6 +6,9 @@
     <groupId>my.suveng</groupId>
     <artifactId>demo</artifactId>
     <version>1.0</version>
+    <modules>
+        <module>chapter.001</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>demo</name>
@@ -13,6 +16,18 @@
 
 
 
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>2.1.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 
