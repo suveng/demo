@@ -1,0 +1,3164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+        <Author>jiasong chen</Author>
+        <LastAuthor>jiasong chen</LastAuthor>
+        <Created>2018-03-29T14:23:00Z</Created>
+        <LastSaved>2019-08-25T19:02:02Z</LastSaved>
+    </DocumentProperties>
+    <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+        <KSOProductBuildVer dt:dt="string">2052-1.4.0.1935</KSOProductBuildVer>
+    </CustomDocumentProperties>
+    <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+        <WindowHeight>14960</WindowHeight>
+        <ProtectStructure>False</ProtectStructure>
+        <ProtectWindows>False</ProtectWindows>
+    </ExcelWorkbook>
+    <Styles>
+        <Style ss:ID="s47" ss:Name="40% - 强调文字颜色 1">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#B8CCE4" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s15" ss:Name="计算">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FA7D00" ss:Bold="1"/>
+            <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s44" ss:Name="40% - 强调文字颜色 5">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#B7DEE8" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s40" ss:Name="40% - 强调文字颜色 6">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#FCD5B4" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s37" ss:Name="注释">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#B2B2B2"/>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#B2B2B2"/>
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#B2B2B2"/>
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#B2B2B2"/>
+            </Borders>
+            <Interior ss:Color="#FFFFCC" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s26" ss:Name="解释性文本">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#7F7F7F" ss:Italic="1"/>
+        </Style>
+        <Style ss:ID="s36" ss:Name="60% - 强调文字颜色 3">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#C4D79B" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s25" ss:Name="标题 1">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#4F81BD"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="15" ss:Color="#1F497D" ss:Bold="1"/>
+        </Style>
+        <Style ss:ID="s34" ss:Name="40% - 强调文字颜色 2">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#E6B8B7" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s33" ss:Name="标题">
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="18" ss:Color="#1F497D" ss:Bold="1"/>
+        </Style>
+        <Style ss:ID="s43" ss:Name="标题 2">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#4F81BD"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="13" ss:Color="#1F497D" ss:Bold="1"/>
+        </Style>
+        <Style ss:ID="s5" ss:Name="40% - 强调文字颜色 3">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#D8E4BC" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s18" ss:Name="20% - 强调文字颜色 5">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#DAEEF3" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s32" ss:Name="已访问的超链接">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#800080" ss:Underline="Single"/>
+        </Style>
+        <Style ss:ID="s31" ss:Name="千位分隔">
+            <NumberFormat ss:Format="_ * #,##0.00_ ;_ * \-#,##0.00_ ;_ * &quot;-&quot;??_ ;_ @_ "/>
+        </Style>
+        <Style ss:ID="s14" ss:Name="60% - 强调文字颜色 4">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#B1A0C7" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s29" ss:Name="货币[0]">
+            <NumberFormat
+                ss:Format="_ &quot;￥&quot;* #,##0_ ;_ &quot;￥&quot;* \-#,##0_ ;_ &quot;￥&quot;* &quot;-&quot;_ ;_ @_ "/>
+        </Style>
+        <Style ss:ID="s45" ss:Name="标题 3">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#A7BFDE"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="11" ss:Color="#1F497D" ss:Bold="1"/>
+        </Style>
+        <Style ss:ID="s23" ss:Name="检查单元格">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Double" ss:Weight="3" ss:Color="#3F3F3F"/>
+                <Border ss:Position="Left" ss:LineStyle="Double" ss:Weight="3" ss:Color="#3F3F3F"/>
+                <Border ss:Position="Right" ss:LineStyle="Double" ss:Weight="3" ss:Color="#3F3F3F"/>
+                <Border ss:Position="Top" ss:LineStyle="Double" ss:Weight="3" ss:Color="#3F3F3F"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF" ss:Bold="1"/>
+            <Interior ss:Color="#A5A5A5" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s11" ss:Name="60% - 强调文字颜色 5">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#92CDDC" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s2" ss:Name="20% - 强调文字颜色 4">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#E4DFEC" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s22" ss:Name="差">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#9C0006"/>
+            <Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s4" ss:Name="输入">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#7F7F7F"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#3F3F76"/>
+            <Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s17" ss:Name="适中">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#9C6500"/>
+            <Interior ss:Color="#FFEB9C" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s28" ss:Name="标题 4">
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="11" ss:Color="#1F497D" ss:Bold="1"/>
+        </Style>
+        <Style ss:ID="s24" ss:Name="输出">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#3F3F3F"/>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#3F3F3F"/>
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#3F3F3F"/>
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#3F3F3F"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#3F3F3F" ss:Bold="1"/>
+            <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="Default" ss:Name="Normal">
+            <Alignment/>
+            <Borders/>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="11" ss:Color="#000000"/>
+            <Interior/>
+            <NumberFormat/>
+            <Protection/>
+        </Style>
+        <Style ss:ID="s48" ss:Name="链接单元格">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Double" ss:Weight="3" ss:Color="#FF8001"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FA7D00"/>
+        </Style>
+        <Style ss:ID="s41" ss:Name="超链接">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#0000FF" ss:Underline="Single"/>
+        </Style>
+        <Style ss:ID="s27" ss:Name="20% - 强调文字颜色 2">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#F2DCDB" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s30" ss:Name="40% - 强调文字颜色 4">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#CCC0DA" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s20" ss:Name="20% - 强调文字颜色 1">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#DCE6F1" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s39" ss:Name="强调文字颜色 5">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#4BACC6" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s6" ss:Name="20% - 强调文字颜色 3">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#EBF1DE" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s13" ss:Name="60% - 强调文字颜色 1">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#95B3D7" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s19" ss:Name="好">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#006100"/>
+            <Interior ss:Color="#C6EFCE" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s12" ss:Name="强调文字颜色 2">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#C0504D" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s10" ss:Name="60% - 强调文字颜色 2">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#DA9694" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s21" ss:Name="汇总">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Double" ss:Weight="3" ss:Color="#4F81BD"/>
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#4F81BD"/>
+            </Borders>
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000" ss:Bold="1"/>
+        </Style>
+        <Style ss:ID="s46" ss:Name="强调文字颜色 6">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#F79646" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s38" ss:Name="20% - 强调文字颜色 6">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#000000"/>
+            <Interior ss:Color="#FDE9D9" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s1" ss:Name="60% - 强调文字颜色 6">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#FABF8F" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s35" ss:Name="警告文本">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FF0000"/>
+        </Style>
+        <Style ss:ID="s16" ss:Name="强调文字颜色 1">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#4F81BD" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s42" ss:Name="千位分隔[0]">
+            <NumberFormat ss:Format="_ * #,##0_ ;_ * \-#,##0_ ;_ * &quot;-&quot;_ ;_ @_ "/>
+        </Style>
+        <Style ss:ID="s9" ss:Name="百分比">
+            <NumberFormat ss:Format="0%"/>
+        </Style>
+        <Style ss:ID="s7" ss:Name="货币">
+            <NumberFormat
+                ss:Format="_ &quot;￥&quot;* #,##0.00_ ;_ &quot;￥&quot;* \-#,##0.00_ ;_ &quot;￥&quot;* &quot;-&quot;??_ ;_ @_ "/>
+        </Style>
+        <Style ss:ID="s3" ss:Name="强调文字颜色 4">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#8064A2" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s8" ss:Name="强调文字颜色 3">
+            <Font ss:FontName="宋体" x:CharSet="0" ss:Size="11" ss:Color="#FFFFFF"/>
+            <Interior ss:Color="#9BBB59" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s49"/>
+        <Style ss:ID="s50">
+            <Alignment ss:Horizontal="Center"/>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="18" ss:Color="#000000" ss:Bold="1"/>
+            <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s51">
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="14" ss:Color="#000000"/>
+            <Interior ss:Color="#F79646" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s52">
+            <NumberFormat ss:Format="m&quot;月&quot;d&quot;日&quot;"/>
+        </Style>
+        <Style ss:ID="s53">
+            <Protection ss:Protected="0"/>
+        </Style>
+        <Style ss:ID="s54">
+            <Alignment/>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="11" ss:Color="#000000"/>
+            <Interior/>
+            <NumberFormat ss:Format="m&quot;月&quot;d&quot;日&quot;"/>
+        </Style>
+        <Style ss:ID="s55">
+            <Alignment ss:Horizontal="Center"/>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="18" ss:Color="#000000" ss:Bold="1"/>
+            <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s56">
+            <Alignment ss:Horizontal="Center"/>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="18" ss:Color="#000000" ss:Bold="1"/>
+            <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+        </Style>
+        <Style ss:ID="s57">
+            <Alignment ss:Horizontal="Center"/>
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="18" ss:Color="#000000" ss:Bold="1"/>
+            <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+        </Style>
+    </Styles>
+    <Worksheet ss:Name="时时库存表">
+        <Names>
+            <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=时时库存表!R2C1:R88C9" ss:Hidden="1"/>
+        </Names>
+        <Table ss:ExpandedColumnCount="12" ss:ExpandedRowCount="23" x:FullColumns="1" x:FullRows="1"
+               ss:DefaultColumnWidth="46.8" ss:DefaultRowHeight="16.8">
+            <Column ss:Index="1" ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="139.1"/>
+            <Column ss:Index="2" ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="74.75"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="131.3"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="44.2"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="56.55"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="58.5"/>
+            <Row ss:Height="26">
+                <Cell ss:StyleID="s55" ss:MergeAcross="11">
+                    <Data ss:Type="String">2018成品库存表</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="20.4">
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">产品名称</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">产品编码</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">规格型号</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">单位</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">库存数</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">本月数</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">入库</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">出库</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">库位</Data>
+                </Cell>
+            </Row>
+            <#list products as product>
+                <Row>
+                    <Cell>
+                        <Data ss:Type="String">${product.name!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.number!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.type!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.unit!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.left!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.monthNumber!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.in!}</Data>
+                    </Cell>
+                    <Cell>
+                        <Data ss:Type="String">${product.out!}</Data>
+                    </Cell>
+                    <Cell ss:StyleID="s54">
+                        <Data ss:Type="String">${product.date?string('yyyy/MM/dd')}</Data>
+                    </Cell>
+                </Row>
+            </#list>
+
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+            <Row>
+                <Cell ss:Index="9" ss:StyleID="s54"/>
+            </Row>
+        </Table>
+        <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+            <PageSetup>
+                <Header x:Margin="0.3"/>
+                <Footer x:Margin="0.3"/>
+                <PageMargins x:Left="0.699305555555556" x:Right="0.699305555555556" x:Top="0.75" x:Bottom="0.75"/>
+            </PageSetup>
+            <Selected/>
+            <TopRowVisible>0</TopRowVisible>
+            <LeftColumnVisible>0</LeftColumnVisible>
+            <PageBreakZoom>100</PageBreakZoom>
+            <Panes>
+                <Pane>
+                    <Number>3</Number>
+                    <ActiveRow>8</ActiveRow>
+                    <ActiveCol>4</ActiveCol>
+                    <RangeSelection>R9C5</RangeSelection>
+                </Pane>
+            </Panes>
+            <ProtectObjects>False</ProtectObjects>
+            <ProtectScenarios>False</ProtectScenarios>
+        </WorksheetOptions>
+        <AutoFilter x:Range="R2C1:R88C9" xmlns="urn:schemas-microsoft-com:office:excel"/>
+    </Worksheet>
+    <Worksheet ss:Name="入库单">
+        <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="88" x:FullColumns="1" x:FullRows="1"
+               ss:DefaultColumnWidth="46.8" ss:DefaultRowHeight="16.8">
+            <Column ss:Index="1" ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="139.1"/>
+            <Column ss:Index="2" ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="74.75"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="131.3"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="44.2"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="58.5"/>
+            <Row ss:Height="26">
+                <Cell ss:StyleID="s56" ss:MergeAcross="9">
+                    <Data ss:Type="String">2018成品库存表</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="20.4">
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">产品名称</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">产品编码</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">规格型号</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">单位</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">本月数</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">入库</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">库位</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">水波涵氧机（绿花）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-128.01-1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-128</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+                <Cell ss:StyleID="s52"/>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">水波涵氧机（爱心机）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-129.01-3</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-129</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">八合一嫩肤美颜器（三光）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-178.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-178</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">音乐水舞香氛机（新生活版）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-238.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">曲线雕塑导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-369</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-369</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">超音波导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-380</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-380</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">焕彩导人仪（白直立式）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">焕彩导人仪（白卡通盒）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381.01.4</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">焕彩导人仪（粉红盒）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">黄金超音波美人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-382</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-382</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">活氧平衡光疗机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-389</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-389</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">香氛机（粉红樱花组）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-588.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#588</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">朔颜金熨斗</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-686.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#686</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">璀璨 导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-688</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-688</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">维纳斯瘦身体雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-689</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-689</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">维纳斯瘦身体雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-689.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">new life-成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">维纳斯瘦脸仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-690</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-690</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.01玫瑰金</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.01.01玫瑰金升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-瓷肌</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.01.00玫瑰金升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.02银色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">30</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.02.01银色升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.03黑色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.03.01黑色升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.01.01玫瑰金升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔洁肤紧肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-782.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">水飞杯四合一 玫瑰金</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔洁肤紧肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-782.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">水飞杯四合一 经典红</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔洁肤紧肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-782.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">水飞杯四合一 宝石蓝</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">RUnve mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫瑰金 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.01.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫瑰金 中性成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">RUnve mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.04</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">珠光白色成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.04.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">珠光白中性 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">RUnve mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.05</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">宝石蓝 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.05.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">宝石蓝中性 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">五合一顶级多功能导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-999</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-999</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">音乐香氛水氧机（香草集）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-238</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-238.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">QQ美体机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-111</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#111</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">微型美颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-170</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-170</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">完美抗皮美眼笔+1支蓝铜眼胶</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">B-288成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARB-288.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">双效抗皮美眼笔</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARB-289</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARB-289</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">奈米彩光墧带美颜机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-005</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-005</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能雾化水氧机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-101.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">白色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能雾化水氧机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-101.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能雾化水氧机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-101.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">洁柔嫩肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-102.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-102.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">纯金活力美人棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-103</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-103</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">黄金滚轮按摩铁棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-103.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-103.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">Y型体雕滚轮仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-109</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-109</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">钻石微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-110</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#110</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">超微补水仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-115</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#115</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">紧致滚轮按摩仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-118</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">4D</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">电动去脚皮机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-119</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">Runve</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">Y型紧宝拉提黄金美容棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-167</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-167</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">电动粉扑-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-174.2</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">电动粉扑-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-174.5</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">黑色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">精巧全能赋颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-175</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#175</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">温热震动抚颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-176</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#176</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">冷热美肌双效仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-188</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#188</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能气压眼罩</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-203</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#203</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">脸部微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-300</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">银色成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">脸部微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-300.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫瑰金 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">脸部微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-300.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">金色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">无线充电硅胶洁颜刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-401.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">无线充电硅胶洁颜刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-401.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">升级版 粉色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">QQ囍颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-402</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">桃红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">QQ囍颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-402.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">洁玲美肤刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-406</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">BD-406</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">洁玲美肤刷-(中英文旧版)</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-406-2</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">BD-406-2</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">拉筋按摩版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-409</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#-409</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">奈米手持补水仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-410</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#-410</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">震动洁颜刷 机棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">震动洁颜刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-411</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#411</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">震动洁颜刷 刷头</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">音波洗脸刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-412</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">RUNVE</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪 绿色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">mini #416 裸机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫红是 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">浅绿色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.04</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.05</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.06</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">黑色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.07</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">红色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">拉提美容仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-418</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">4D</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">美足赋活仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-501.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">白色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">美足赋活仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-501.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">京城之霜 刷头</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-507.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#507.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+        </Table>
+        <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+            <PageSetup>
+                <Header x:Margin="0.297916666666667"/>
+                <Footer x:Margin="0.297916666666667"/>
+                <PageMargins x:Left="0.700694444444445" x:Right="0.700694444444445" x:Top="0.751388888888889"
+                             x:Bottom="0.751388888888889"/>
+            </PageSetup>
+            <TopRowVisible>0</TopRowVisible>
+            <LeftColumnVisible>0</LeftColumnVisible>
+            <PageBreakZoom>100</PageBreakZoom>
+            <Panes>
+                <Pane>
+                    <Number>3</Number>
+                    <ActiveRow>13</ActiveRow>
+                    <ActiveCol>8</ActiveCol>
+                    <RangeSelection>R14C9</RangeSelection>
+                </Pane>
+            </Panes>
+            <ProtectObjects>False</ProtectObjects>
+            <ProtectScenarios>False</ProtectScenarios>
+        </WorksheetOptions>
+    </Worksheet>
+    <Worksheet ss:Name="出库表">
+        <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="88" x:FullColumns="1" x:FullRows="1"
+               ss:DefaultColumnWidth="46.8" ss:DefaultRowHeight="16.8">
+            <Column ss:Index="1" ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="139.1"/>
+            <Column ss:Index="2" ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="74.75"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="131.3"/>
+            <Column ss:StyleID="Default" ss:AutoFitWidth="0" ss:Width="44.2"/>
+            <Row ss:Height="26">
+                <Cell ss:StyleID="s57" ss:MergeAcross="8">
+                    <Data ss:Type="String">2018成品库存表</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="20.4">
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">产品名称</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">产品编码</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">规格型号</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">单位</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">出库</Data>
+                </Cell>
+                <Cell ss:StyleID="s51">
+                    <Data ss:Type="String">库位</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">水波涵氧机（绿花）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-128.01-1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-128</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+                <Cell ss:StyleID="s52"/>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">水波涵氧机（爱心机）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-129.01-3</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-129</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">八合一嫩肤美颜器（三光）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-178.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-178</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">音乐水舞香氛机（新生活版）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-238.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">曲线雕塑导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-369</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-369</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">超音波导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-380</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-380</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">焕彩导人仪（白直立式）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">焕彩导人仪（白卡通盒）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381.01.4</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">焕彩导人仪（粉红盒）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-381</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">黄金超音波美人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-382</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-382</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell ss:StyleID="s53">
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">活氧平衡光疗机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-389</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-389</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">香氛机（粉红樱花组）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-588.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#588</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">朔颜金熨斗</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-686.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#686</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">璀璨 导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-688</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-688</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">维纳斯瘦身体雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-689</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-689</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">维纳斯瘦身体雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-689.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">new life-成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">维纳斯瘦脸仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-690</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-690</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.01玫瑰金</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.01.01玫瑰金升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-瓷肌</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.01.00玫瑰金升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.02银色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="Number">20</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.02.01银色升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.03黑色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">A-781.03.01黑色升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔焕肤仪-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">all in one</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-781.01.01玫瑰金升级版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔洁肤紧肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-782.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">水飞杯四合一 玫瑰金</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔洁肤紧肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-782.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">水飞杯四合一 经典红</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">波能毛孔洁肤紧肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-782.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">水飞杯四合一 宝石蓝</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">RUnve mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫瑰金 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.01.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫瑰金 中性成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">RUnve mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.04</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">珠光白色成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.04.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">珠光白中性 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">RUnve mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.05</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">宝石蓝 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini毛孔清洁仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-783.05.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">宝石蓝中性 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">五合一顶级多功能导人仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-999</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-999</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">音乐香氛水氧机（香草集）</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-238</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">AR-238.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">QQ美体机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-111</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#111</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">微型美颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-170</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-170</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">完美抗皮美眼笔+1支蓝铜眼胶</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">B-288成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARB-288.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">双效抗皮美眼笔</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARB-289</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARB-289</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">奈米彩光墧带美颜机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-005</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-005</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能雾化水氧机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-101.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">白色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能雾化水氧机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-101.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能雾化水氧机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-101.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">洁柔嫩肤仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-102.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-102.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">纯金活力美人棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-103</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-103</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">黄金滚轮按摩铁棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-103.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-103.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">Y型体雕滚轮仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-109</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-109</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">钻石微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-110</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#110</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">超微补水仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-115</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#115</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">紧致滚轮按摩仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-118</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">4D</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">电动去脚皮机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-119</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">Runve</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">Y型紧宝拉提黄金美容棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-167</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">D-167</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">电动粉扑-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-174.2</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">电动粉扑-</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-174.5</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">黑色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">精巧全能赋颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-175</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#175</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">温热震动抚颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-176</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#176</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">冷热美肌双效仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-188</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#188</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">智能气压眼罩</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-203</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#203</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">脸部微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-300</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">银色成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">脸部微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-300.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫瑰金 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">脸部微雕仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-300.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">金色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">无线充电硅胶洁颜刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-401.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">无线充电硅胶洁颜刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-401.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">升级版 粉色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">QQ囍颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-402</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">桃红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">QQ囍颜仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-402.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">洁玲美肤刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-406</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">BD-406</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">洁玲美肤刷-(中英文旧版)</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-406-2</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">BD-406-2</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">拉筋按摩版</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-409</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#-409</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">奈米手持补水仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-410</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#-410</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">震动洁颜刷 机棒</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">震动洁颜刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-411</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#411</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">震动洁颜刷 刷头</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#411.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">音波洗脸刷</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-412</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">RUNVE</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪 绿色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">mini #416 裸机</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">玫红是 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">浅绿色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.03</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini充电硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.04</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">蓝色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.05</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.06</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">黑色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">mini硅胶洁面仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-416.07</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">红色 成品</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">拉提美容仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-418</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">4D</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">美足赋活仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-501.01</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">白色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">美足赋活仪</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-501.02</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">粉红色</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">京城之霜 刷头</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">ARBD-507.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">#507.1</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">PCS</Data>
+                </Cell>
+            </Row>
+        </Table>
+        <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+            <PageSetup>
+                <Header x:Margin="0.3"/>
+                <Footer x:Margin="0.3"/>
+                <PageMargins x:Left="0.699305555555556" x:Right="0.699305555555556" x:Top="0.75" x:Bottom="0.75"/>
+            </PageSetup>
+            <TopRowVisible>0</TopRowVisible>
+            <LeftColumnVisible>0</LeftColumnVisible>
+            <PageBreakZoom>100</PageBreakZoom>
+            <Panes>
+                <Pane>
+                    <Number>3</Number>
+                    <ActiveRow>24</ActiveRow>
+                    <ActiveCol>8</ActiveCol>
+                    <RangeSelection>R25C9</RangeSelection>
+                </Pane>
+            </Panes>
+            <ProtectObjects>False</ProtectObjects>
+            <ProtectScenarios>False</ProtectScenarios>
+        </WorksheetOptions>
+    </Worksheet>
+</Workbook>
