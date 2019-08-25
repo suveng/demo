@@ -30,7 +30,10 @@ public class AppController {
 
 	@RequestMapping("/export")
 	public void export(HttpServletResponse response) throws Exception {
+		//自己封装号数据实体
 		ArrayList<Product> products = new ArrayList<>();
+
+		//构造数据
 		for (int i = 0; i < 100; i++) {
 			Product e = new Product();
 			e.setName(RandomUtil.randomString(5));
@@ -45,12 +48,16 @@ public class AppController {
 		}
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("products", products);
+
+		//构造输出流
 		Template template = configuration.getTemplate("2018库存表.xml", "UTF-8");
 		String fileName = "/data/files/" + DateUtil.now() + ".xlsx";
 		File file = new File(fileName);
 		FileWriter out = new FileWriter(fileName);
+		//变量替换
 		template.process(map, out);
 
+		//将文件输出到response,返回给客户端
 		FileInputStream in = new FileInputStream(file);
 		byte[] buffer = new byte[in.available()];
 		in.read(buffer);
@@ -62,6 +69,5 @@ public class AppController {
 		outputStream.write(buffer);
 		outputStream.flush();
 		outputStream.close();
-
 	}
 }
