@@ -110,9 +110,10 @@ public class FemaleRepositoryTest extends BaseTest {
 		PageRequest of = PageRequest.of(0, 10);
 		QFemale female = QFemale.female;
 		BooleanExpression createTimeBetween = female.createTime.between(LocalDate.now().minusDays(2).toDate(), LocalDate.now().minusDays(1).toDate());
-		BooleanBuilder booleanBuilder = new BooleanBuilder(createTimeBetween);
-		Page<Female> all = femaleRepository.findAll(createTimeBetween,of);
-		final ArrayList<Female> females = new ArrayList<>();
+		BooleanBuilder builder = new BooleanBuilder(createTimeBetween);
+		BooleanExpression contains = female.name.contains("3");
+		builder.and(contains);
+		Page<Female> all = femaleRepository.findAll(builder,of);
 		System.out.println(all.getTotalElements());
 		System.out.println(JSON.toJSONString(all.getContent()));
 	}
