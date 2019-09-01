@@ -3,6 +3,7 @@ package my.suveng.app.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
+import com.querydsl.core.BooleanBuilder;
 import my.suveng.app.dao.FemaleRepository;
 import my.suveng.app.model.Female;
 import my.suveng.app.model.FemaleVo;
@@ -65,19 +66,8 @@ public class AppServiceImpl implements AppService {
 		Page<Female> res = null;
 
 		//时间范围
-		if (ObjectUtil.isNotEmpty(vo.getStart()) && ObjectUtil.isNotEmpty(vo.getEnd())) {
-			//both
-			return ResultBuilder.build(CodeEnum.SUCCESS,femaleRepository.findAllByCreateTimeBetween(vo.getStart(),vo.getEnd(),pageRequest).getContent());
-		} else if (ObjectUtil.isNotEmpty(vo.getStart()) && ObjectUtil.isEmpty(vo.getEnd())) {
-			//before
-			return ResultBuilder.build(CodeEnum.SUCCESS,femaleRepository.findAllByCreateTimeBefore(vo.getStart(),pageRequest).getContent());
+		BooleanBuilder builder = new BooleanBuilder();
 
-		} else if (ObjectUtil.isEmpty(vo.getStart()) && ObjectUtil.isNotEmpty(vo.getEnd())) {
-			//after
-			return ResultBuilder.build(CodeEnum.SUCCESS,femaleRepository.findAllByCreateTimeAfter(vo.getEnd(),pageRequest).getContent());
-		} else {
-			//none
-			return ResultBuilder.build(CodeEnum.SUCCESS,femaleRepository.findAll(pageRequest).getContent());
-		}
+		return ResultBuilder.build(CodeEnum.SUCCESS,res.getContent());
 	}
 }

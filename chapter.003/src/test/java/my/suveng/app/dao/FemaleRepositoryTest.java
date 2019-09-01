@@ -1,17 +1,25 @@
 package my.suveng.app.dao;
 
-import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
+import com.alibaba.fastjson.JSON;
+import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import my.suveng.app.BaseTest;
 import my.suveng.app.model.Female;
+import my.suveng.app.model.QFemale;
 import org.joda.time.LocalDate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * description:
@@ -49,4 +57,65 @@ public class FemaleRepositoryTest extends BaseTest {
 			femaleRepository.save(entity);
 		}
 	}
+
+	/**
+	 * description: 测试查询构造器
+	 * author: suwenguang
+	 * date: 2019-09-01
+	 */
+	public void  matching(){
+		//精确匹配和模糊匹配
+		Female probe = new Female();
+		ExampleMatcher matching = ExampleMatcher.matching()
+			.withMatcher("name", ExampleMatcher.GenericPropertyMatcher.of(ExampleMatcher.StringMatcher.CONTAINING))//模糊匹配
+			.withIgnorePaths("id")//忽略匹配id
+			;
+		PageRequest of = PageRequest.of(0, 10);
+		Page<Female> all = femaleRepository.findAll(Example.of(probe, matching), of);
+		System.out.println(JSON.toJSONString(all));
+	}
+
+	/**
+	 * description: 测试范围查询
+	 * author: suwenguang
+	 * date: 2019-09-01
+	 */
+	@Test
+	public void findAllByCreateTimeAfter() {
+		LocalDate yesteday = new LocalDate().minusDays(3);
+		PageRequest of = PageRequest.of(0, 10);
+		List<Female> byCreateTimeAfter = femaleRepository.findAllByCreateTimeAfter(yesteday.toDate(), of);
+		System.out.println(JSON.toJSONString(byCreateTimeAfter));
+	}
+
+	/**
+	 * description: 测试范围查询
+	 * author: suwenguang
+	 * date: 2019-09-01
+	 */
+	@Test
+	public void findByCreateTimeBetween() {
+		LocalDate localDate = new LocalDate();
+		Page<Female> byCreateTimeBetween = femaleRepository.findByCreateTimeBetween(localDate.minusDays(2).toDate(), localDate.toDate(), PageRequest.of(0, 10));
+		System.out.println(JSON.toJSONString(byCreateTimeBetween.getContent()));
+	}
+
+	/**
+	 * description: 多条件
+	 * author: suwenguang
+	 * date: 2019-09-01
+	 */
+	@Test
+	public void querydsl() {
+		PageRequest of = PageRequest.of(0, 10);
+		QFemale female = QFemale.female;
+		BooleanExpression createTimeBetween = female.createTime.between(LocalDate.now().minusDays(2).toDate(), LocalDate.now().minusDays(1).toDate());
+		BooleanBuilder booleanBuilder = new BooleanBuilder(createTimeBetween);
+		Page<Female> all = femaleRepository.findAll(createTimeBetween,of);
+		final ArrayList<Female> females = new ArrayList<>();
+		System.out.println(all.getTotalElements());
+		System.out.println(JSON.toJSONString(all.getContent()));
+	}
+
+
 }
