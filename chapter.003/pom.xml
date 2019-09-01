@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -9,13 +10,10 @@
         <relativePath/>
     </parent>
     <groupId>my.suveng</groupId>
-    <artifactId>chapter.001</artifactId>
-    <version>1.0.0</version>
-    <name>脚手架</name>
-
+    <artifactId>chapter.003</artifactId>
+    <name>mongo增删查改</name>
 
     <repositories>
-
         <repository>
             <id>oschina</id>
             <name>oschina Repository</name>
@@ -24,6 +22,17 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -65,7 +74,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
         </dependency>
 
         <!--###############视图模板相关##############-->
@@ -86,7 +94,6 @@
         </dependency>
 
     </dependencies>
-
     <profiles>
         <profile>
             <id>dev</id>
@@ -110,7 +117,6 @@
             </properties>
         </profile>
     </profiles>
-
     <build>
         <filters>
             <filter>src/main/filter/${env}.properties</filter>
@@ -150,7 +156,6 @@
             </plugin>
         </plugins>
     </build>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -160,8 +165,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-
 
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>
@@ -204,4 +207,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>

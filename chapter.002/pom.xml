@@ -11,11 +11,10 @@
     <groupId>my.suveng</groupId>
     <artifactId>chapter.002</artifactId>
     <version>1.0.0</version>
-    <name>campus</name>
+    <name>导出复杂样式的Excel</name>
 
 
     <repositories>
-
         <repository>
             <id>oschina</id>
             <name>oschina Repository</name>
@@ -160,8 +159,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-
 
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>

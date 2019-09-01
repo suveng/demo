@@ -1,0 +1,14 @@
+server:
+  port: 40403
+  servlet:
+    context-path: /c3
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mongo-curd
+  data:
+    mongodb:
+      host: @spring.data.mongodb.host@
+      port: @spring.data.mongodb.port@
+      database: @spring.data.mongodb.database@

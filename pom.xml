@@ -9,6 +9,7 @@
     <modules>
         <module>chapter.001</module>
         <module>chapter.002</module>
+        <module>chapter.003</module>
     </modules>
     <packaging>pom</packaging>
 
