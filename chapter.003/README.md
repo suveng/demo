@@ -152,11 +152,15 @@ docker run --restart="always" \
 
 ### 3.创建Mongo的实体类
 
-1. @Document(collection="female")
-2. 设置id: @Id
-3. 设置属性
-4. 构建索引
-5. getter/setter
+- @Document(collection="female")
+
+- 设置id: @Id
+
+- 设置属性
+
+- 构建索引
+
+- getter/setter
 
 > [Female.java](https://github.com/suveng/demo/blob/master/chapter.003/src/main/java/my/suveng/app/model/Female.java) 
 
@@ -217,9 +221,11 @@ public class Female {
 
 ### 4.创建Dao层
 
-1. 创建Repository 继承于MongoRepository
-2. 根据规则来编写接口方法, spring data mongodb的dao 方法规则详细查看[点这里](https://docs.spring.io/spring-data/data-mongodb/docs/2.1.2.RELEASE/reference/html/#repositories.query-methods.details),理论上用idea会提示出来的.
-3. 编写单元测试方法
+- 创建Repository 继承于MongoRepository
+
+- 根据规则来编写接口方法, spring data mongodb的dao 方法规则详细查看[点这里](https://docs.spring.io/spring-data/data-mongodb/docs/2.1.2.RELEASE/reference/html/#repositories.query-methods.details),理论上用idea会提示出来的.
+
+- 编写单元测试方法
 
 
 
@@ -308,18 +314,25 @@ public interface FemaleRepository extends MongoRepository<Female,String> {
 
 ## 进阶Querydsl扩展复杂查询
 
+> (基于单表的复杂查询,多表复杂查询暂时不纳入讨论范围)
+
+如果按照以上的用法,动态扩展多条件查询仍然不能够完美支持,会导致代码冗余,当然你如果使用mongoTemlate进行自己封装,另当别论.
+
+那么为了实现动态扩展多条件查询,我去查看对应版本的官方文档,[跳转点这里](https://docs.spring.io/spring-data/data-mongodb/docs/2.1.2.RELEASE/reference/html/#core.extensions.querydsl),看到可以集成querydsl作为扩展.
+
 ### 步骤
 
-1. 整合querydsl
-2. 使用dsl
+- 整合querydsl
 
-### 整合querydsl
+- 使用dsl
 
-[Querydsl](http://www.querydsl.com/)
+### 1.整合querydsl
 
-[querydsl集成文档](http://www.querydsl.com/static/querydsl/latest/reference/html/ch02.html#jpa_integration)
+> [1.Querydsl官网](http://www.querydsl.com/)
+>
+> [2.querydsl集成文档](http://www.querydsl.com/static/querydsl/latest/reference/html/ch02.html#jpa_integration)
 
-#### pom.xml配置引入依赖
+**pom.xml配置引入依赖**
 
 ```xml
        <!--###############复杂查询querydsl jpa################-->
@@ -347,12 +360,54 @@ public interface FemaleRepository extends MongoRepository<Female,String> {
 
 因为我的springboot项目已经引入了slf4j,没必要重复声明,自己可以通过idea的maven dependence查看是否有引入,没有则需要重新引入
 
-### 使用dsl
+### 2.使用dsl
 
-还是在单元测试中编写
+- 在`dao`的`repository`中继承`QuerydslPredicateExecutor<T>`
+
+  ```java
+  public interface FemaleRepository extends MongoRepository<Female,String>, QuerydslPredicateExecutor<Female> {
+  
+  }
+  ```
+
+  
+
+- 编写单元测试[FemaleRepositoryTest.java](https://github.com/suveng/demo/blob/master/chapter.003/src/test/java/my/suveng/app/dao/FemaleRepositoryTest.java)
+
+  ```java
+  	/**
+  	 * description: 多条件
+  	 * author: suwenguang
+  	 * date: 2019-09-01
+  	 */
+  	@Test
+  	public void querydsl() {
+  		PageRequest of = PageRequest.of(0, 10);
+  		QFemale female = QFemale.female;
+  		BooleanExpression createTimeBetween = female.createTime.between(LocalDate.now().minusDays(2).toDate(), LocalDate.now().minusDays(1).toDate());
+  		BooleanBuilder builder = new BooleanBuilder(createTimeBetween);
+  		BooleanExpression contains = female.name.contains("3");
+  		builder.and(contains);
+  		Page<Female> all = femaleRepository.findAll(builder,of);
+  		System.out.println(all.getTotalElements());
+  		System.out.println(JSON.toJSONString(all.getContent()));
+  	}
+  ```
 
 
 
+如上所示, 这样子可以**动态构造**所需要的条件,**多个范围查询也可以支持**了!!!那么对于后台的搜索数据只需要一个接口就可以了
+
+至于怎么实现,后面再继续整合 [X-admin 2.2](https://gitee.com/daniuit/X-admin)这个后端模板, 另外出一篇文章吧.
+
+> 如果对上诉**代码有问题**或者有**其他的扩展性问题**,欢迎留下你的评论.
 
 
-## 结论
+
+## 补充
+
+- **BooleanBuilder的类图, 可以通过idea查看,因为findAll是通过父类继承下来的接口, 里面的Predicate也是一个接口,而BooleanExpression和BooleanBuilder都是实现了Predicate的;**
+  ![](https://img2018.cnblogs.com/blog/1419387/201909/1419387-20190901192816243-1084215449.png)
+
+
+

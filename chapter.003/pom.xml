@@ -9,6 +9,7 @@
         <version>2.1.2.RELEASE</version>
         <relativePath/>
     </parent>
+
     <groupId>my.suveng</groupId>
     <artifactId>chapter.003</artifactId>
     <name>mongo增删查改</name>
