@@ -11,6 +11,7 @@
         <module>chapter.002</module>
         <module>chapter.003</module>
         <module>chapter.004</module>
+        <module>chapter.005</module>
     </modules>
     <packaging>pom</packaging>
 
