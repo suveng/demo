@@ -11,9 +11,6 @@ import java.io.Serializable;
  * description: 统一返回层
  **/
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class Result implements Serializable {
 
 	@NonNull
@@ -26,4 +23,10 @@ public class Result implements Serializable {
 
 	private String requestId;
 
+	public Result(Integer code, String msg, Object data, String requsetId) {
+		this.code=code;
+		this.msg=msg;
+		this.data=data;
+		this.requestId=requsetId;
+	}
 }

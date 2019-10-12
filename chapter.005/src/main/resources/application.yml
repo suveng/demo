@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/jpa?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect # 事务引擎
+    hibernate:
+      ddl-auto: create
