@@ -14,8 +14,17 @@ spring:
       max-wait: 500
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 20
-      filters: config,stat,wall,slf4j
+      filters: me,config,stat,wall,slf4j
       connect-properties: {"druid.stat.mergeSql":true,"druid.stat.slowSqlMillis":5000} # 慢SQL查询
+      # 让连接池知道数据库已经断开了，并且自动测试连接查询
+      validation-query: select 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      filter:
+        me:
+          hello: weewewew
+          user: wewewewe
   jpa:
     properties:
       hibernate:
