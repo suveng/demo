@@ -6,6 +6,16 @@ spring:
       username: root
       password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 1
+      min-idle: 2
+      max-active: 10
+      time-between-eviction-runs-millis: 10000
+      min-evictable-idle-time-millis: 50000
+      max-wait: 500
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,wall,slf4j
+      connect-properties: {"druid.stat.mergeSql":true,"druid.stat.slowSqlMillis":5000} # 慢SQL查询
   jpa:
     properties:
       hibernate:
