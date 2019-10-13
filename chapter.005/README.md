@@ -5,7 +5,7 @@
 - springboot 2.1.9
 - spring-data-jdbc
 - spring-data-jpa
-- mapstruct
+- mapstruct(暂时没用到这个...)
 - hutool
 - fastjson
 - druid
