@@ -12,6 +12,7 @@
         <module>chapter.003</module>
         <module>chapter.004</module>
         <module>chapter.005</module>
+        <module>spring.redis</module>
     </modules>
     <packaging>pom</packaging>
 
