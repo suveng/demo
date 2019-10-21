@@ -1,5 +1,13 @@
 # Spring 操作 Redis Repositoy
+<!-- toc -->
 
+- [操作方式](#操作方式)
+- [`Redis Repository` 使用](#Redis-Repository-使用)
+  * [代码仓库](#代码仓库)
+  * [demo 功能介绍](#demo-功能介绍)
+- [资料](#资料)
+
+<!-- tocstop -->
 ## 操作方式
 
 spring 操作 redis 有好几种方式,以下是最常用的两种,并且都是同步的方式
