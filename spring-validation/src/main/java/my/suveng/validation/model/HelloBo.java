@@ -3,6 +3,7 @@ package my.suveng.validation.model;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  *
@@ -12,8 +13,13 @@ import javax.validation.constraints.NotNull;
 @Data
 public class HelloBo {
 
-	@NotNull
 	private String c;
 
 	private String d;
+
+	/**
+	 * 正则校验
+	 */
+	@Pattern(regexp = "[A-Z][a-z][0-9]")
+	private String e;
 }

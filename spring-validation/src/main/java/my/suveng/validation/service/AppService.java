@@ -31,6 +31,7 @@ public class AppService {
 
 		HelloBo hellobo = dao.getOne();
 
+		hellobo.setE("...");
 		if (!ObjectUtils.isEmpty(hellobo) && check(hellobo)){
 			System.out.println("通过校验");
 			return;
