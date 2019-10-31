@@ -8,6 +8,8 @@
     <groupId>my.suveng</groupId>
     <artifactId>spring.redis</artifactId>
     <version>1.0</version>
+    <name>redis repository 使用</name>
+    <description>redis repository 使用</description>
 
     <properties>
         <spring.version>5.2.0.RELEASE</spring.version>

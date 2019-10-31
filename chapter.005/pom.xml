@@ -10,8 +10,8 @@
     <groupId>my.suveng</groupId>
     <artifactId>chapter.005</artifactId>
     <version>1.0</version>
-    <name>system.jpa</name>
-    <description>Demo project for Spring Boot</description>
+    <name>spring 独立程序</name>
+    <description>spring 独立程序</description>
 
     <properties>
         <java.version>1.8</java.version>
