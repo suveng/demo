@@ -47,4 +47,18 @@ public class AppController {
 
 		return "";
 	}
+
+	/**
+	 * 自定义注解校验
+	 * @author suwenguang
+	 * @date 2019/10/31
+	 */
+	@RequestMapping("/mobile")
+	@ResponseBody
+	public String mobile(){
+		String str = " ddddd";
+
+		appService.mobile(str);
+		return "";
+	}
 }

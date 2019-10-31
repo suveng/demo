@@ -2,6 +2,7 @@ package my.suveng.validation.service;
 
 import my.suveng.validation.dao.Dao;
 import my.suveng.validation.model.HelloBo;
+import my.suveng.validation.model.Mobile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -43,5 +44,9 @@ public class AppService {
 	private boolean check(HelloBo hellobo) {
 		Set<ConstraintViolation<HelloBo>> validate = validator.validate(hellobo);
 		return validate.size() < 1;
+	}
+
+	public void mobile(@Mobile String str) {
+
 	}
 }
