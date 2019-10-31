@@ -10,7 +10,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>chapter.005</artifactId>
     <version>1.0</version>
-    <name>spring 独立程序</name>
+    <name>5.spring 独立程序</name>
     <description>spring 独立程序</description>
 
     <properties>
