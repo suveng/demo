@@ -12,7 +12,8 @@
         <module>chapter.003</module>
         <module>chapter.004</module>
         <module>chapter.005</module>
-        <module>spring.redis</module>
+        <module>spring-redis</module>
+        <module>spring-validation</module>
     </modules>
     <packaging>pom</packaging>
 
