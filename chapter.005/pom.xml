@@ -34,7 +34,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>RELEASE</version>
+            <version>4.1.12</version>
         </dependency>
 
         <!--mapStruct依赖-->
