@@ -16,12 +16,11 @@
         <module>spring-validation</module>
         <module>design</module>
         <module>fastjson</module>
+        <module>guava</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>demo</name>
-    <description>my blog demo</description>
-
+    <name>root</name>
 
 
 
