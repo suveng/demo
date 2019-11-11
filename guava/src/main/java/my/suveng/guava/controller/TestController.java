@@ -3,6 +3,7 @@ package my.suveng.guava.controller;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Throwables;
 import my.suveng.guava.model.TestModel;
 import my.suveng.guava.service.TestService;
 
@@ -93,5 +94,21 @@ public class TestController {
 	}
 
 
+	/**
+	 * 异常处理
+	 * @author suwenguang
+	 * @date 2019/11/8
+	 */
+	public void throwable(){
+		try {
+			throw new IllegalAccessException();
+		} catch (IllegalAccessException e) {
+			try {
+				Throwables.propagateIfInstanceOf(e,IllegalAccessException.class);
+			} catch (IllegalAccessException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
 
 }

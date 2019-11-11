@@ -17,6 +17,7 @@
         <module>design</module>
         <module>fastjson</module>
         <module>guava</module>
+        <module>springboot-docker-hello</module>
     </modules>
     <packaging>pom</packaging>
 
