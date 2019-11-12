@@ -11,7 +11,7 @@
 
     <properties>
         <user>suveng</user>
-        <address>192.168.0.215</address>
+        <address>192.168.0.215:80</address>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
     </properties>
     <dependencies>
@@ -116,6 +116,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
