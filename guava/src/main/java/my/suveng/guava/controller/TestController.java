@@ -22,6 +22,7 @@ public class TestController {
 
 	/**
 	 * 获取test, optional使用demo
+	 * @see Optional
 	 * @author suwenguang
 	 * @date 2019/11/8
 	 */
@@ -96,6 +97,7 @@ public class TestController {
 
 	/**
 	 * 异常处理
+	 * @see Throwables
 	 * @author suwenguang
 	 * @date 2019/11/8
 	 */
@@ -108,6 +110,8 @@ public class TestController {
 			} catch (IllegalAccessException ex) {
 				ex.printStackTrace();
 			}
+		}catch (Throwable throwable){
+			throw Throwables.propagate(throwable);
 		}
 	}
 
