@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Properties;
 
 /**
  *
@@ -21,6 +22,9 @@ public class AppController {
 		result.put("ip",httpServletRequest.getLocalAddr());
 		result.put("port",httpServletRequest.getLocalPort());
 		result.put("time",new Date());
+		// 获取系统的信息
+		Properties properties = System.getProperties();
+		result.put("root_dir", properties.getProperty("user.dir"));
 		return result;
 	}
 }

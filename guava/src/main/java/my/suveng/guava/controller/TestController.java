@@ -97,7 +97,7 @@ public class TestController {
 
 	/**
 	 * 异常处理
-	 * @see Throwables
+	 * @see Throwables 异常封装,用于抛出异常封装,可用于切面,结合aop做一些额外操作
 	 * @author suwenguang
 	 * @date 2019/11/8
 	 */
@@ -114,5 +114,7 @@ public class TestController {
 			throw Throwables.propagate(throwable);
 		}
 	}
+
+
 
 }
