@@ -8,7 +8,7 @@
     <artifactId>guava</artifactId>
     <version>1.0</version>
 
-    <name>guava学习</name>
+    <name>10.guava学习</name>
 
     <dependencies>
         <!--lombok-->
