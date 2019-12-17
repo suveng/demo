@@ -11,7 +11,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>chapter.001</artifactId>
     <version>1.0.0</version>
-    <name>1.脚手架</name>
+    <name>01.脚手架</name>
 
 
     <repositories>

@@ -6,9 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>my.suveng</groupId>
-    <artifactId>design</artifactId>
-    <version>1.0</version>
-    <name>08.设计模式</name>
+    <artifactId>spring-consul-demo</artifactId>
+    <version>1.0.0</version>
+    <name>11.springcloud使用consul注册中心</name>
 
 
 </project>

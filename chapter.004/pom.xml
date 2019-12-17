@@ -12,7 +12,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>chapter.004</artifactId>
     <version>1.0.0</version>
-    <name>4.nginx 学习</name>
+    <name>04.nginx 学习</name>
     <description>nginx学习</description>
     <modelVersion>4.0.0</modelVersion>
 

@@ -12,7 +12,7 @@
 
     <groupId>my.suveng</groupId>
     <artifactId>chapter.003</artifactId>
-    <name>3.mongo增删查改</name>
+    <name>03.mongo增删查改</name>
 
     <repositories>
         <repository>
