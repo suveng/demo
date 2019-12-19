@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>my.suveng</groupId>
-    <artifactId>chapter.002</artifactId>
+    <artifactId>demo.export.excel</artifactId>
     <version>1.0.0</version>
     <name>02.导出复杂样式的Excel</name>
 

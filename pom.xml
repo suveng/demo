@@ -7,38 +7,22 @@
     <artifactId>demo</artifactId>
     <version>1.0</version>
     <modules>
-        <module>chapter.001</module>
-        <module>chapter.002</module>
-        <module>chapter.003</module>
-        <module>chapter.004</module>
-        <module>chapter.005</module>
-        <module>spring-redis</module>
-        <module>spring-validation</module>
-        <module>design</module>
-        <module>fastjson</module>
-        <module>guava</module>
-        <module>springboot-docker-hello</module>
-        <module>spring-cloud-consul-demo</module>
+        <module>01.脚手架</module>
+        <module>02.导出复杂样式的Excel</module>
+        <module>03.mongo增删查改</module>
+        <module>04.nginx学习</module>
+        <module>05.spring独立程序</module>
+        <module>06.spring-redis-repository-demo</module>
+        <module>07.spring-validation-demo</module>
+        <module>08.设计模式</module>
+        <module>09.fastjson最佳实践</module>
+        <module>10.guava学习</module>
+        <module>11.spring-cloud-consul-demo</module>
+        <module>12.springboot-docker容器化</module>
     </modules>
     <packaging>pom</packaging>
 
     <name>root</name>
-
-
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>2.1.2.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-
 
 
 </project>

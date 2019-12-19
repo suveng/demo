@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>my.suveng</groupId>
-    <artifactId>consul</artifactId>
+    <artifactId>demo.spring.cloud.consul</artifactId>
     <version>1.0.0</version>
     <name>11.spring-cloud-consul-demo</name>
 

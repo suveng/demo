@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>my.suveng</groupId>
-    <artifactId>chapter.003</artifactId>
+    <artifactId>demo.mongo.curd</artifactId>
     <name>03.mongo增删查改</name>
 
     <repositories>

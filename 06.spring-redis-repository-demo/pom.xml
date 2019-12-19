@@ -6,9 +6,9 @@
 
 
     <groupId>my.suveng</groupId>
-    <artifactId>spring.redis</artifactId>
+    <artifactId>demo.spring.redis.repository</artifactId>
     <version>1.0</version>
-    <name>06.redis repository 使用</name>
+    <name>06.spring-redis-repository-demo</name>
     <description>redis repository 使用</description>
 
     <properties>

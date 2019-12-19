@@ -8,9 +8,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>my.suveng</groupId>
-    <artifactId>chapter.005</artifactId>
+    <artifactId>demo.spring.independent</artifactId>
     <version>1.0</version>
-    <name>05.spring 独立程序</name>
+    <name>05.spring独立程序</name>
     <description>spring 独立程序</description>
 
     <properties>

@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>my.suveng</groupId>
-    <artifactId>design</artifactId>
+    <artifactId>demo.design</artifactId>
     <version>1.0</version>
     <name>08.设计模式</name>
 
