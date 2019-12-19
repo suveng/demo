@@ -20,6 +20,7 @@
         <module>11.spring-cloud-consul-demo</module>
         <module>12.springboot-docker容器化</module>
         <module>13.demo-springboot-junit</module>
+        <module>14.demo-spring-cloud-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
