@@ -1,23 +1,49 @@
 package my.suveng.demo.spring.security.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
+/**
+ * 重写 WebSecurityConfigurerAdapter 的方法，实现自定义的 Spring Security 的配置
+ * @author suwenguang
+ */
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity//实现自定义配置相关
+@EnableGlobalMethodSecurity(prePostEnabled = true)//权限注解开启相关
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	/**
-	 * 配置安全校验
+	 * 配置认证器{@link org.springframework.security.authentication.AuthenticationManager}
+	 * @author suwenguang
+	 */
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		//复写父类方法,调用AuthenticationManagerBuilder的配置方法 配置 自定义身份认证器,链式调用
+		auth
+			// <1> 使用内存保存user身份信息
+			.inMemoryAuthentication()
+			// <2> 配置密码编码器, 这里使用空的密码编码器,注意: 只适用于测试项目
+			.passwordEncoder(NoOpPasswordEncoder.getInstance())
+			// <3> 注入用户信息
+			.withUser("admin")//用户名
+			.password("admin")//密码
+			.roles("MASTER")//角色
+			.and()
+			// <3> 注入第二个用户
+			.withUser("user")
+			.password("password")
+			.roles("USER")
+		;
+
+
+	}
+
+	/**
+	 * 配置资源的安全校验规则
 	 * @author suwenguang
 	 */
 	@Override
@@ -28,31 +54,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("/login")//指定路径的登录页,用于用户登录
+				//.loginPage("/login")//指定路径的登录页,用于用户登录
 				.permitAll()//登录页放开权限
 				.and()
 			.logout()//登出页放开权限
+				//.logoutUrl("/logout") //自定义路径退出
 				.permitAll();
 	}
 
-	/**
-	 * 覆盖{@link UserDetailsService}
-	 * 提供受信用户,这里有两种配置方式, 这一种是直接替换{@link UserDetailsService}
-	 * 另一种是替换{@link org.springframework.security.authentication.AuthenticationManager},
-	 * 需要复写{@link WebSecurityConfigurerAdapter#configure(AuthenticationManagerBuilder)} 和 {@link WebSecurityConfigurerAdapter#authenticationManagerBean()}
-	 * @author suwenguang
-	 */
-	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
-		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		UserDetails user =
-			 User.builder()
-				.username("user")
-				.password(encoder.encode("password"))
-				.roles("USER")
-				.build();
 
-		return new InMemoryUserDetailsManager(user);
-	}
 }

@@ -3,17 +3,17 @@
   <ID>JAVA</ID>
   <OriginalElement>org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</OriginalElement>
   <nodes>
-    <node x="782.8194444444443" y="76.0">org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider</node>
-    <node x="0.0" y="0.0">org.springframework.context.ApplicationEventPublisherAware</node>
+    <node x="499.75" y="76.0">org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider</node>
+    <node x="185.0" y="0.0">org.springframework.context.ApplicationEventPublisherAware</node>
     <node x="0.0" y="223.0">org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</node>
-    <node x="665.625" y="0.0">org.springframework.security.authentication.AuthenticationManager</node>
-    <node x="199.34722222222217" y="152.0">org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter</node>
-    <node x="192.34722222222217" y="76.0">org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</node>
-    <node x="473.62499999999994" y="0.0">org.springframework.context.MessageSourceAware</node>
-    <node x="275.99999999999994" y="0.0">org.springframework.web.filter.GenericFilterBean</node>
+    <node x="880.8055555555555" y="0.0">org.springframework.security.authentication.AuthenticationManager</node>
+    <node x="159.18055555555554" y="152.0">org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter</node>
+    <node x="152.18055555555554" y="76.0">org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</node>
+    <node x="468.80555555555554" y="0.0">org.springframework.context.MessageSourceAware</node>
+    <node x="0.0" y="0.0">org.springframework.web.filter.GenericFilterBean</node>
     <node x="287.0" y="223.0">org.springframework.security.core.userdetails.UserDetails</node>
-    <node x="932.5694444444443" y="0.0">org.springframework.security.authentication.AuthenticationProvider</node>
-    <node x="593.8194444444443" y="76.0">org.springframework.security.authentication.ProviderManager</node>
+    <node x="660.8055555555555" y="0.0">org.springframework.security.authentication.AuthenticationProvider</node>
+    <node x="864.0555555555555" y="76.0">org.springframework.security.authentication.ProviderManager</node>
   </nodes>
   <notes />
   <edges>
@@ -23,47 +23,49 @@
     </edge>
     <edge source="org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter" target="org.springframework.context.MessageSourceAware">
       <point x="104.0" y="-13.0" />
-      <point x="452.3472222222222" y="56.0" />
-      <point x="502.29166666666663" y="56.0" />
+      <point x="412.18055555555554" y="56.0" />
+      <point x="497.47222222222223" y="56.0" />
       <point x="-57.333333333333314" y="13.0" />
     </edge>
     <edge source="org.springframework.security.authentication.ProviderManager" target="org.springframework.context.MessageSourceAware">
       <point x="-37.75" y="-13.0" />
-      <point x="631.5694444444443" y="56.0" />
-      <point x="559.625" y="56.0" />
-      <point x="0.0" y="13.0" />
+      <point x="901.8055555555555" y="46.0" />
+      <point x="612.1388888888889" y="46.0" />
+      <point x="57.33333333333337" y="13.0" />
     </edge>
     <edge source="org.springframework.security.authentication.ProviderManager" target="org.springframework.security.authentication.AuthenticationManager">
       <point x="37.75" y="-13.0" />
-      <point x="707.0694444444443" y="56.0" />
-      <point x="762.125" y="56.0" />
       <point x="0.0" y="13.0" />
     </edge>
     <edge source="org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter" target="org.springframework.context.ApplicationEventPublisherAware">
-      <point x="-104.0" y="-13.0" />
-      <point x="244.34722222222217" y="56.0" />
-      <point x="128.0" y="56.0" />
+      <point x="0.0" y="-13.0" />
+      <point x="308.18055555555554" y="56.0" />
+      <point x="313.0" y="56.0" />
       <point x="0.0" y="13.0" />
     </edge>
     <edge source="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" target="org.springframework.context.MessageSourceAware">
       <point x="-83.25" y="-13.0" />
-      <point x="866.0694444444443" y="46.0" />
-      <point x="616.9583333333333" y="46.0" />
-      <point x="57.33333333333337" y="13.0" />
+      <point x="583.0" y="56.0" />
+      <point x="554.8055555555555" y="56.0" />
+      <point x="0.0" y="13.0" />
     </edge>
     <edge source="org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter" target="org.springframework.web.filter.GenericFilterBean">
-      <point x="0.0" y="-13.0" />
-      <point x="348.3472222222222" y="56.0" />
-      <point x="358.49999999999994" y="56.0" />
+      <point x="-104.0" y="-13.0" />
+      <point x="204.18055555555554" y="56.0" />
+      <point x="82.5" y="56.0" />
       <point x="0.0" y="13.0" />
     </edge>
     <edge source="org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider" target="org.springframework.security.authentication.AuthenticationProvider">
       <point x="83.25" y="-13.0" />
+      <point x="749.5" y="56.0" />
+      <point x="760.8055555555555" y="56.0" />
       <point x="0.0" y="13.0" />
     </edge>
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="505.0" y="89.0" />
-  <SelectedNodes />
+  <SelectedNodes>
+    <node>org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter</node>
+  </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
