@@ -1,0 +1,10 @@
+# 自定义配置
+oauth:
+  jdbc-url: jdbc:mysql://192.168.9.208:30107/ss?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull
+  user: root
+  password: root
+  jdbc-driver-class: com.mysql.jdbc.Driver
+#security:
+#  user:
+#    name: username
+#    password: password

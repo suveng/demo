@@ -22,6 +22,7 @@
         <module>13.demo-springboot-junit</module>
         <module>14.demo-spring-cloud-gateway</module>
         <module>15.spring-boot-source</module>
+        <module>17.demo-spring-oauth2</module>
     </modules>
     <packaging>pom</packaging>
 
