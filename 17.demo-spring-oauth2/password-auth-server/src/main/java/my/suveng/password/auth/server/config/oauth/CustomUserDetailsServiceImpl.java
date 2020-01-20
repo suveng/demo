@@ -26,7 +26,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
 	}
 
 	/**
-	 * 这里可以配置UserDetailsService, 可以实现自定义用户校验, 整合用户权限系统
+	 * todo://这里可以配置UserDetailsService, 可以实现自定义用户校验, 整合用户权限系统
 	 * @author suwenguang
 	 */
 	@Override
