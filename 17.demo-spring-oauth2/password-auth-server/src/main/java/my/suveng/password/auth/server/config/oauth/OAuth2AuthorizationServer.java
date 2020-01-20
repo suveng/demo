@@ -12,6 +12,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
@@ -52,6 +53,8 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 			.authenticationManager(authenticationManager);//配置认证器
 	}
 
+
+
 	/**
 	 * 配置受信客户端
 	 * @author suwenguang
@@ -62,6 +65,18 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 		clients.jdbc(dataSource())
 		;
 
+	}
+
+	/**
+	 *
+	 * @author suwenguang
+	 */
+	@Override
+	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+		security.tokenKeyAccess("permitAll()")
+			.checkTokenAccess("isAuthenticated()")//
+			.allowFormAuthenticationForClients()//允许check_token
+		;
 	}
 
 	/**
