@@ -103,11 +103,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 	 * token使用jdbc存储
 	 * @author suwenguang
 	 */
-	//@Bean
-	//public TokenStore tokenStore() {
-	//	return new JdbcTokenStore(dataSource());
-	//}
-
 	@Bean
 	public TokenStore tokenStore() {
 		return new JwtTokenStore(jwtTokenEnhancer());
