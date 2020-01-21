@@ -3,6 +3,7 @@ import my.suveng.password.auth.server.config.properties.OauthEnv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,6 +16,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import javax.sql.DataSource;
 
@@ -50,6 +54,8 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 		endpoints
 			.userDetailsService(userDetailsService)//配置用户认证来源,可扩展用户
 			.tokenStore(tokenStore())//配置认证器的token存储方式
+			// 配置用于JWT私钥加密的增强器
+			.tokenEnhancer(jwtTokenEnhancer())
 			.authenticationManager(authenticationManager);//配置认证器
 	}
 
@@ -97,11 +103,24 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 	 * token使用jdbc存储
 	 * @author suwenguang
 	 */
+	//@Bean
+	//public TokenStore tokenStore() {
+	//	return new JdbcTokenStore(dataSource());
+	//}
+
 	@Bean
 	public TokenStore tokenStore() {
-		return new JdbcTokenStore(dataSource());
+		return new JwtTokenStore(jwtTokenEnhancer());
 	}
 
+	@Bean
+	protected JwtAccessTokenConverter jwtTokenEnhancer() {
+		// 配置jks文件
+		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("oauth-jwt.jks"), "suveng".toCharArray());
+		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+		converter.setKeyPair(keyStoreKeyFactory.getKeyPair("oauth-jwt"));
+		return converter;
+	}
 
 
 }
