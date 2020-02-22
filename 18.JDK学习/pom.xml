@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>my.suveng</groupId>
-    <artifactId>demo.guava</artifactId>
+    <artifactId>demo.jdk</artifactId>
     <version>1.0</version>
     <build>
         <plugins>
@@ -20,7 +20,7 @@
         </plugins>
     </build>
 
-    <name>10.guava学习</name>
+    <name>18.JDK1.8学习</name>
 
     <dependencies>
         <!--lombok-->
@@ -29,12 +29,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
             <optional>true</optional>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>19.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>

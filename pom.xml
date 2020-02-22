@@ -23,6 +23,7 @@
         <module>14.demo-spring-cloud-gateway</module>
         <module>15.spring-boot-source</module>
         <module>17.demo-spring-oauth2</module>
+        <module>18.JDK学习</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -17,19 +17,6 @@
 
     <dependencies>
 
-        <!--自定义类库-->
-        <dependency>
-            <groupId>com.qw.support</groupId>
-            <artifactId>currency.result</artifactId>
-            <version>1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.qw.support</groupId>
-            <artifactId>currency.log</artifactId>
-            <version>1.2</version>
-        </dependency>
-
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
