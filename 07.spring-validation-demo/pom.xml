@@ -8,6 +8,18 @@
     <groupId>my.suveng</groupId>
     <artifactId>demo.spring.validation</artifactId>
     <version>1.0.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <name>07.spring-validation-demo</name>
 
 
