@@ -3,35 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/>
+        <artifactId>demo-spring-oauth2</artifactId>
+        <groupId>my.suveng</groupId>
+        <version>1.0</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>authorization-code</artifactId>
+    <artifactId>authorization-code-jdbc-rbac</artifactId>
     <version>1.0</version>
-
-    <properties>
-        <skipTests>true</skipTests>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <dubbo.version>2.7.4.1</dubbo.version>
-        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
-        <spring-cloud-alibaba.verion>2.1.1.RELEASE</spring-cloud-alibaba.verion>
-        <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
-        <spring-boot-pagehelper.version>1.2.13</spring-boot-pagehelper.version>
-        <alibaba-seata.version>1.0.0</alibaba-seata.version>
-        <alibaba-spring-context-support.version>1.0.5</alibaba-spring-context-support.version>
-        <apache-sharding-sphere.version>4.0.0-RC3</apache-sharding-sphere.version>
-        <okhttp3.version>4.2.2</okhttp3.version>
-    </properties>
 
     <dependencies>
         <!-- Spring Boot -->
@@ -55,6 +34,7 @@
         </dependency>
     </dependencies>
 
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -66,5 +46,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>

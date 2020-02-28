@@ -10,6 +10,9 @@
     <version>1.0</version>
     <modules>
         <module>authorization-code-memory</module>
+        <module>authorization-code-jdbc</module>
+        <module>authorization-code-jdbc-rbac</module>
+        <module>dependency</module>
     </modules>
     <packaging>pom</packaging>
     <name>17.demo-spring-oauth2</name>
