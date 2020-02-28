@@ -121,6 +121,11 @@
                 <artifactId>okhttp</artifactId>
                 <version>${okhttp3.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.1.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
