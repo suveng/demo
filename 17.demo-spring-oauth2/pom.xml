@@ -9,7 +9,7 @@
     <artifactId>demo-spring-oauth2</artifactId>
     <version>1.0</version>
     <modules>
-        <module>authorization-code</module>
+        <module>authorization-code-memory</module>
     </modules>
     <packaging>pom</packaging>
     <name>17.demo-spring-oauth2</name>
