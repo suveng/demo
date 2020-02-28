@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * 用户表(TbUser)表控制层
  *
  * @author makejava
- * @since 2020-02-28 16:41:40
+ * @since 2020-02-28 18:21:34
  */
 @RestController
 @RequestMapping("tbUser")

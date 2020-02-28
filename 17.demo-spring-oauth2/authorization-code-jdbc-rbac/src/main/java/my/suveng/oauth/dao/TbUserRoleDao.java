@@ -1,16 +1,16 @@
 package my.suveng.oauth.dao;
 
-import my.suveng.oauth.entity.TbUser;
+import my.suveng.oauth.entity.TbUserRole;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 用户表(TbUser)表数据库访问层
+ * 用户角色表(TbUserRole)表数据库访问层
  *
  * @author makejava
- * @since 2020-02-28 16:41:40
+ * @since 2020-02-28 18:20:55
  */
-public interface TbUserDao {
+public interface TbUserRoleDao {
 
     /**
      * 通过ID查询单条数据
@@ -18,7 +18,7 @@ public interface TbUserDao {
      * @param id 主键
      * @return 实例对象
      */
-    TbUser queryById(Long id);
+    TbUserRole queryById(Long id);
 
     /**
      * 查询指定行数据
@@ -27,32 +27,32 @@ public interface TbUserDao {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<TbUser> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
+    List<TbUserRole> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
 
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param tbUser 实例对象
+     * @param tbUserRole 实例对象
      * @return 对象列表
      */
-    List<TbUser> queryAll(TbUser tbUser);
+    List<TbUserRole> queryAll(TbUserRole tbUserRole);
 
     /**
      * 新增数据
      *
-     * @param tbUser 实例对象
+     * @param tbUserRole 实例对象
      * @return 影响行数
      */
-    int insert(TbUser tbUser);
+    int insert(TbUserRole tbUserRole);
 
     /**
      * 修改数据
      *
-     * @param tbUser 实例对象
+     * @param tbUserRole 实例对象
      * @return 影响行数
      */
-    int update(TbUser tbUser);
+    int update(TbUserRole tbUserRole);
 
     /**
      * 通过主键删除数据

@@ -1,15 +1,15 @@
 package my.suveng.oauth.service;
 
-import my.suveng.oauth.entity.TbUser;
+import my.suveng.oauth.entity.TbRolePermission;
 import java.util.List;
 
 /**
- * 用户表(TbUser)表服务接口
+ * 角色权限表(TbRolePermission)表服务接口
  *
  * @author makejava
- * @since 2020-02-28 16:41:40
+ * @since 2020-02-28 18:15:03
  */
-public interface TbUserService {
+public interface TbRolePermissionService {
 
     /**
      * 通过ID查询单条数据
@@ -17,7 +17,7 @@ public interface TbUserService {
      * @param id 主键
      * @return 实例对象
      */
-    TbUser queryById(Long id);
+    TbRolePermission queryById(Long id);
 
     /**
      * 查询多条数据
@@ -26,23 +26,23 @@ public interface TbUserService {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<TbUser> queryAllByLimit(int offset, int limit);
+    List<TbRolePermission> queryAllByLimit(int offset, int limit);
 
     /**
      * 新增数据
      *
-     * @param tbUser 实例对象
+     * @param tbRolePermission 实例对象
      * @return 实例对象
      */
-    TbUser insert(TbUser tbUser);
+    TbRolePermission insert(TbRolePermission tbRolePermission);
 
     /**
      * 修改数据
      *
-     * @param tbUser 实例对象
+     * @param tbRolePermission 实例对象
      * @return 实例对象
      */
-    TbUser update(TbUser tbUser);
+    TbRolePermission update(TbRolePermission tbRolePermission);
 
     /**
      * 通过主键删除数据

@@ -12,7 +12,7 @@ import java.util.List;
  * 用户表(TbUser)表服务实现类
  *
  * @author makejava
- * @since 2020-02-28 16:41:40
+ * @since 2020-02-28 18:21:34
  */
 @Service("tbUserService")
 public class TbUserServiceImpl implements TbUserService {
@@ -76,4 +76,9 @@ public class TbUserServiceImpl implements TbUserService {
     public boolean deleteById(Long id) {
         return this.tbUserDao.deleteById(id) > 0;
     }
+
+	@Override
+	public TbUser queryByUsername(String username) {
+    	return tbUserDao.queryByUsername(username);
+	}
 }
