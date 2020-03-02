@@ -15,12 +15,12 @@
 
 
     <select id="getGrantedAuthorityByUserId" resultMap="TbPermissionMap">
-            select tp.id,tp.name,tp.enname
-            from tb_user tu
+            select tb_user.id as tbId,tp.id as id,tp.name as name ,tp.enname as enname
+            from tb_user
             left join tb_user_role tur on tb_user.id = tur.user_id
             left join tb_role_permission trp on tur.role_id = trp.role_id
             left join tb_permission tp on trp.permission_id = tp.id
-            where tu.id = #{userId}
+            where tb_user.id = #{userId}
     </select>
 
 
