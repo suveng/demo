@@ -13,6 +13,7 @@
         <module>authorization-code-jdbc</module>
         <module>authorization-code-jdbc-rbac</module>
         <module>dependency</module>
+        <module>resource-jdbc-rbac</module>
     </modules>
     <packaging>pom</packaging>
     <name>17.demo-spring-oauth2</name>
