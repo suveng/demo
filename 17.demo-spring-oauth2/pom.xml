@@ -9,11 +9,11 @@
     <artifactId>demo-spring-oauth2</artifactId>
     <version>1.0</version>
     <modules>
-        <module>authorization-code-memory</module>
-        <module>authorization-code-jdbc</module>
-        <module>authorization-code-jdbc-rbac</module>
+        <module>oauth2-memory</module>
+        <module>oauth2-jdbc</module>
+        <module>oauth2-password-jwt</module>
         <module>dependency</module>
-        <module>resource-jdbc-rbac</module>
+        <module>resource</module>
     </modules>
     <packaging>pom</packaging>
     <name>17.demo-spring-oauth2</name>
