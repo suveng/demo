@@ -1,4 +1,14 @@
-authorization-code-jdbc-rbac 认证 支持authorization_code 和 password 模式
-resource-jdbc-rbac 资源
+oauth2-X 认证授权服务 支持authorization_code 和 password 两种oauth2的模式
 
-这两个是一对, 注意在数据配置client和user的时候需要对密码都进行加密passwordEncoder
+- oauth2-memory token存放在内存
+- oauth2-jdbc token存放在数据库
+- oauth2-jwt 用户信息存放在token, 使用jwt存储协议的格式, 使用RSA非对称加密
+- resource 资源服务
+- dependency 依赖管理
+    - spring 版本2.2.5
+
+
+注意:
+认证授权服务和资源服务建议配套使用
+
+
