@@ -25,6 +25,7 @@
         <module>17.demo-spring-oauth2</module>
         <module>18.JDK学习</module>
         <module>19.demo-rest</module>
+        <module>20.oauth2-rbac</module>
     </modules>
     <packaging>pom</packaging>
 
