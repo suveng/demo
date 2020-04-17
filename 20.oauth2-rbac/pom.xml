@@ -16,6 +16,7 @@
     <artifactId>oauth2-rbac</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
+    <name>20.oauth2-rbac</name>
 
     <modules>
         <module>oauth2-rbac-server</module>

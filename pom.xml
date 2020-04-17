@@ -26,6 +26,7 @@
         <module>18.JDK学习</module>
         <module>19.demo-rest</module>
         <module>20.oauth2-rbac</module>
+        <module>21.xxl-job-demo</module>
     </modules>
     <packaging>pom</packaging>
 

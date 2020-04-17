@@ -14,6 +14,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>oauth2-jdbc</artifactId>
     <version>1.0</version>
+    <name>17.oauth2-jdbc</name>
 
     <dependencies>
         <!-- Spring Boot -->

@@ -11,6 +11,7 @@
 
     <artifactId>oauth2-jwt</artifactId>
     <version>1.0</version>
+    <name>17.oauth2-jwt</name>
 
     <dependencies>
         <!-- Spring Boot -->

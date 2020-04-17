@@ -13,6 +13,8 @@
     <groupId>my.suveng</groupId>
     <artifactId>resource</artifactId>
     <version>1.0</version>
+    <name>17.resource</name>
+
     <dependencies>
         <!-- Spring Boot -->
         <dependency>

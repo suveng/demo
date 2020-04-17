@@ -7,6 +7,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>dependency</artifactId>
     <version>1.0</version>
+    <name>17.dependency</name>
 
     <properties>
         <dubbo.version>2.7.4.1</dubbo.version>

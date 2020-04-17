@@ -11,8 +11,8 @@
     <groupId>my.suveng</groupId>
     <artifactId>oauth2-password-jwt</artifactId>
     <version>1.0.0</version>
+    <name>17.oauth2-password-jwt</name>
 
-    <name>password-auth-server</name>
     <description>password-auth-server</description>
 
     <properties>

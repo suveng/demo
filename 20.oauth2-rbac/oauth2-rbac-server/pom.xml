@@ -10,7 +10,7 @@
 
     <artifactId>oauth2-rbac-server</artifactId>
     <version>1.0</version>
-    <name>oauth2-rbac-server</name>
+    <name>20.oauth2-rbac-server</name>
 
 
     <dependencies>

@@ -28,3 +28,7 @@ Each module is independent of a blog source code.
 - 18.jdk source code learn
 - 19.rest demo
 - 20. oauth2.0 with RBAC
+- 21. xxl-job demo 
+    - official address url: https://www.xuxueli.com/xxl-job/
+    - github url: https://github.com/xuxueli/xxl-job/
+    - 码云地址: http://gitee.com/xuxueli0323/xxl-job
