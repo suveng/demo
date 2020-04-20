@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.nio.channels.Channel</OriginalElement>
+  <nodes>
+    <node x="183.0" y="92.0">java.nio.FloatBuffer</node>
+    <node x="525.0" y="92.0">java.nio.CharBuffer</node>
+    <node x="805.0" y="251.0">java.nio.channels.Selector</node>
+    <node x="350.0" y="92.0">java.nio.DoubleBuffer</node>
+    <node x="581.0" y="333.0">java.nio.channels.DatagramChannel</node>
+    <node x="994.0" y="92.0">java.nio.ShortBuffer</node>
+    <node x="24.0" y="92.0">java.nio.ByteBuffer</node>
+    <node x="350.0" y="333.0">java.nio.channels.ServerSocketChannel</node>
+    <node x="0.0" y="333.0">java.nio.channels.SocketChannel</node>
+    <node x="684.0" y="92.0">java.nio.IntBuffer</node>
+    <node x="541.0" y="0.0">java.nio.Buffer</node>
+    <node x="835.0" y="92.0">java.nio.LongBuffer</node>
+    <node x="183.0" y="333.0">java.nio.channels.FileChannel</node>
+    <node x="0.0" y="174.0">java.nio.MappedByteBuffer</node>
+    <node x="298.5" y="251.0">java.nio.channels.Channel</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.nio.IntBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="749.5" y="72.0" />
+      <point x="609.7857142857142" y="72.0" />
+      <point x="15.28571428571422" y="16.0" />
+    </edge>
+    <edge source="java.nio.DoubleBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="427.5" y="72.0" />
+      <point x="579.2142857142857" y="72.0" />
+      <point x="-15.285714285714334" y="16.0" />
+    </edge>
+    <edge source="java.nio.channels.ServerSocketChannel" target="java.nio.channels.Channel">
+      <point x="0.0" y="-16.0" />
+      <point x="455.5" y="313.0" />
+      <point x="370.375" y="313.0" />
+      <point x="14.375" y="16.0" />
+    </edge>
+    <edge source="java.nio.channels.FileChannel" target="java.nio.channels.Channel">
+      <point x="0.0" y="-16.0" />
+      <point x="256.5" y="313.0" />
+      <point x="341.625" y="313.0" />
+      <point x="-14.375" y="16.0" />
+    </edge>
+    <edge source="java.nio.channels.DatagramChannel" target="java.nio.channels.Channel">
+      <point x="0.0" y="-16.0" />
+      <point x="670.5" y="303.0" />
+      <point x="399.125" y="303.0" />
+      <point x="43.125" y="16.0" />
+    </edge>
+    <edge source="java.nio.MappedByteBuffer" target="java.nio.ByteBuffer">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="java.nio.LongBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="904.5" y="62.0" />
+      <point x="625.0714285714286" y="62.0" />
+      <point x="30.571428571428555" y="16.0" />
+    </edge>
+    <edge source="java.nio.ShortBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="1067.5" y="52.0" />
+      <point x="640.3571428571429" y="52.0" />
+      <point x="45.85714285714289" y="16.0" />
+    </edge>
+    <edge source="java.nio.ByteBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="93.5" y="52.0" />
+      <point x="548.6428571428571" y="52.0" />
+      <point x="-45.85714285714289" y="16.0" />
+    </edge>
+    <edge source="java.nio.channels.SocketChannel" target="java.nio.channels.Channel">
+      <point x="0.0" y="-16.0" />
+      <point x="81.5" y="303.0" />
+      <point x="312.875" y="303.0" />
+      <point x="-43.125" y="16.0" />
+    </edge>
+    <edge source="java.nio.FloatBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="256.5" y="62.0" />
+      <point x="563.9285714285714" y="62.0" />
+      <point x="-30.571428571428555" y="16.0" />
+    </edge>
+    <edge source="java.nio.CharBuffer" target="java.nio.Buffer">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="558.5" y="141.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
