@@ -27,6 +27,8 @@
         <module>19.demo-rest</module>
         <module>20.oauth2-rbac</module>
         <module>21.xxl-job-demo</module>
+        <module>22.netty-demo</module>
+        <module>23.Java-IO-demo</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.InputStream</OriginalElement>
+  <nodes>
+    <node x="463.0" y="241.0">java.io.OutputStream</node>
+    <node x="0.0" y="564.0">java.io.BufferedInputStream</node>
+    <node x="223.0" y="82.0">java.io.BufferedWriter</node>
+    <node x="32.0" y="164.0">java.io.FileWriter</node>
+    <node x="145.5" y="241.0">java.io.Reader</node>
+    <node x="0.0" y="323.0">java.io.InputStreamReader</node>
+    <node x="431.0" y="323.0">java.io.BufferedOutputStream</node>
+    <node x="151.5" y="0.0">java.io.Writer</node>
+    <node x="0.0" y="82.0">java.io.OutputStreamWriter</node>
+    <node x="215.0" y="323.0">java.io.BufferedReader</node>
+    <node x="28.0" y="405.0">java.io.FileReader</node>
+    <node x="32.0" y="482.0">java.io.InputStream</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.BufferedWriter" target="java.io.Writer">
+      <point x="0.0" y="-16.0" />
+      <point x="308.5" y="57.0" />
+      <point x="231.75" y="57.0" />
+      <point x="26.75" y="16.0" />
+    </edge>
+    <edge source="java.io.FileWriter" target="java.io.OutputStreamWriter">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="java.io.BufferedInputStream" target="java.io.InputStream">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="java.io.BufferedOutputStream" target="java.io.OutputStream">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="java.io.BufferedReader" target="java.io.Reader">
+      <point x="0.0" y="-16.0" />
+      <point x="300.5" y="298.0" />
+      <point x="225.75" y="298.0" />
+      <point x="26.75" y="16.0" />
+    </edge>
+    <edge source="java.io.OutputStreamWriter" target="java.io.Writer">
+      <point x="0.0" y="-16.0" />
+      <point x="101.5" y="57.0" />
+      <point x="178.25" y="57.0" />
+      <point x="-26.75" y="16.0" />
+    </edge>
+    <edge source="java.io.InputStreamReader" target="java.io.Reader">
+      <point x="0.0" y="-16.0" />
+      <point x="97.5" y="298.0" />
+      <point x="172.25" y="298.0" />
+      <point x="-26.75" y="16.0" />
+    </edge>
+    <edge source="java.io.FileReader" target="java.io.InputStreamReader">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="81.5" y="220.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
