@@ -12,7 +12,7 @@ import java.nio.channels.FileChannel;
  * java nio channel demo
  * @author suwenguang
  **/
-public class ChannelDemo {
+public class FileChannelDemo {
 	public static void main(String[] args) throws IOException {
 		File dir = new File("/data/logs/");
 		if (!dir.exists()) {
