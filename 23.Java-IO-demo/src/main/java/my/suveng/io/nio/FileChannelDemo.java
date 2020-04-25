@@ -1,4 +1,4 @@
-package my.suveng.io.nio.channel;
+package my.suveng.io.nio;
 
 import cn.hutool.core.util.RandomUtil;
 

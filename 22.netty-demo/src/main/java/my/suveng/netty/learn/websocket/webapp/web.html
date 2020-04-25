@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>client</title>
+</head>
+<body>
+
+<script>
+    var socket;
+
+    if (window.WebSocket) {
+
+        var webSocketInstance = new WebSocket("ws://localhost:30301/ws");
+
+        //读事件回调
+        webSocketInstance.onmessage = function (ev) {
+            var response = document.getElementById('response');
+            response.value = response.value + '\n' + "readyState=" + webSocketInstance.readyState + ev.data;
+        };
+        //连接建立回调
+        webSocketInstance.onopen = function (ev) {
+            var response = document.getElementById('response');
+            response.value = response.value + '\n' + "readyState=" + webSocketInstance.readyState + "连接已建立";
+        };
+
+        //连接关闭回调
+        webSocketInstance.onclose = function (ev) {
+            var response = document.getElementById('response');
+            response.value = response.value + '\n' + "readyState=" + webSocketInstance.readyState + "连接已关闭";
+        };
+    } else {
+        alert("该环境不支持websocket");
+    }
+
+    function send(message) {
+        if (!window.WebSocket) {
+            alert("该环境不支持websocket");
+        }
+
+        if (!message) {
+            alert("数据不能为空");
+        }
+
+        // 注意这个 readyState是整型
+        if (webSocketInstance.readyState === WebSocket.OPEN) {
+            webSocketInstance.send(message);
+        } else {
+            alert("连接状态为: " + webSocketInstance.readyState + '请刷新重新连接');
+        }
+
+
+    }
+
+
+</script>
+
+<form onsubmit="return false;">
+    <textarea name="message" id="message" cols="200" rows="10"></textarea>
+
+    <button onclick="send(this.form.message.value)">发送数据</button>
+
+    <h3>服务端输出:</h3>
+
+    <textarea name="response" id="response" cols="200" rows="10"></textarea>
+
+    <button onclick="javascript: document.getElementById('response').value='' ">清空内容</button>
+
+</form>
+
+
+</body>
+</html>
