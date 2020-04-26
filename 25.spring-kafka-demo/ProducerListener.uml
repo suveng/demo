@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.kafka.support.ProducerListener</OriginalElement>
+  <nodes>
+    <node x="24.5" y="0.0">org.springframework.kafka.support.ProducerListener</node>
+    <node x="0.0" y="217.0">org.springframework.util.concurrent.ListenableFutureCallback</node>
+    <node x="0.0" y="111.0">org.springframework.kafka.support.LoggingProducerListener</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.kafka.support.LoggingProducerListener" target="org.springframework.kafka.support.ProducerListener">
+      <point x="0.0" y="-30.5" />
+      <point x="0.0" y="30.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="86.5" y="224.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
