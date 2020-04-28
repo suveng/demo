@@ -30,6 +30,8 @@
         <module>22.netty-demo</module>
         <module>23.Java-IO-demo</module>
         <module>24.spring-application-event</module>
+        <module>25.spring-kafka-demo</module>
+        <module>26.dataway-demo</module>
     </modules>
     <packaging>pom</packaging>
 
