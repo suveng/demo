@@ -37,5 +37,9 @@
 
     <name>root</name>
 
+    <dependencies>
+
+    </dependencies>
+
 
 </project>

@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package my.suveng.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "my.suveng.netty.learn.protobuf";
+option java_outer_classname = "DataInfoPra";
+
+message Info {
+    optional string name = 1;
+    optional string age = 2;
+    optional string time = 3;
+}
+
