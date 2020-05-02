@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+package my.suveng.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "my.suveng.netty.learn.promote_protobuf.proto";
+option java_outer_classname = "MessageProto";
+
+message Message {
+    enum Type {
+        PersonType = 1;
+        DogType = 2;
+        CatType = 3;
+    }
+
+    required Type type = 1;
+
+    oneof dataBody {
+        Person person = 2;
+        Address address = 3;
+        Dog dog = 4;
+        Cat cat = 5;
+    }
+}
+
+message Person {
+    optional string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+}
+
+message Address {
+    optional string name = 1;
+}
+
+message Dog {
+    optional string naem = 1;
+}
+
+message Cat {
+    optional string name = 1;
+}
+
+
+
