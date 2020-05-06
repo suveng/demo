@@ -8,6 +8,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.PropertyWriter;
+import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import org.junit.Test;
 
 /**
@@ -134,6 +139,41 @@ public class Use {
 			});
 
 			System.out.println(readValue.toString());
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * jsonFilter使用
+	 * @author suwenguang
+	 */
+	@Test
+	public void jsonFilter() {
+		ObjectMapper mapper = new ObjectMapper();
+		Bar<Foo> fooBar = new Bar<>();
+		fooBar.setName(RandomUtil.randomString(3));
+		fooBar.setAge(RandomUtil.randomInt());
+		fooBar.setHouses(CollUtil.toList(RandomUtil.randomLong(), RandomUtil.randomLong()));
+
+		Foo foo = new Foo();
+		foo.setName(RandomUtil.randomString(2));
+		foo.setAge(RandomUtil.randomInt());
+		foo.setHouses(CollUtil.toList(RandomUtil.randomLong(), RandomUtil.randomLong()));
+		fooBar.setFoo(foo);
+
+		//注册myFilter
+		mapper.addMixIn(Bar.class, MyFilter.class);
+		//调用 SimpleBeanPropertyFilter 的 serializeAllExcept 方法
+		SimpleBeanPropertyFilter newFilter =
+			SimpleBeanPropertyFilter.serializeAllExcept("testfilter");
+
+		//设置 FilterProvider
+		FilterProvider filterProvider = new SimpleFilterProvider()
+			.addFilter("myFilter", newFilter);
+		try {
+			String json = mapper.setFilterProvider(filterProvider).writeValueAsString(fooBar);
+			System.out.println(json);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
