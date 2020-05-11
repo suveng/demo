@@ -1,5 +1,6 @@
-// 包名
+// 包名, 异构平台支持
 namespace java thrift.generated
+namespace py py.thrift.generated
 
 // 类型定义
 typedef i16 short
