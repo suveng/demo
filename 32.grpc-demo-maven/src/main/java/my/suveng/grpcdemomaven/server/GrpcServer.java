@@ -14,8 +14,17 @@ public class GrpcServer {
 	private Server server;
 
 	private void start() throws IOException {
-		this.server = ServerBuilder.forPort(9999).addService(new StudentServiceImpl()).build().start();
+		this.server = ServerBuilder
+			.forPort(9999)
+			.addService(new StudentServiceImpl())
+			.build()
+			.start();
 		System.out.println("服务启动...");
+
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+			System.out.println("添加jvm钩子,关闭jvm前,调用stop方法");
+			stop();
+		}));
 	}
 
 	private void stop() {
