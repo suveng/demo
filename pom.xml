@@ -32,6 +32,9 @@
         <module>24.spring-application-event</module>
         <module>25.spring-kafka-demo</module>
         <module>26.dataway-demo</module>
+        <module>27.json-demo</module>
+        <module>28.thrift-demo</module>
+        <module>29.stat-machine-demo</module>
     </modules>
     <packaging>pom</packaging>
 

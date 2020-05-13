@@ -1,0 +1,18 @@
+//指定proto3格式
+syntax = "proto3";
+//一些生成代码的设置
+option java_multiple_files = true;//以非外部类模式生成
+option java_package = "my.suveng.grpcdemomaven.grpc";//所在包名
+option java_outer_classname = "Student";//最外层类名称
+
+message MyRequest{
+    string username = 1;
+}
+
+message MyResponse {
+    string realname = 2;
+}
+
+service StudentService{
+    rpc getRealNameByUsername(MyRequest) returns (MyResponse);
+}
