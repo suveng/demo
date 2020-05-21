@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -55,8 +56,8 @@ public class MainController {
 	 * @author suwenguang
 	 */
 	@RequestMapping(value = "/produce", produces = "application/json")
-	public String produce() {
-		return "produce";
+	public String produce(HttpServletRequest request) {
+		return "produce---"+request.getRemoteAddr()+"---"+request.getRemotePort()+"---"+request.getRequestURI();
 	}
 
 	/**
