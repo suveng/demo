@@ -99,10 +99,10 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>compile-custom</goal>
-                        </goals>
+<!--                        <goals>-->
+<!--                            <goal>compile</goal>-->
+<!--                            <goal>compile-custom</goal>-->
+<!--                        </goals>-->
                     </execution>
                 </executions>
             </plugin>

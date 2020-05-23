@@ -68,6 +68,7 @@ public class StudentServiceImpl extends StudentServiceGrpc.StudentServiceImplBas
 			public void onError(Throwable throwable) {
 				// 当在onNext 或者 onCompleted 发生异常时, 会被回调
 				throwable.printStackTrace();
+				responseObserver.onCompleted();
 			}
 
 			@Override
@@ -79,8 +80,5 @@ public class StudentServiceImpl extends StudentServiceGrpc.StudentServiceImplBas
 			}
 		};
 	}
-
-
-
 
 }
