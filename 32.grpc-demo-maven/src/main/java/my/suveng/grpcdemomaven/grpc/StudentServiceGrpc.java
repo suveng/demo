@@ -5,12 +5,15 @@ import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.*;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.*;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -27,29 +30,29 @@ public final class StudentServiceGrpc {
   public static final String SERVICE_NAME = "StudentService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameMethod;
+  private static volatile io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getRealNameByUsername",
-      requestType = MyRequest.class,
-      responseType = MyResponse.class,
+      requestType = my.suveng.grpcdemomaven.grpc.MyRequest.class,
+      responseType = my.suveng.grpcdemomaven.grpc.MyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameMethod() {
-    io.grpc.MethodDescriptor<MyRequest, MyResponse> getGetRealNameByUsernameMethod;
+  public static io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameMethod() {
+    io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameMethod;
     if ((getGetRealNameByUsernameMethod = StudentServiceGrpc.getGetRealNameByUsernameMethod) == null) {
       synchronized (StudentServiceGrpc.class) {
         if ((getGetRealNameByUsernameMethod = StudentServiceGrpc.getGetRealNameByUsernameMethod) == null) {
           StudentServiceGrpc.getGetRealNameByUsernameMethod = getGetRealNameByUsernameMethod =
-              io.grpc.MethodDescriptor.<MyRequest, MyResponse>newBuilder()
+              io.grpc.MethodDescriptor.<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getRealNameByUsername"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyRequest.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyResponse.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("getRealNameByUsername"))
               .build();
         }
@@ -58,29 +61,29 @@ public final class StudentServiceGrpc {
     return getGetRealNameByUsernameMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameResStreamMethod;
+  private static volatile io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameResStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getRealNameByUsernameResStream",
-      requestType = MyRequest.class,
-      responseType = MyResponse.class,
+      requestType = my.suveng.grpcdemomaven.grpc.MyRequest.class,
+      responseType = my.suveng.grpcdemomaven.grpc.MyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameResStreamMethod() {
-    io.grpc.MethodDescriptor<MyRequest, MyResponse> getGetRealNameByUsernameResStreamMethod;
+  public static io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameResStreamMethod() {
+    io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameResStreamMethod;
     if ((getGetRealNameByUsernameResStreamMethod = StudentServiceGrpc.getGetRealNameByUsernameResStreamMethod) == null) {
       synchronized (StudentServiceGrpc.class) {
         if ((getGetRealNameByUsernameResStreamMethod = StudentServiceGrpc.getGetRealNameByUsernameResStreamMethod) == null) {
           StudentServiceGrpc.getGetRealNameByUsernameResStreamMethod = getGetRealNameByUsernameResStreamMethod =
-              io.grpc.MethodDescriptor.<MyRequest, MyResponse>newBuilder()
+              io.grpc.MethodDescriptor.<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getRealNameByUsernameResStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyRequest.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyResponse.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("getRealNameByUsernameResStream"))
               .build();
         }
@@ -89,29 +92,29 @@ public final class StudentServiceGrpc {
     return getGetRealNameByUsernameResStreamMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameReqStreamMethod;
+  private static volatile io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameReqStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getRealNameByUsernameReqStream",
-      requestType = MyRequest.class,
-      responseType = MyResponse.class,
+      requestType = my.suveng.grpcdemomaven.grpc.MyRequest.class,
+      responseType = my.suveng.grpcdemomaven.grpc.MyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameReqStreamMethod() {
-    io.grpc.MethodDescriptor<MyRequest, MyResponse> getGetRealNameByUsernameReqStreamMethod;
+  public static io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameReqStreamMethod() {
+    io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameReqStreamMethod;
     if ((getGetRealNameByUsernameReqStreamMethod = StudentServiceGrpc.getGetRealNameByUsernameReqStreamMethod) == null) {
       synchronized (StudentServiceGrpc.class) {
         if ((getGetRealNameByUsernameReqStreamMethod = StudentServiceGrpc.getGetRealNameByUsernameReqStreamMethod) == null) {
           StudentServiceGrpc.getGetRealNameByUsernameReqStreamMethod = getGetRealNameByUsernameReqStreamMethod =
-              io.grpc.MethodDescriptor.<MyRequest, MyResponse>newBuilder()
+              io.grpc.MethodDescriptor.<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getRealNameByUsernameReqStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyRequest.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyResponse.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("getRealNameByUsernameReqStream"))
               .build();
         }
@@ -120,29 +123,29 @@ public final class StudentServiceGrpc {
     return getGetRealNameByUsernameReqStreamMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameStreamAllMethod;
+  private static volatile io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameStreamAllMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getRealNameByUsernameStreamAll",
-      requestType = MyRequest.class,
-      responseType = MyResponse.class,
+      requestType = my.suveng.grpcdemomaven.grpc.MyRequest.class,
+      responseType = my.suveng.grpcdemomaven.grpc.MyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<MyRequest,
-      MyResponse> getGetRealNameByUsernameStreamAllMethod() {
-    io.grpc.MethodDescriptor<MyRequest, MyResponse> getGetRealNameByUsernameStreamAllMethod;
+  public static io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest,
+      my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameStreamAllMethod() {
+    io.grpc.MethodDescriptor<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse> getGetRealNameByUsernameStreamAllMethod;
     if ((getGetRealNameByUsernameStreamAllMethod = StudentServiceGrpc.getGetRealNameByUsernameStreamAllMethod) == null) {
       synchronized (StudentServiceGrpc.class) {
         if ((getGetRealNameByUsernameStreamAllMethod = StudentServiceGrpc.getGetRealNameByUsernameStreamAllMethod) == null) {
           StudentServiceGrpc.getGetRealNameByUsernameStreamAllMethod = getGetRealNameByUsernameStreamAllMethod =
-              io.grpc.MethodDescriptor.<MyRequest, MyResponse>newBuilder()
+              io.grpc.MethodDescriptor.<my.suveng.grpcdemomaven.grpc.MyRequest, my.suveng.grpcdemomaven.grpc.MyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getRealNameByUsernameStreamAll"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyRequest.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MyResponse.getDefaultInstance()))
+                  my.suveng.grpcdemomaven.grpc.MyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("getRealNameByUsernameStreamAll"))
               .build();
         }
@@ -157,7 +160,7 @@ public final class StudentServiceGrpc {
   public static StudentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StudentServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<StudentServiceStub>() {
-        @Override
+        @java.lang.Override
         public StudentServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new StudentServiceStub(channel, callOptions);
         }
@@ -172,7 +175,7 @@ public final class StudentServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StudentServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<StudentServiceBlockingStub>() {
-        @Override
+        @java.lang.Override
         public StudentServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new StudentServiceBlockingStub(channel, callOptions);
         }
@@ -187,7 +190,7 @@ public final class StudentServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StudentServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<StudentServiceFutureStub>() {
-        @Override
+        @java.lang.Override
         public StudentServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new StudentServiceFutureStub(channel, callOptions);
         }
@@ -207,8 +210,8 @@ public final class StudentServiceGrpc {
      *     1. 普通请求返回
      * </pre>
      */
-    public void getRealNameByUsername(MyRequest request,
-                                      io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public void getRealNameByUsername(my.suveng.grpcdemomaven.grpc.MyRequest request,
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetRealNameByUsernameMethod(), responseObserver);
     }
 
@@ -217,8 +220,8 @@ public final class StudentServiceGrpc {
      *      2. 流式请求,普通返回
      * </pre>
      */
-    public void getRealNameByUsernameResStream(MyRequest request,
-                                               io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public void getRealNameByUsernameResStream(my.suveng.grpcdemomaven.grpc.MyRequest request,
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetRealNameByUsernameResStreamMethod(), responseObserver);
     }
 
@@ -227,8 +230,8 @@ public final class StudentServiceGrpc {
      *      3. 普通请求,流式返回
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<MyRequest> getRealNameByUsernameReqStream(
-        io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyRequest> getRealNameByUsernameReqStream(
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getGetRealNameByUsernameReqStreamMethod(), responseObserver);
     }
 
@@ -237,40 +240,40 @@ public final class StudentServiceGrpc {
      *      3. 流式请求, 流式返回
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<MyRequest> getRealNameByUsernameStreamAll(
-        io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyRequest> getRealNameByUsernameStreamAll(
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getGetRealNameByUsernameStreamAllMethod(), responseObserver);
     }
 
-    @Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetRealNameByUsernameMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                MyRequest,
-                MyResponse>(
+                my.suveng.grpcdemomaven.grpc.MyRequest,
+                my.suveng.grpcdemomaven.grpc.MyResponse>(
                   this, METHODID_GET_REAL_NAME_BY_USERNAME)))
           .addMethod(
             getGetRealNameByUsernameResStreamMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                MyRequest,
-                MyResponse>(
+                my.suveng.grpcdemomaven.grpc.MyRequest,
+                my.suveng.grpcdemomaven.grpc.MyResponse>(
                   this, METHODID_GET_REAL_NAME_BY_USERNAME_RES_STREAM)))
           .addMethod(
             getGetRealNameByUsernameReqStreamMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
-                MyRequest,
-                MyResponse>(
+                my.suveng.grpcdemomaven.grpc.MyRequest,
+                my.suveng.grpcdemomaven.grpc.MyResponse>(
                   this, METHODID_GET_REAL_NAME_BY_USERNAME_REQ_STREAM)))
           .addMethod(
             getGetRealNameByUsernameStreamAllMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                MyRequest,
-                MyResponse>(
+                my.suveng.grpcdemomaven.grpc.MyRequest,
+                my.suveng.grpcdemomaven.grpc.MyResponse>(
                   this, METHODID_GET_REAL_NAME_BY_USERNAME_STREAM_ALL)))
           .build();
     }
@@ -287,7 +290,7 @@ public final class StudentServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected StudentServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new StudentServiceStub(channel, callOptions);
@@ -298,8 +301,8 @@ public final class StudentServiceGrpc {
      *     1. 普通请求返回
      * </pre>
      */
-    public void getRealNameByUsername(MyRequest request,
-                                      io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public void getRealNameByUsername(my.suveng.grpcdemomaven.grpc.MyRequest request,
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetRealNameByUsernameMethod(), getCallOptions()), request, responseObserver);
     }
@@ -309,8 +312,8 @@ public final class StudentServiceGrpc {
      *      2. 流式请求,普通返回
      * </pre>
      */
-    public void getRealNameByUsernameResStream(MyRequest request,
-                                               io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public void getRealNameByUsernameResStream(my.suveng.grpcdemomaven.grpc.MyRequest request,
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getGetRealNameByUsernameResStreamMethod(), getCallOptions()), request, responseObserver);
     }
@@ -320,8 +323,8 @@ public final class StudentServiceGrpc {
      *      3. 普通请求,流式返回
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<MyRequest> getRealNameByUsernameReqStream(
-        io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyRequest> getRealNameByUsernameReqStream(
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getGetRealNameByUsernameReqStreamMethod(), getCallOptions()), responseObserver);
     }
@@ -331,8 +334,8 @@ public final class StudentServiceGrpc {
      *      3. 流式请求, 流式返回
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<MyRequest> getRealNameByUsernameStreamAll(
-        io.grpc.stub.StreamObserver<MyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyRequest> getRealNameByUsernameStreamAll(
+        io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getGetRealNameByUsernameStreamAllMethod(), getCallOptions()), responseObserver);
     }
@@ -349,7 +352,7 @@ public final class StudentServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected StudentServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new StudentServiceBlockingStub(channel, callOptions);
@@ -360,7 +363,7 @@ public final class StudentServiceGrpc {
      *     1. 普通请求返回
      * </pre>
      */
-    public MyResponse getRealNameByUsername(MyRequest request) {
+    public my.suveng.grpcdemomaven.grpc.MyResponse getRealNameByUsername(my.suveng.grpcdemomaven.grpc.MyRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetRealNameByUsernameMethod(), getCallOptions(), request);
     }
@@ -370,8 +373,8 @@ public final class StudentServiceGrpc {
      *      2. 流式请求,普通返回
      * </pre>
      */
-    public java.util.Iterator<MyResponse> getRealNameByUsernameResStream(
-        MyRequest request) {
+    public java.util.Iterator<my.suveng.grpcdemomaven.grpc.MyResponse> getRealNameByUsernameResStream(
+        my.suveng.grpcdemomaven.grpc.MyRequest request) {
       return blockingServerStreamingCall(
           getChannel(), getGetRealNameByUsernameResStreamMethod(), getCallOptions(), request);
     }
@@ -388,7 +391,7 @@ public final class StudentServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected StudentServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new StudentServiceFutureStub(channel, callOptions);
@@ -399,8 +402,8 @@ public final class StudentServiceGrpc {
      *     1. 普通请求返回
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<MyResponse> getRealNameByUsername(
-        MyRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<my.suveng.grpcdemomaven.grpc.MyResponse> getRealNameByUsername(
+        my.suveng.grpcdemomaven.grpc.MyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetRealNameByUsernameMethod(), getCallOptions()), request);
     }
@@ -424,34 +427,34 @@ public final class StudentServiceGrpc {
       this.methodId = methodId;
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_REAL_NAME_BY_USERNAME:
-          serviceImpl.getRealNameByUsername((MyRequest) request,
-              (io.grpc.stub.StreamObserver<MyResponse>) responseObserver);
+          serviceImpl.getRealNameByUsername((my.suveng.grpcdemomaven.grpc.MyRequest) request,
+              (io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse>) responseObserver);
           break;
         case METHODID_GET_REAL_NAME_BY_USERNAME_RES_STREAM:
-          serviceImpl.getRealNameByUsernameResStream((MyRequest) request,
-              (io.grpc.stub.StreamObserver<MyResponse>) responseObserver);
+          serviceImpl.getRealNameByUsernameResStream((my.suveng.grpcdemomaven.grpc.MyRequest) request,
+              (io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_REAL_NAME_BY_USERNAME_REQ_STREAM:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.getRealNameByUsernameReqStream(
-              (io.grpc.stub.StreamObserver<MyResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse>) responseObserver);
         case METHODID_GET_REAL_NAME_BY_USERNAME_STREAM_ALL:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.getRealNameByUsernameStreamAll(
-              (io.grpc.stub.StreamObserver<MyResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<my.suveng.grpcdemomaven.grpc.MyResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -462,12 +465,12 @@ public final class StudentServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     StudentServiceBaseDescriptorSupplier() {}
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return Student.getDescriptor();
+      return my.suveng.grpcdemomaven.grpc.Student.getDescriptor();
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("StudentService");
     }
@@ -487,7 +490,7 @@ public final class StudentServiceGrpc {
       this.methodName = methodName;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }
