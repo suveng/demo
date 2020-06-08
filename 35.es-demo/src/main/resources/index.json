@@ -1,0 +1,23 @@
+{
+    "settings": {
+        "number_of_replicas": 0
+    },
+    "mappings": {
+        "dynamic": false,
+        "properties": {
+            "name": {
+                "type": "text"
+            },
+            "hobby": {
+                "type": "keyword"
+            },
+            "birth": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd"
+            },
+            "age": {
+                "type": "integer"
+            }
+        }
+    }
+}
