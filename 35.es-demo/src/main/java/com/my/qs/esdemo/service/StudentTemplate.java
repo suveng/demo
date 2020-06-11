@@ -7,6 +7,15 @@ public class StudentTemplate {
 	private Integer age;
 	private List<String> hobby;
 	private String birth;
+	private List<Suggest> suggests;
+
+	public List<Suggest> getSuggests() {
+		return suggests;
+	}
+
+	public void setSuggests(List<Suggest> suggests) {
+		this.suggests = suggests;
+	}
 
 	@Override
 	public String toString() {
