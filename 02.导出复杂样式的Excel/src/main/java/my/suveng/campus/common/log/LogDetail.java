@@ -148,7 +148,7 @@ public class LogDetail implements ILogDetail {
 		if (logDetail == null) {
 			synchronized (ILogDetail.class) {
 				if (logDetail == null) {
-					return new LogDetail();
+					logDetail = new LogDetail();
 				}
 			}
 		}
