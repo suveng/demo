@@ -50,6 +50,11 @@
             <artifactId>simpleclient_pushgateway</artifactId>
             <version>0.9.0</version>
         </dependency>
+        <!-- Micrometer Prometheus registry  -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -24,9 +24,10 @@ public class Application {
 		log.info("功能2. 编写一些接口, 监控其处理耗时, 并把对应指标推送到prometheus中");
 
 
-		int metricServerPort = 18081;
-		HTTPServer server = new HTTPServer(metricServerPort);
-		log.info("metricServer启动, 端口:{}", metricServerPort);
+		// 下面是自定义server去做监控, 后面使用spring boot actuator 做监控
+		//int metricServerPort = 18081;
+		//HTTPServer server = new HTTPServer(metricServerPort);
+		//log.info("metricServer启动, 端口:{}", metricServerPort);
 
 		// 每个指标都不一样, 大致都是这样子写
 		HttpApiCounter.http_count.labels("/url", "node1", "v1", "2").inc();
@@ -37,7 +38,7 @@ public class Application {
 		//printlnCollectors(collectors);
 
 		// jvm metrics 数据
-		DefaultExports.initialize();
+		//DefaultExports.initialize();
 
 
 	}

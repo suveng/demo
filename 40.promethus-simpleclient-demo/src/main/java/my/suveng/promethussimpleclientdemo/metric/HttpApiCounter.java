@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 /**
+ * 整合prometheus提供的simpleclient
  *
  * @author suwenguang
  **/
