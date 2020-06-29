@@ -1,0 +1,27 @@
+//指定proto3格式
+syntax = "proto3";
+//一些生成代码的设置
+option java_multiple_files = true; //以非外部类模式生成
+option java_package = "my.suveng.grpc.two.api"; //所在包名
+option java_outer_classname = "StudentTwo"; //最外层类名称
+
+message MyRequestTwo{
+    string username = 1;
+}
+
+message MyResponseTwo {
+    string realname = 2;
+}
+
+// rpc 方法定义, 4种方式
+service StudentServiceTwo {
+    //     1. 普通请求返回
+    rpc getRealNameByUsername (MyRequestTwo) returns (MyResponseTwo);
+    //      2. 流式请求,普通返回
+    rpc getRealNameByUsernameResStream (MyRequestTwo) returns (stream MyResponseTwo);
+    //      3. 普通请求,流式返回
+    rpc getRealNameByUsernameReqStream (stream MyRequestTwo) returns (MyResponseTwo);
+    //      3. 流式请求, 流式返回
+    rpc getRealNameByUsernameStreamAll (stream MyRequestTwo) returns (stream MyResponseTwo);
+
+}

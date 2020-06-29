@@ -1,6 +1,6 @@
 grpc:
   client:
-    studentService: # 注入的rpc client 的名字
+    student: # 注入的rpc client 的名字
       address: 'static://127.0.0.1:9090' # rpc服务的地址
       negotiation-type: plaintext
 server:
