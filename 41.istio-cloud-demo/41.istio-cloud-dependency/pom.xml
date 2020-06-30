@@ -57,6 +57,14 @@
                 <version>${grpc.version}</version>
             </dependency>
 
+            <!-- 国产的grpc starter -->
+            <!-- https://yidongnan.github.io/grpc-spring-boot-starter/ -->
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-spring-boot-starter</artifactId>
+                <version>2.9.0.RELEASE</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

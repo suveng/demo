@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: istio-cloud-user-demo
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: *
+    web:
+      exposure:
+        include: *
+  server:
+    port: 38081
+server:
+  port: 38080

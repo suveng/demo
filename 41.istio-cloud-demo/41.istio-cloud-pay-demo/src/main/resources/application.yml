@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: istio-cloud-pay-demo
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: *
+    web:
+      exposure:
+        include: *
+  server:
+    port: 28081
+server:
+  port: 28080
