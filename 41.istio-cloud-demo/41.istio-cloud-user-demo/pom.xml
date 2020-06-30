@@ -6,7 +6,6 @@
         <groupId>my.suveng</groupId>
         <artifactId>istio-cloud-demo</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>my.suveng</groupId>
     <artifactId>istio-cloud-user-demo</artifactId>
@@ -21,6 +20,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <artifactId>util-core</artifactId>
+            <groupId>com.gitee.suveng</groupId>
+        </dependency>
         <!-- 国产的grpc starter -->
         <!-- https://yidongnan.github.io/grpc-spring-boot-starter/ -->
         <dependency>

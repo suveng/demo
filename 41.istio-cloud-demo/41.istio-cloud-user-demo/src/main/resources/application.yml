@@ -2,17 +2,17 @@ spring:
   application:
     name: istio-cloud-user-demo
 management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    jmx:
-      exposure:
-        include: *
-    web:
-      exposure:
-        include: *
   server:
     port: 38081
 server:
   port: 38080
+grpc:
+  server:
+    port: 39090
+  client:
+    pay:
+      address: 'static://127.0.0.1:29090' # rpc服务的地址
+      negotiation-type: plaintext
+    order:
+      address: 'static://127.0.0.1:19090' # rpc服务的地址
+      negotiation-type: plaintext
