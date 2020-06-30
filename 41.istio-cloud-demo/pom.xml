@@ -2,6 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>41.istio-cloud-dependency</module>
+        <module>41.istio-cloud-order-demo</module>
+        <module>41.istio-cloud-pay-demo</module>
+        <module>41.istio-grpc-api</module>
+    </modules>
+
     <groupId>my.suveng</groupId>
     <artifactId>istio-cloud-demo</artifactId>
     <version>1.0.0</version>
@@ -9,11 +16,20 @@
     <description>学习使用istio</description>
 
     <packaging>pom</packaging>
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-    </properties>
 
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>my.suveng</groupId>
+                <artifactId>41.istio-cloud-dependency</artifactId>
+                <version>1.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
 </project>
