@@ -1,5 +1,6 @@
 package my.suveng.istioclouduserdemo.controller;
 
+import brave.Tracer;
 import my.suveng.istio.grpc.api.order.OrderRequest;
 import my.suveng.istio.grpc.api.order.OrderResponse;
 import my.suveng.istio.grpc.api.order.OrderServiceGrpc;
@@ -10,6 +11,7 @@ import my.suveng.model.common.interfaces.response.IMessage;
 import my.suveng.model.common.response.Message;
 import my.suveng.util.json.Jackson;
 import net.devh.boot.grpc.client.inject.GrpcClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,11 +28,14 @@ public class PayController {
 	@GrpcClient("order")
 	private OrderServiceGrpc.OrderServiceBlockingStub orderServiceBlockingStub;
 
+	@Autowired
+	Tracer tracer;
+
 	@GetMapping("/pay")
 	public IMessage<String> pay() {
 		OrderResponse orderResult = orderServiceBlockingStub.getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
 		PayResponse result = payServiceBlockingStub.getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
-		return Message.successWithData(result.toString());
+		return Message.successWithData(tracer.currentSpan().context().traceIdString());
 	}
 
 
