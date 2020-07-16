@@ -5,7 +5,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>istio-zipkin-grpc-api</artifactId>
     <version>1.0.0</version>
-    <name>istio-grpc-api</name>
+    <name>42.istio-grpc-api</name>
     <description>grpc demo api 存放</description>
 
     <properties>

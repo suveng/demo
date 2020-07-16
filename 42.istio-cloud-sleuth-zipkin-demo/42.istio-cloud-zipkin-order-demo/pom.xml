@@ -10,7 +10,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>istio-cloud-order-demo</artifactId>
     <version>1.0.0</version>
-    <name>istio-cloud-order-demo</name>
+    <name>42.istio-cloud-order-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

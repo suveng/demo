@@ -2,7 +2,7 @@ spring:
   application:
     name: istio-cloud-pay-demo
   zipkin:
-    base-url: http://127.0.0.1:9411
+    base-url: http://192.168.9.208:9411
   sleuth:
     sampler:
       probability: 1

@@ -37,6 +37,7 @@
         <module>29.stat-machine-demo</module>
         <module>33.security-demo</module>
         <module>35.es-demo</module>
+        <module>43.jdk-spi</module>
     </modules>
     <packaging>pom</packaging>
 

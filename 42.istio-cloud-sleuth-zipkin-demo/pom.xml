@@ -13,7 +13,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>istio-cloud-zipkin-demo</artifactId>
     <version>1.0.0</version>
-    <name>istio-cloud-demo</name>
+    <name>42.istio-cloud-demo</name>
     <description>学习使用istio</description>
 
     <packaging>pom</packaging>

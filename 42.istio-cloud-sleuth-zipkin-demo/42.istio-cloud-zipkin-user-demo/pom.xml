@@ -10,7 +10,7 @@
     <groupId>my.suveng</groupId>
     <artifactId>istio-cloud-user-demo</artifactId>
     <version>1.0.0</version>
-    <name>istio-cloud-user-demo</name>
+    <name>42.istio-cloud-user-demo</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,6 +20,16 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ofpay</groupId>
+            <artifactId>logback-mdc-ttl</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.lognet</groupId>
             <artifactId>grpc-spring-boot-starter</artifactId>
