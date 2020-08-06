@@ -78,7 +78,7 @@
 
 
 
-**基于maven dependencyManagement 版本控制如下:** 
+**基于maven dependencyManagement 版本控制如下:**
 
 
 
@@ -130,7 +130,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>19.0</version>
+                <version>20.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -145,7 +145,7 @@ docker run --restart="always" \
           --name mongo\
           -p 27017:27017\
           -v /docker/mongo/data/db:/data/db\
-          mongo:latest --storageEngine wiredTiger 
+          mongo:latest --storageEngine wiredTiger
 ````
 
 
@@ -162,7 +162,7 @@ docker run --restart="always" \
 
 - getter/setter
 
-> [Female.java](https://github.com/suveng/demo/blob/master/chapter.003/src/main/java/my/suveng/app/model/Female.java) 
+> [Female.java](https://github.com/suveng/demo/blob/master/chapter.003/src/main/java/my/suveng/app/model/Female.java)
 
 ```
 @Document(collection = "female")
@@ -366,11 +366,11 @@ public interface FemaleRepository extends MongoRepository<Female,String> {
 
   ```java
   public interface FemaleRepository extends MongoRepository<Female,String>, QuerydslPredicateExecutor<Female> {
-  
+
   }
   ```
 
-  
+
 
 - 编写单元测试[FemaleRepositoryTest.java](https://github.com/suveng/demo/blob/master/chapter.003/src/test/java/my/suveng/app/dao/FemaleRepositoryTest.java)
 

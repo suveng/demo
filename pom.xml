@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>my.suveng</groupId>
     <artifactId>demo</artifactId>
     <version>1.0</version>
@@ -42,6 +41,7 @@
         <module>42.grpc-cloud-sleuth-zipkin-demo</module>
         <module>43.jdk-spi</module>
         <module>44.grpc-cloud-security-sleuth-zipkin-demo</module>
+        <module>46.sharding-jdbc-demo</module>
     </modules>
     <packaging>pom</packaging>
 
