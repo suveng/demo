@@ -1,0 +1,27 @@
+spring:
+  # sharding jdbc 读写分离
+  shardingsphere:
+    masterslave:
+      name: commision
+      load-balance-algorithm-type: round_robin
+      master-data-source-name: master
+      slave-data-source-names: slave
+    datasource:
+      names: master,slave
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.9.234:3306/sharding_demo?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        username: root
+        password: 123456
+      slave:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.9.234:3306/sharding_demo?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        username: root
+        password: 123456
+    props:
+      sql:
+        show: true
+  zipkin:
+    enabled: false
