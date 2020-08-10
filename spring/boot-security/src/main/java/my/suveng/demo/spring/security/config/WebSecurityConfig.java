@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * 重写 WebSecurityConfigurerAdapter 的方法，实现自定义的 Spring Security 的配置
@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			// <1> 使用内存保存user身份信息
 			.inMemoryAuthentication()
 			// <2> 配置密码编码器, 这里使用空的密码编码器,注意: 只适用于测试项目
-			.passwordEncoder(NoOpPasswordEncoder.getInstance())
+			.passwordEncoder(new BCryptPasswordEncoder())
 			// <3> 注入用户信息
 			.withUser("admin")//用户名
 			.password("admin")//密码

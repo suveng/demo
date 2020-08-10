@@ -10,7 +10,6 @@
 
     <artifactId>cloud-grpc-sleuth-zipkin-user</artifactId>
     <version>1.0.0</version>
-    <name>42.grpc-cloud-sleuth-zipkin-demo</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -116,10 +115,20 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>

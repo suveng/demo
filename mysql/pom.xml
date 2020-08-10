@@ -6,6 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>my.suveng</groupId>
     <artifactId>mysql</artifactId>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>

@@ -2,12 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>demo</artifactId>
-        <groupId>my.suveng</groupId>
-        <version>1.0</version>
-    </parent>
 
+    <groupId>my.suveng</groupId>
+    <artifactId>cloud-grpc</artifactId>
+    <version>1.0.0</version>
     <modules>
         <module>cloud-grpc-api</module>
         <module>cloud-grpc-dependency</module>
@@ -16,8 +14,7 @@
         <module>cloud-grpc-user</module>
     </modules>
 
-    <artifactId>cloud-grpc</artifactId>
-    <version>1.0.0</version>
+
 
     <packaging>pom</packaging>
 

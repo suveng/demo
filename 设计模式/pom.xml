@@ -6,8 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>my.suveng</groupId>
-    <artifactId>设计模式</artifactId>
+    <artifactId>design-pattern</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
 
 
 </project>

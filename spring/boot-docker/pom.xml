@@ -10,9 +10,13 @@
 
 
     <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <user>suveng</user>
         <address>192.168.0.215:80</address>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
     </properties>
     <dependencies>
         <dependency>
@@ -69,12 +73,6 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.16</version>
-            </dependency>
 
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -123,6 +121,8 @@
                         </goals>
                     </execution>
                 </executions>
+                <version>${spring-boot.version}</version>
+
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -131,6 +131,7 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
             <plugin>
                 <groupId>com.spotify</groupId>

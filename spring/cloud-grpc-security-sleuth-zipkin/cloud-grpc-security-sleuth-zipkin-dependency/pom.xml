@@ -7,6 +7,23 @@
     <groupId>my.suveng</groupId>
     <artifactId>cloud-grpc-security-sleuth-zipkin-dependency</artifactId>
     <version>1.0.0</version>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <protobuf.version>3.12.3</protobuf.version>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <grpc.version>1.29.0</grpc.version>
+        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <java.version>1.8</java.version>
+        <protobuf.version>3.12.3</protobuf.version>
+        <grpc.version>1.29.0</grpc.version>
+    </properties>
+
+
     <licenses>
         <license>
             <name>Apache 2.0</name>
@@ -21,14 +38,6 @@
             <email>suveng@163.com</email>
         </developer>
     </developers>
-
-    <properties>
-        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
-        <java.version>1.8</java.version>
-        <protobuf.version>3.12.3</protobuf.version>
-        <grpc.version>1.29.0</grpc.version>
-    </properties>
 
 
     <dependencies>

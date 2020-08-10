@@ -10,6 +10,9 @@
     <name>17.dependency</name>
 
     <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <dubbo.version>2.7.4.1</dubbo.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba.verion>2.1.1.RELEASE</spring-cloud-alibaba.verion>
@@ -18,7 +21,6 @@
         <alibaba-seata.version>1.0.0</alibaba-seata.version>
         <alibaba-spring-context-support.version>1.0.5</alibaba-spring-context-support.version>
         <apache-sharding-sphere.version>4.0.0-RC3</apache-sharding-sphere.version>
-
         <okhttp3.version>4.2.2</okhttp3.version>
     </properties>
 

@@ -4,14 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
-
     <groupId>my.suveng</groupId>
     <artifactId>cloud-oauth-rbac</artifactId>
     <version>1.0</version>
@@ -23,11 +15,27 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <protobuf.version>3.12.3</protobuf.version>
+        <grpc.version>1.29.0</grpc.version>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <!-- springcloud版本 -->
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <org.mapstruct.version>1.2.0.CR1</org.mapstruct.version>
     </properties>
-
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- springcloud 依赖管理-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -35,7 +43,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
 
             <!--swagger-->
             <dependency>
@@ -70,6 +77,7 @@
                 <artifactId>druid</artifactId>
                 <version>1.0.15</version>
             </dependency>
+
 
         </dependencies>
     </dependencyManagement>

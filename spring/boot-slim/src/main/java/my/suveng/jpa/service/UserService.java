@@ -1,7 +1,6 @@
 package my.suveng.jpa.service;
 
 import cn.hutool.core.util.RandomUtil;
-import com.sun.org.apache.regexp.internal.RE;
 import my.suveng.jpa.dao.UserRepository;
 import my.suveng.jpa.model.database.User;
 import org.springframework.beans.factory.annotation.Autowired;

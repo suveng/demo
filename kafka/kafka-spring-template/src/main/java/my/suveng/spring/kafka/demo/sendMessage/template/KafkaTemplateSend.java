@@ -1,9 +1,7 @@
 package my.suveng.spring.kafka.demo.sendMessage.template;
 
 import cn.hutool.core.util.IdUtil;
-import cn.hutool.core.util.RandomUtil;
 import com.alibaba.fastjson.JSON;
-import jdk.nashorn.internal.runtime.JSONFunctions;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -13,8 +11,6 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
-import sun.plugin.javascript.JSClassLoader;
-import sun.rmi.runtime.Log;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

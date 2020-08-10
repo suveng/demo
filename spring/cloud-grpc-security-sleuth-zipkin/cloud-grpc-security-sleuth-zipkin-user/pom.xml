@@ -77,7 +77,7 @@
         <!--grpc idl-->
         <dependency>
             <groupId>my.suveng</groupId>
-            <artifactId>grpc-cloud-security-sleuth-zipkin-api</artifactId>
+            <artifactId>cloud-grpc-security-sleuth-zipkin-api</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
@@ -130,10 +130,20 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
