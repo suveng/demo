@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>cloud-grpc-sleuth-zipkin-api</module>
+        <module>cloud-grpc-sleuth-zipkin-dependency</module>
+        <module>cloud-grpc-sleuth-zipkin-order</module>
+        <module>cloud-grpc-sleuth-zipkin-pay</module>
+        <module>cloud-grpc-sleuth-zipkin-user</module>
+    </modules>
+
+    <groupId>my.suveng</groupId>
+    <artifactId>cloud-grpc-sleuth-zipkin</artifactId>
+    <version>1.0.0</version>
+    <name>42.grpc-cloud-sleuth-zipkin-demo</name>
+
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>my.suveng</groupId>
+                <artifactId>cloud-grpc-sleuth-zipkin-dependency</artifactId>
+                <version>1.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

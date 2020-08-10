@@ -6,42 +6,16 @@
     <artifactId>demo</artifactId>
     <version>1.0</version>
     <modules>
-        <module>01.脚手架</module>
-        <module>02.导出复杂样式的Excel</module>
-        <module>03.mongo增删查改</module>
-        <module>04.nginx学习</module>
-        <module>05.spring独立程序</module>
-        <module>06.spring-redis-repository-demo</module>
-        <module>07.spring-validation-demo</module>
-        <module>08.设计模式</module>
-        <module>09.fastjson最佳实践</module>
-        <module>10.guava学习</module>
-        <module>11.spring-cloud-consul-demo</module>
-        <module>12.springboot-docker容器化</module>
-        <module>13.demo-springboot-junit</module>
-        <module>14.demo-spring-cloud-gateway</module>
-        <module>15.spring-boot-source</module>
-        <module>17.demo-spring-oauth2</module>
-        <module>18.JDK学习</module>
-        <module>19.demo-rest</module>
-        <module>20.oauth2-rbac</module>
-        <module>21.xxl-job-demo</module>
-        <module>22.netty-demo</module>
-        <module>23.Java-IO-demo</module>
-        <module>24.spring-application-event</module>
-        <module>25.spring-kafka-demo</module>
-        <module>26.dataway-demo</module>
-        <module>27.json-demo</module>
-        <module>28.thrift-demo</module>
-        <module>29.stat-machine-demo</module>
-        <module>33.security-demo</module>
-        <module>35.es-demo</module>
-        <module>36.kafka-demo</module>
-        <module>41.grpc-cloud-demo</module>
-        <module>42.grpc-cloud-sleuth-zipkin-demo</module>
-        <module>43.jdk-spi</module>
-        <module>44.grpc-cloud-security-sleuth-zipkin-demo</module>
-        <module>46.sharding-jdbc-demo</module>
+        <module>mysql</module>
+        <module>spring</module>
+        <module>java</module>
+        <module>kafka</module>
+        <module>elasticsearch</module>
+        <module>netty</module>
+        <module>mongo</module>
+        <module>redis</module>
+        <module>设计模式</module>
+        <module>guava</module>
     </modules>
     <packaging>pom</packaging>
 

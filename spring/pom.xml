@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>my.suveng</groupId>
+
+    <artifactId>spring</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>boot-application-event</module>
+        <module>boot-dataway</module>
+        <module>boot-docker</module>
+        <module>boot-excel</module>
+        <module>boot-fastjson</module>
+        <module>boot-grpc</module>
+        <module>boot-json</module>
+        <module>boot-junit</module>
+        <module>boot-promethus-simpleclient</module>
+        <module>boot-rest</module>
+        <module>boot-security</module>
+        <module>boot-slim</module>
+        <module>boot-stat-machine</module>
+        <module>boot-thrift</module>
+        <module>boot-validation</module>
+        <module>boot-xxl-job</module>
+        <module>cloud-consul</module>
+        <module>cloud-gateway</module>
+        <module>cloud-grpc</module>
+        <module>cloud-grpc-security-sleuth-zipkin</module>
+        <module>cloud-grpc-sleuth-zipkin</module>
+        <module>cloud-grpc/cloud-grpc-api</module>
+        <module>cloud-oauth</module>
+        <module>cloud-oauth-rbac</module>
+    </modules>
+
+
+</project>

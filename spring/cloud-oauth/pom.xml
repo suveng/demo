@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>my.suveng</groupId>
+    <artifactId>cloud-oauth</artifactId>
+    <version>1.0</version>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>cloud-oauth-dependency</module>
+        <module>cloud-oauth-jdbc</module>
+        <module>cloud-oauth-jwt</module>
+        <module>cloud-oauth-memory</module>
+        <module>cloud-oauth-password-jwt</module>
+        <module>cloud-oauth-resource</module>
+    </modules>
+    <packaging>pom</packaging>
+    <name>17.demo-spring-oauth2</name>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>my.suveng</groupId>
+                <artifactId>cloud-oauth-dependency</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
