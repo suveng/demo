@@ -17,6 +17,7 @@
         <module>redis</module>
         <module>设计模式</module>
         <module>guava</module>
+        <module>数据结构</module>
     </modules>
 
 
