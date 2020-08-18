@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
+ * 自定义获取权限 converter
  * @author suwenguang
  **/
 public class GrpcJwtConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
@@ -26,7 +26,7 @@ public class GrpcJwtConverter implements Converter<Jwt, Collection<GrantedAuthor
 	@Override
 	public Collection<GrantedAuthority> convert(Jwt source) {
 		ArrayList<GrantedAuthority> authorities = new ArrayList<>();
-		// 直接读取source的 map
+		// 直接读取source的 map, 这里建议自行打断点进来看看, 我也是翻看了源码才知道可以自定义这个
 		Map<String, Object> claims = source.getClaims();
 		if (claims == null || claims.isEmpty()) {
 			return authorities;
