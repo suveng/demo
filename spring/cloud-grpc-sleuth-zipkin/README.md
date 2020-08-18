@@ -1,13 +1,17 @@
-## 大概的调用逻辑
-user 调用pay
-user 调用order
+# demo
+文档 [中文] [English]()
 
-## 关键技术点
+## 服务间的调用逻辑
 
-- springboot
-- springboot-grpc springboot整合grpc
-- grpc 接口定义
-- actuator 监控
-- todo:// sleuth zipkin 链路追踪
-- todo:// 注册中心,服务发现, 主要是client调用server的时候负载均衡,可以整合熔断,或者自己代码实现熔断
-- todo:// promethues整合actuator
+cloud-grpc-sleuth-zipkin-user 用 grpc 调用 cloud-grpc-sleuth-zipkin-pay
+cloud-grpc-sleuth-zipkin-user 用 grpc 调用 cloud-grpc-sleuth-zipkin-order
+cloud-grpc-api 是存放 grpc 的 proto 文件
+
+查看 cloud-grpc-sleuth-zipkin-user 中的 controller, 里面简单写了一些测试逻辑
+
+
+## 整合了sleuth和zipkin做链路追踪
+
+查看 cloud-grpc-sleuth-zipkin-user 的 application.yml 配置文件
+其他模块类似, 查看配置即可, 这里没有使用服务发现组件, 写死了 ip
+

@@ -129,11 +129,11 @@ public class SercurityConfig extends ResourceServerConfigurerAdapter {
 		// Add the authentication providers to the manager.
 	AuthenticationManager authenticationManager() {
 		final List<AuthenticationProvider> providers = new ArrayList<>();
-		// basic username+password
+		// 1. basic username+password 的 授权方式
 		providers.add(daoAuthenticationProvider());
 		log.info("加入 basic provider 认证");
 
-		// jwt token
+		// 2. jwt token 授权方式
 		Resource resource = new ClassPathResource("oauth-jwt-public.cer");
 		try {
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -145,7 +145,7 @@ public class SercurityConfig extends ResourceServerConfigurerAdapter {
 			JwtAuthenticationProvider jwtAuthenticationProvider = new JwtAuthenticationProvider(NimbusJwtDecoder.withPublicKey((RSAPublicKey) publicKey).build());
 			// 自定义token extract
 			JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
-			// 这里是扩展
+			// 这里是扩展,获取到权限
 			GrpcJwtConverter grpcJwtConverter = new GrpcJwtConverter();
 			jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grpcJwtConverter);
 			jwtAuthenticationProvider.setJwtAuthenticationConverter(jwtAuthenticationConverter);

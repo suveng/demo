@@ -16,7 +16,7 @@ import org.springframework.scheduling.annotation.AsyncResult;
 import java.util.concurrent.Future;
 
 /**
- *
+ * grpc servic 调用
  * @author suwenguang
  **/
 @org.springframework.stereotype.Service
@@ -35,32 +35,32 @@ public class Service {
 
 	/**
 	 * 异步是没问题的
-	 *
+	 * @see my.suveng.istioclouduserdemo.config.ThreadConfig
 	 */
 	@Async
-	public void t1(){
+	public void asyncPayNoResult(){
 		PayResponse result = payServiceBlockingStub.getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
-		log.info("t1");
+		log.info("pay: getRealNameByUsername ");
 	}
 
 	@Async
-	public void t2(){
+	public void asyncOrderNoResult(){
 		OrderResponse orderResult = orderServiceBlockingStub.getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
-		log.info("t2");
+		log.info("order: getRealNameByUsername");
 	}
 
 	@Async
-	public Future<String> at1(){
+	public Future<String> asyncPayWithResult(){
 		PayResponse result = payServiceBlockingStub.getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
-		log.info("at1");
-		return AsyncResult.forValue("t1");
+		log.info("pay async: getRealNameByUsername");
+		return AsyncResult.forValue("pay async");
 	}
 
 	@Async
-	public Future<String> at2(){
+	public Future<String> asyncOrderWithResult(){
 		OrderResponse orderResult = orderServiceBlockingStub.getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
-		log.info("at2");
-		return AsyncResult.forValue("t2");
+		log.info("order async: getRealNameByUsername");
+		return AsyncResult.forValue("order async");
 	}
 
 }

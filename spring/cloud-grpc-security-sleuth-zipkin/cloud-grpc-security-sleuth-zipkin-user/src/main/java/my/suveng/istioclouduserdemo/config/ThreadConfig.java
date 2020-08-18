@@ -12,7 +12,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Executor;
 
 /**
- *
+ * 异步线程池配置
+ * 使用
  * @author suwenguang
  **/
 @Configuration

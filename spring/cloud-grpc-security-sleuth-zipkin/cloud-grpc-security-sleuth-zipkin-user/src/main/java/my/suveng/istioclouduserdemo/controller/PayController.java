@@ -2,16 +2,11 @@ package my.suveng.istioclouduserdemo.controller;
 
 import brave.Tracer;
 import lombok.extern.slf4j.Slf4j;
-import my.suveng.istio.grpc.api.order.OrderRequest;
-import my.suveng.istio.grpc.api.order.OrderResponse;
 import my.suveng.istio.grpc.api.order.OrderServiceGrpc;
-import my.suveng.istio.grpc.api.pay.PayRequest;
-import my.suveng.istio.grpc.api.pay.PayResponse;
 import my.suveng.istio.grpc.api.pay.PayServiceGrpc;
 import my.suveng.istioclouduserdemo.consumer.Service;
 import my.suveng.model.common.interfaces.response.IMessage;
 import my.suveng.model.common.response.Message;
-import my.suveng.util.json.Jackson;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +36,7 @@ public class PayController {
 
 	@GetMapping("/pay")
 	public IMessage<String> pay() throws ExecutionException, InterruptedException {
-		// 使用原生的是不行的
+		// 使用原生的异步线程/线程池, sleuth无法传递traceId
 		//FutureTask<String> futureTask = new FutureTask<>(new Callable<String>() {
 		//	@Override
 		//	public String call() throws Exception {
@@ -66,22 +61,21 @@ public class PayController {
 		//new Thread(task).start();
 		//String s1 = task.get();
 
-		log.info("1");
 		// 配置sleuth提供线程池, 配合@Async注解使用 能够成功
-		service.t1();
-		service.t2();
+		service.asyncPayNoResult();
+		service.asyncOrderNoResult();
 
-		Future<String> at1 = service.at1();
+		Future<String> asyncPayWithResult = service.asyncPayWithResult();
 
 		try {
-			String s2 = at1.get(100, TimeUnit.MILLISECONDS);
+			String s2 = asyncPayWithResult.get(100, TimeUnit.MILLISECONDS);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 		}
 
-		Future<String> at2 = service.at2();
+		Future<String> asyncOrderWithResult = service.asyncOrderWithResult();
 		try {
-			String s2 = at2.get(100, TimeUnit.MILLISECONDS);
+			String s2 = asyncOrderWithResult.get(100, TimeUnit.MILLISECONDS);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 		}

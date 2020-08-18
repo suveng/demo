@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
+ * 测试 security 的 url 拦截
  * @author suwenguang
  **/
 @RestController
