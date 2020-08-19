@@ -13,26 +13,26 @@ import java.util.List;
 
 /**
  * 启动器
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @SpringBootApplication
 public class AppApplication {
-	@Autowired
-	UserService userService;
+    @Autowired
+    UserService userService;
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext run = SpringApplication.run(AppApplication.class, args);
-		System.out.println("hello,world");
+    public static void main(String[] args) {
+        ConfigurableApplicationContext run = SpringApplication.run(AppApplication.class, args);
+        System.out.println("hello,world");
 
-		UserService userService = (UserService) run.getBean("userService");
+        UserService userService = (UserService) run.getBean("userService");
 
-		userService.insert();
+        userService.insert();
 
-		List<User> users = userService.select();
-		System.out.println(JSON.toJSONString(users));
-	}
-
-
+        List<User> users = userService.select();
+        System.out.println(JSON.toJSONString(users));
+    }
 
 }

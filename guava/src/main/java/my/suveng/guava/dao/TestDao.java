@@ -7,27 +7,31 @@ import my.suveng.guava.model.TestModel;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class TestDao {
-	public static final TestDao SINGLE = new TestDao();
+    public static final TestDao SINGLE = new TestDao();
 
-	public Optional<TestModel> getOne() {
-		return newModel();
+    public Optional<TestModel> getOne() {
+        return newModel();
 
-	}
+    }
 
-	private Optional<TestModel> newModel() {
-		return Optional.absent();
-	}
+    private Optional<TestModel> newModel() {
+        return Optional.absent();
+    }
 
-	/**
-	 * 默认值替换
-	 * @see MoreObjects
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public TestModel getOneDefaultValue() {
-		return MoreObjects.firstNonNull(null, new TestModel());
-	}
+    /**
+     * 默认值替换
+     * 
+     * @see MoreObjects
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public TestModel getOneDefaultValue() {
+        return MoreObjects.firstNonNull(null, new TestModel());
+    }
 }

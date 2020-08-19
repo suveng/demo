@@ -14,16 +14,16 @@ import java.io.IOException;
 @SpringBootTest
 public class JavaIoApplicationTest {
 
-	@Autowired
-	FileIoDemo fileIoDemo;
+    @Autowired
+    FileIoDemo fileIoDemo;
 
-	@Test
-	void fileIo() throws IOException {
-		fileIoDemo.io();
-	}
+    @Test
+    void fileIo() throws IOException {
+        fileIoDemo.io();
+    }
 
-	@Test
-	void load() {
+    @Test
+    void load() {
 
-	}
+    }
 }

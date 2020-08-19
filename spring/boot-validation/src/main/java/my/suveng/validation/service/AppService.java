@@ -14,39 +14,43 @@ import java.util.Set;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Service
 public class AppService {
-	@Autowired
-	private Validator validator;
+    @Autowired
+    private Validator validator;
 
-	@Autowired
-	private Dao dao;
-	/**
-	 * 业务逻辑
-	 * @author suwenguang
-	 * @date 2019/10/31
-	 */
-	public void logic() {
+    @Autowired
+    private Dao dao;
 
-		HelloBo hellobo = dao.getOne();
+    /**
+     * 业务逻辑
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/10/31
+     */
+    public void logic() {
 
-		hellobo.setE("...");
-		if (!ObjectUtils.isEmpty(hellobo) && check(hellobo)){
-			System.out.println("通过校验");
-			return;
-		}
+        HelloBo hellobo = dao.getOne();
 
-		System.out.println("校验失败");
-	}
+        hellobo.setE("...");
+        if (!ObjectUtils.isEmpty(hellobo) && check(hellobo)) {
+            System.out.println("通过校验");
+            return;
+        }
 
-	private boolean check(HelloBo hellobo) {
-		Set<ConstraintViolation<HelloBo>> validate = validator.validate(hellobo);
-		return validate.size() < 1;
-	}
+        System.out.println("校验失败");
+    }
 
-	public void mobile(@Mobile String str) {
+    private boolean check(HelloBo hellobo) {
+        Set<ConstraintViolation<HelloBo>> validate = validator.validate(hellobo);
+        return validate.size() < 1;
+    }
 
-	}
+    public void mobile(@Mobile String str) {
+
+    }
 }

@@ -13,7 +13,9 @@ import java.io.InputStreamReader;
 
 /**
  * 聊天室客户端
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class BroadcastClient {
@@ -27,10 +29,10 @@ public class BroadcastClient {
 
             ChannelFuture channelFuture = bootstrap.connect("localhost", 30301);
             Channel channel = channelFuture.channel();
-            //控制台读取
+            // 控制台读取
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            for (; ; ) {
-                channel.writeAndFlush(bufferedReader.readLine()+"\r\n");
+            for (;;) {
+                channel.writeAndFlush(bufferedReader.readLine() + "\r\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

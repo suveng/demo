@@ -10,20 +10,21 @@ import org.springframework.data.redis.repository.configuration.EnableRedisReposi
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Configuration
 @EnableRedisRepositories
 public class RedsiConfig {
-	@Autowired
-	RedisConnectionFactory redisConnectionFactory;
+    @Autowired
+    RedisConnectionFactory redisConnectionFactory;
 
-	@Bean
-	public RedisTemplate<?, ?> redisTemplate() {
+    @Bean
+    public RedisTemplate<?, ?> redisTemplate() {
 
-		RedisTemplate<byte[], byte[]> template = new RedisTemplate<byte[], byte[]>();
-		template.setConnectionFactory(redisConnectionFactory);
-		return template;
-	}
+        RedisTemplate<byte[], byte[]> template = new RedisTemplate<byte[], byte[]>();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
 
 }

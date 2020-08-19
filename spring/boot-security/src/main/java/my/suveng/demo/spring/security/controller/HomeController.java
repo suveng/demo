@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @Controller
 public class HomeController {
-	@RequestMapping("/home")
-	public String home(){
-		return "home";
-	}
+    @RequestMapping("/home")
+    public String home() {
+        return "home";
+    }
 
-	@RequestMapping("/hello")
-	public String hello(){
-		return "hello";
-	}
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
 
-	@RequestMapping("/")
-	public String index(){
-		return "home";
-	}
+    @RequestMapping("/")
+    public String index() {
+        return "home";
+    }
 
 }

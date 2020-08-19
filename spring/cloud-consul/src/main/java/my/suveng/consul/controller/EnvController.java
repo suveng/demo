@@ -7,19 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @RestController
 public class EnvController {
 
-	@Value("${env.version}")
-	private String version;
+    @Value("${env.version}")
+    private String version;
 
-	@Value("${env.author}")
-	private String author;
+    @Value("${env.author}")
+    private String author;
 
-	@RequestMapping("/get")
-	public String get(){
-		return version + ":" + author;
-	}
+    @RequestMapping("/get")
+    public String get() {
+        return version + ":" + author;
+    }
 }

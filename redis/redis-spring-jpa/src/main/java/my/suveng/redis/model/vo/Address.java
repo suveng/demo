@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Data
@@ -16,9 +17,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Address {
 
-	private String street;
+    private String street;
 
-	private String number;
-
+    private String number;
 
 }

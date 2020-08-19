@@ -14,46 +14,44 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @date 2019-09-01
+ * 
  * @version 1.0.0
  **/
 @Controller
 @RequestMapping("/app")
 public class AppController {
 
-	@Autowired
-	private AppService appService;
-	/**
-	 * description: 增加/修改
-	 * author: suwenguang
-	 * date: 2019-09-01
-	 */
-	@RequestMapping("/save")
-	@ResponseBody
-	public Result save(Female vo){
-		return appService.save(vo);
-	}
+    @Autowired
+    private AppService appService;
 
-	/**
-	 * description: 删除
-	 * author: suwenguang
-	 * date: 2019-09-01
-	 */
-	@RequestMapping("/delete")
-	@ResponseBody
-	public Result delete(String id){
-		return appService.delete(id);
-	}
+    /**
+     * description: 增加/修改 author: suwenguang date: 2019-09-01
+     */
+    @RequestMapping("/save")
+    @ResponseBody
+    public Result save(Female vo) {
+        return appService.save(vo);
+    }
 
-	/**
-	 * description: 查询
-	 * author: suwenguang
-	 * date: 2019-09-01
-	 */
-	@RequestMapping("/list")
-	@ResponseBody
-	public Result list(@RequestBody FemaleVo vo){
-		return appService.list(vo);
-	}
+    /**
+     * description: 删除 author: suwenguang date: 2019-09-01
+     */
+    @RequestMapping("/delete")
+    @ResponseBody
+    public Result delete(String id) {
+        return appService.delete(id);
+    }
+
+    /**
+     * description: 查询 author: suwenguang date: 2019-09-01
+     */
+    @RequestMapping("/list")
+    @ResponseBody
+    public Result list(@RequestBody FemaleVo vo) {
+        return appService.list(vo);
+    }
 }

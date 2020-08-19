@@ -16,31 +16,31 @@ import java.util.Set;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ValidationApplication.class)
 public class MobileTest {
 
-	public void setMobile(@Mobile String mobile){
-		// to do
-	}
+    public void setMobile(@Mobile String mobile) {
+        // to do
+    }
 
-	private static ExecutableValidator executableValidator;
+    private static ExecutableValidator executableValidator;
 
+    @Test
+    public void manufacturerIsNull() throws NoSuchMethodException {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        executableValidator = factory.getValidator().forExecutables();
 
-	@Test
-	public void manufacturerIsNull() throws NoSuchMethodException {
-		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-		executableValidator = factory.getValidator().forExecutables();
+        MobileTest mobileTest = new MobileTest();
 
-		MobileTest mobileTest = new MobileTest();
+        Method method = MobileTest.class.getMethod("setMobile", String.class);
+        Object[] parameterValues = { "1111111" };
+        Set<ConstraintViolation<MobileTest>> violations = executableValidator.validateParameters(mobileTest, method,
+                parameterValues);
 
-		Method method = MobileTest.class.getMethod("setMobile", String.class);
-		Object[] parameterValues = {"1111111"};
-		Set<ConstraintViolation<MobileTest>> violations = executableValidator.validateParameters(
-			mobileTest, method, parameterValues);
-
-		violations.forEach(violation -> System.out.println(violation.getMessage()));
-	}
+        violations.forEach(violation -> System.out.println(violation.getMessage()));
+    }
 }

@@ -12,9 +12,9 @@ import java.util.List;
  **/
 @Data
 public class Foo {
-	// 忽略字段
-	@JsonIgnore
-	private String name;
-	private Integer age;
-	private List<Long> houses;
+    // 忽略字段
+    @JsonIgnore
+    private String name;
+    private Integer age;
+    private List<Long> houses;
 }

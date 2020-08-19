@@ -22,64 +22,63 @@ import java.io.IOException;
 @EnableResourceServer
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
-	@Autowired
-	@Qualifier("resourceTokenStore")
-	TokenStore tokenStore;
-	/**
-	 * 资源安全权限配置
-	 * @author suwenguang
-	 */
+    @Autowired
+    @Qualifier("resourceTokenStore")
+    TokenStore tokenStore;
+
+    /**
+     * 资源安全权限配置
+     * 
+     * @author suwenguang
+     */
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 // 对 "/api/**" 开启认证
-                .anyRequest()
-                .authenticated()
-                .and()
-                .requestMatchers()
-                .antMatchers("/api/**");
+                .anyRequest().authenticated().and().requestMatchers().antMatchers("/api/**");
     }
 
     /**
      * 配置resource使用jwt公钥解密
+     * 
      * @author suwenguang
      */
-	@Override
-	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-		resources.tokenStore(tokenStore);
-	}
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+        resources.tokenStore(tokenStore);
+    }
 
+    /**
+     * resource的TokenStore
+     * 
+     * @author suwenguang
+     */
+    @Bean
+    @Qualifier("resourceTokenStore")
+    public TokenStore tokenStore() {
+        return new JwtTokenStore(jwtTokenEnhancer());
+    }
 
-	/**
-	 * resource的TokenStore
-	 * @author suwenguang
-	 */
-	@Bean
-	@Qualifier("resourceTokenStore")
-	public TokenStore tokenStore() {
-		return new JwtTokenStore(jwtTokenEnhancer());
-	}
-
-
-	/**
-	 * resource的jwt的RSA公钥解密配置
-	 * @author suwenguang
-	 */
-	@Bean(name = "publicJwtTokenEnhancer")
-	public JwtAccessTokenConverter jwtTokenEnhancer() {
-		// 用作JWT转换器
-		JwtAccessTokenConverter converter =  new JwtAccessTokenConverter();
-		Resource resource = new ClassPathResource("oauth-public.cert");
-		String publicKey;
-		try {
-			publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		//设置公钥
-		converter.setVerifierKey(publicKey);
-		return converter;
-	}
+    /**
+     * resource的jwt的RSA公钥解密配置
+     * 
+     * @author suwenguang
+     */
+    @Bean(name = "publicJwtTokenEnhancer")
+    public JwtAccessTokenConverter jwtTokenEnhancer() {
+        // 用作JWT转换器
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        Resource resource = new ClassPathResource("oauth-public.cert");
+        String publicKey;
+        try {
+            publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        // 设置公钥
+        converter.setVerifierKey(publicKey);
+        return converter;
+    }
 
 }
 

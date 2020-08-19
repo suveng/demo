@@ -11,24 +11,24 @@ import java.util.List;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Service
 public class UserService {
-	@Autowired
-	UserRepository userRepository;
+    @Autowired
+    UserRepository userRepository;
 
+    public List<User> select() {
+        return userRepository.findAll();
+    }
 
-	public List<User> select() {
-		return userRepository.findAll();
-	}
-
-	public void insert() {
-		for (int i = 0; i < 1000; i++) {
-			User s = new User();
-			s.setUserName(RandomUtil.randomString(3));
-			s.setPassword(RandomUtil.randomString(3));
-			userRepository.save(s);
-		}
-	}
+    public void insert() {
+        for (int i = 0; i < 1000; i++) {
+            User s = new User();
+            s.setUserName(RandomUtil.randomString(3));
+            s.setPassword(RandomUtil.randomString(3));
+            userRepository.save(s);
+        }
+    }
 }

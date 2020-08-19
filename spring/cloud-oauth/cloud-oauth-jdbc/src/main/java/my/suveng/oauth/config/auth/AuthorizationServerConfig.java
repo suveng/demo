@@ -18,48 +18,47 @@ import javax.sql.DataSource;
 
 /**
  * 认证中心配置
+ * 
  * @author suwenguang
  **/
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-	@Autowired
-	private DataSource dataSource;
-	@Autowired
-	private AuthenticationManager authenticationManager;
-	@Autowired
-	private UserDetailsService userDetailsService;
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private UserDetailsService userDetailsService;
 
-	/**
-	 * 配置token使用jdbc存储
-	 * @author suwenguang
-	 */
-	@Bean
-	public TokenStore tokenStore(){
-		return new JdbcTokenStore(dataSource);
-	}
+    /**
+     * 配置token使用jdbc存储
+     * 
+     * @author suwenguang
+     */
+    @Bean
+    public TokenStore tokenStore() {
+        return new JdbcTokenStore(dataSource);
+    }
 
-	@Bean
-	public ClientDetailsService jdbcClientDetails() {
-		// 基于 JDBC 实现，需要事先在数据库配置客户端信息
-		return new JdbcClientDetailsService(dataSource);
-	}
+    @Bean
+    public ClientDetailsService jdbcClientDetails() {
+        // 基于 JDBC 实现，需要事先在数据库配置客户端信息
+        return new JdbcClientDetailsService(dataSource);
+    }
 
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        // 设置令牌
+        endpoints.userDetailsService(userDetailsService).tokenStore(tokenStore())
+                .authenticationManager(authenticationManager);
+    }
 
-	@Override
-	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		// 设置令牌
-		endpoints.userDetailsService(userDetailsService)
-			.tokenStore(tokenStore())
-			.authenticationManager(authenticationManager);
-	}
-
-
-	@Override
-	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		// 读取客户端配置
-		clients.withClientDetails(jdbcClientDetails());
-	}
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        // 读取客户端配置
+        clients.withClientDetails(jdbcClientDetails());
+    }
 
 }

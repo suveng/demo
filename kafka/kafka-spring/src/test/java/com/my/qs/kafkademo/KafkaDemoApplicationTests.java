@@ -12,31 +12,29 @@ import java.util.concurrent.ExecutionException;
 @SpringBootTest
 class KafkaDemoApplicationTests {
 
-	@Autowired
-	private AdminKafka adminKafka;
-	@Autowired
-	private ProducerKafka producerKafka;
-	@Autowired
-	private ConsumerKafka consumerKafka;
+    @Autowired
+    private AdminKafka adminKafka;
+    @Autowired
+    private ProducerKafka producerKafka;
+    @Autowired
+    private ConsumerKafka consumerKafka;
 
     @Test
     void contextLoads() {
     }
 
-
     @Test
-	void test() throws ExecutionException, InterruptedException {
-//    	adminKafka.createTopic();
-//    	adminKafka.listTopics();
-//		adminKafka.describeTopic();
-//		adminKafka.alterPartition();
-//		adminKafka.describeTopic();
-//		producerKafka.send();
-//		consumerKafka.poll();
-//		consumerKafka.pollByPartition();
-//		consumerKafka.multiConsumer();
-		consumerKafka.multiWorker();
+    void test() throws ExecutionException, InterruptedException {
+        // adminKafka.createTopic();
+        // adminKafka.listTopics();
+        // adminKafka.describeTopic();
+        // adminKafka.alterPartition();
+        // adminKafka.describeTopic();
+        // producerKafka.send();
+        // consumerKafka.poll();
+        // consumerKafka.pollByPartition();
+        // consumerKafka.multiConsumer();
+        consumerKafka.multiWorker();
     }
-
 
 }

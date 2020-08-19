@@ -13,11 +13,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 @Slf4j
 public class SpringApplcationEvent {
-	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(SpringApplcationEvent.class, args);
-		log.info("启动完毕...");
-		log.info("发送事件");
-		context.publishEvent(new DemoEvent(context,"1",1));
-		log.info("发送完毕");
-	}
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(SpringApplcationEvent.class, args);
+        log.info("启动完毕...");
+        log.info("发送事件");
+        context.publishEvent(new DemoEvent(context, "1", 1));
+        log.info("发送完毕");
+    }
 }

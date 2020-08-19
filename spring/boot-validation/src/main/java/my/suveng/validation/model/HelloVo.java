@@ -7,14 +7,15 @@ import javax.validation.constraints.NotNull;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Data
 public class HelloVo {
 
-	@NotNull(message = "不能为空....")
-	private  String a;
+    @NotNull(message = "不能为空....")
+    private String a;
 
-	private  String b;
+    private String b;
 
 }

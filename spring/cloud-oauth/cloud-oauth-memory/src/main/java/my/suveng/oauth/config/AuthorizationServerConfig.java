@@ -14,18 +14,17 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
-	/**
-	 * 配置客户端
-	 * @author suwenguang
-	 */
-	@Override
-	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("client")
-			.secret(passwordEncoder.encode("secret"))
-			.authorizedGrantTypes("authorization_code")
-			.scopes("app")
-			.redirectUris("https://www.baidu.com");
-	}
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+    /**
+     * 配置客户端
+     * 
+     * @author suwenguang
+     */
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.inMemory().withClient("client").secret(passwordEncoder.encode("secret"))
+                .authorizedGrantTypes("authorization_code").scopes("app").redirectUris("https://www.baidu.com");
+    }
 }

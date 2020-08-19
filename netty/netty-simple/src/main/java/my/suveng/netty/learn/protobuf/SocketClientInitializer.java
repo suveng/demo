@@ -15,20 +15,22 @@ import io.netty.util.CharsetUtil;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class SocketClientInitializer extends ChannelInitializer<SocketChannel> {
-	@Override
-	protected void initChannel(SocketChannel ch) throws Exception {
-		ChannelPipeline pipeline = ch.pipeline();
+    @Override
+    protected void initChannel(SocketChannel ch) throws Exception {
+        ChannelPipeline pipeline = ch.pipeline();
 
-		//pipeline.addLast(new LoggingHandler(LogLevel.INFO));
-		pipeline.addLast(new ProtobufVarint32FrameDecoder());
-		pipeline.addLast(new ProtobufDecoder(DataInfoPra.Info.getDefaultInstance()));
-		pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
-		pipeline.addLast(new ProtobufEncoder());
-		pipeline.addLast(new MySocketClientHandler());
+        // pipeline.addLast(new LoggingHandler(LogLevel.INFO));
+        pipeline.addLast(new ProtobufVarint32FrameDecoder());
+        pipeline.addLast(new ProtobufDecoder(DataInfoPra.Info.getDefaultInstance()));
+        pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
+        pipeline.addLast(new ProtobufEncoder());
+        pipeline.addLast(new MySocketClientHandler());
 
-	}
+    }
 }

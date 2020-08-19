@@ -13,30 +13,31 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Documented
-@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
-@Constraint(validatedBy = {MobileValidator.class})
+@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
+@Constraint(validatedBy = { MobileValidator.class })
 @Retention(RUNTIME)
 @Repeatable(Mobile.List.class)
 public @interface Mobile {
 
-	/**
-	 * 错误提示信息，可以写死,也可以填写国际化的key
-	 */
-	String message() default "手机号码不正确";
+    /**
+     * 错误提示信息，可以写死,也可以填写国际化的key
+     */
+    String message() default "手机号码不正确";
 
-	Class<?>[] groups() default {};
+    Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default {};
+    Class<? extends Payload>[] payload() default {};
 
-	String regexp() default "^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])//d{8}$";
+    String regexp() default "^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])//d{8}$";
 
-	@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
-	@Retention(RUNTIME)
-	@Documented
-	@interface List {
-		Mobile[] value();
-	}
+    @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
+    @Retention(RUNTIME)
+    @Documented
+    @interface List {
+        Mobile[] value();
+    }
 }

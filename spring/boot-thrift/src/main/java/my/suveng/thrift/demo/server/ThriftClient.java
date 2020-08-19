@@ -13,24 +13,24 @@ import thrift.generated.PersonService;
  * @author suwenguang
  **/
 public class ThriftClient {
-	public static void main(String[] args) {
-		TTransport tTransport = new TFramedTransport(new TSocket("localhost",9090,3000,2000));
+    public static void main(String[] args) {
+        TTransport tTransport = new TFramedTransport(new TSocket("localhost", 9090, 3000, 2000));
 
-		TProtocol tProtocol = new TCompactProtocol(tTransport);
+        TProtocol tProtocol = new TCompactProtocol(tTransport);
 
-		PersonService.Client client = new PersonService.Client(tProtocol);
+        PersonService.Client client = new PersonService.Client(tProtocol);
 
-		try {
-			// 打开端口, 占用
-			tTransport.open();
-			Person hhh = client.getPersonByUsername("hhh");
-			System.out.println(hhh);
-			client.savePerson(new Person().setAge(123));
-		} catch (TException e) {
-			e.printStackTrace();
-		} finally {
-			tTransport.close();
-		}
-	}
+        try {
+            // 打开端口, 占用
+            tTransport.open();
+            Person hhh = client.getPersonByUsername("hhh");
+            System.out.println(hhh);
+            client.savePerson(new Person().setAge(123));
+        } catch (TException e) {
+            e.printStackTrace();
+        } finally {
+            tTransport.close();
+        }
+    }
 
 }

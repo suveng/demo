@@ -4,13 +4,15 @@ import lombok.Data;
 
 /**
  * hh
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public interface HaBo {
-	Long getOrderId();
+    Long getOrderId();
 
-	Long getCustomerId();
+    Long getCustomerId();
 
-	String getCustomerName();
+    String getCustomerName();
 }

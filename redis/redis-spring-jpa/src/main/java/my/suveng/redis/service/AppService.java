@@ -11,35 +11,33 @@ import java.util.Optional;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Service
 public class AppService {
-	@Autowired
-	PersonRepository repo;
+    @Autowired
+    PersonRepository repo;
 
-	public void basicCrudOperations() {
+    public void basicCrudOperations() {
 
+        Person rand = new Person("rand", "althor");
+        rand.setAddress(new Address("黄埔大道西", "22号"));
+        rand.setExpiration(60L);
 
+        Person save = repo.save(rand);
 
-		Person rand = new Person("rand", "althor");
-		rand.setAddress(new Address("黄埔大道西", "22号"));
-		rand.setExpiration(60L);
+        System.out.println(save.toString());
 
-		Person save = repo.save(rand);
+        Optional<Person> byId = repo.findById(rand.getId());
 
-		System.out.println(save.toString());
+        if (byId.isPresent()) {
+            Person person = byId.get();
+            System.out.println(person.toString());
+        }
 
-		Optional<Person> byId = repo.findById(rand.getId());
+        long count = repo.count();
+        System.out.println(count);
 
-		if (byId.isPresent()) {
-			Person person = byId.get();
-			System.out.println(person.toString());
-		}
-
-		long count = repo.count();
-		System.out.println(count);
-
-
-	}
+    }
 }

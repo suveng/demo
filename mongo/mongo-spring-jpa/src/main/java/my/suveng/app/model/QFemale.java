@@ -9,7 +9,6 @@ import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
 
-
 /**
  * QFemale is a Querydsl query type for Female
  */
@@ -22,13 +21,16 @@ public class QFemale extends EntityPathBase<Female> {
 
     public final StringPath age = createString("age");
 
-    public final ListPath<Male, QMale> boyFriends = this.<Male, QMale>createList("boyFriends", Male.class, QMale.class, PathInits.DIRECT2);
+    public final ListPath<Male, QMale> boyFriends = this.<Male, QMale> createList("boyFriends", Male.class, QMale.class,
+            PathInits.DIRECT2);
 
     public final DateTimePath<java.util.Date> createTime = createDateTime("createTime", java.util.Date.class);
 
-    public final ListPath<Male, QMale> dogs = this.<Male, QMale>createList("dogs", Male.class, QMale.class, PathInits.DIRECT2);
+    public final ListPath<Male, QMale> dogs = this.<Male, QMale> createList("dogs", Male.class, QMale.class,
+            PathInits.DIRECT2);
 
-    public final ListPath<Male, QMale> dreamers = this.<Male, QMale>createList("dreamers", Male.class, QMale.class, PathInits.DIRECT2);
+    public final ListPath<Male, QMale> dreamers = this.<Male, QMale> createList("dreamers", Male.class, QMale.class,
+            PathInits.DIRECT2);
 
     public final StringPath id = createString("id");
 
@@ -51,4 +53,3 @@ public class QFemale extends EntityPathBase<Female> {
     }
 
 }
-

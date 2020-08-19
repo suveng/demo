@@ -14,51 +14,54 @@ import java.util.Set;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @Controller
 public class AppController {
 
-	@Autowired
-	private Validator validator;
+    @Autowired
+    private Validator validator;
 
-	@Autowired
-	private AppService appService;
+    @Autowired
+    private AppService appService;
 
-	/**
-	 * 手动校验
-	 * @author suwenguang
-	 * @date 2019/10/31
-	 */
-	@RequestMapping("/test")
-	@ResponseBody
-	public String hello(HelloVo vo){
+    /**
+     * 手动校验
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/10/31
+     */
+    @RequestMapping("/test")
+    @ResponseBody
+    public String hello(HelloVo vo) {
 
-		Set<ConstraintViolation<HelloVo>> validate = validator.validate(vo);
-		if (validate.size()>0){
-			for (ConstraintViolation<HelloVo> e :
-				validate) {
-				return e.getPropertyPath()+e.getMessage();
-			}
-		}
+        Set<ConstraintViolation<HelloVo>> validate = validator.validate(vo);
+        if (validate.size() > 0) {
+            for (ConstraintViolation<HelloVo> e : validate) {
+                return e.getPropertyPath() + e.getMessage();
+            }
+        }
 
+        appService.logic();
 
-		appService.logic();
+        return "";
+    }
 
-		return "";
-	}
+    /**
+     * 自定义注解校验
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/10/31
+     */
+    @RequestMapping("/mobile")
+    @ResponseBody
+    public String mobile() {
+        String str = " ddddd";
 
-	/**
-	 * 自定义注解校验
-	 * @author suwenguang
-	 * @date 2019/10/31
-	 */
-	@RequestMapping("/mobile")
-	@ResponseBody
-	public String mobile(){
-		String str = " ddddd";
-
-		appService.mobile(str);
-		return "";
-	}
+        appService.mobile(str);
+        return "";
+    }
 }

@@ -15,44 +15,43 @@ import java.util.List;
 @Slf4j
 public class Application {
 
-	public static void main(String[] args) throws IOException {
-		log.info("promethues java exporter 启动...");
-		SpringApplication.run(Application.class, args);
-		log.info("启动完毕!!!");
+    public static void main(String[] args) throws IOException {
+        log.info("promethues java exporter 启动...");
+        SpringApplication.run(Application.class, args);
+        log.info("启动完毕!!!");
 
-		log.info("功能1. 实现一个java 的 exporter , 将数据推送到prometheus中");
-		log.info("功能2. 编写一些接口, 监控其处理耗时, 并把对应指标推送到prometheus中");
+        log.info("功能1. 实现一个java 的 exporter , 将数据推送到prometheus中");
+        log.info("功能2. 编写一些接口, 监控其处理耗时, 并把对应指标推送到prometheus中");
 
+        // 下面是自定义server去做监控, 后面使用spring boot actuator 做监控
+        // int metricServerPort = 18081;
+        // HTTPServer server = new HTTPServer(metricServerPort);
+        // log.info("metricServer启动, 端口:{}", metricServerPort);
 
-		// 下面是自定义server去做监控, 后面使用spring boot actuator 做监控
-		//int metricServerPort = 18081;
-		//HTTPServer server = new HTTPServer(metricServerPort);
-		//log.info("metricServer启动, 端口:{}", metricServerPort);
+        // 每个指标都不一样, 大致都是这样子写
+        HttpApiCounter.http_count.labels("/url", "node1", "v1", "2").inc();
 
-		// 每个指标都不一样, 大致都是这样子写
-		HttpApiCounter.http_count.labels("/url", "node1", "v1", "2").inc();
+        // List<Collector> collectors = new ArrayList<>();
 
-		//List<Collector> collectors = new ArrayList<>();
+        // 打印
+        // printlnCollectors(collectors);
 
-		// 打印
-		//printlnCollectors(collectors);
+        // jvm metrics 数据
+        // DefaultExports.initialize();
 
-		// jvm metrics 数据
-		//DefaultExports.initialize();
+    }
 
-
-	}
-
-	/**
-	 * 打印collectors
-	 * @author suwenguang
-	 */
-	private static void printlnCollectors(List<Collector> collectors) {
-		StringBuilder sb = new StringBuilder("注册的collector  list: ");
-		for (Collector collector : collectors) {
-			sb.append(collector.getClass().getSimpleName()).append(" ");
-		}
-		log.info(sb.toString());
-	}
+    /**
+     * 打印collectors
+     * 
+     * @author suwenguang
+     */
+    private static void printlnCollectors(List<Collector> collectors) {
+        StringBuilder sb = new StringBuilder("注册的collector  list: ");
+        for (Collector collector : collectors) {
+            sb.append(collector.getClass().getSimpleName()).append(" ");
+        }
+        log.info(sb.toString());
+    }
 
 }

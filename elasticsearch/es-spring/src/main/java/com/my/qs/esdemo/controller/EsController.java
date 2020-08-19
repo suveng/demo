@@ -12,37 +12,37 @@ import java.util.List;
 @RestController
 public class EsController {
 
-	@Autowired
-	private EsService esService;
+    @Autowired
+    private EsService esService;
 
-	@GetMapping("/index")
-	public String index(@RequestParam String name){
-		return esService.index(name);
-	}
+    @GetMapping("/index")
+    public String index(@RequestParam String name) {
+        return esService.index(name);
+    }
 
-	@GetMapping("/update")
-	public String update(@RequestParam String name, @RequestParam String updateName){
-		return esService.update(name, updateName);
-	}
+    @GetMapping("/update")
+    public String update(@RequestParam String name, @RequestParam String updateName) {
+        return esService.update(name, updateName);
+    }
 
-	@GetMapping("/search")
-	public String search(@RequestParam String name){
-		return esService.search(name);
-	}
+    @GetMapping("/search")
+    public String search(@RequestParam String name) {
+        return esService.search(name);
+    }
 
-	@GetMapping("/delete")
-	public String delete(@RequestParam String name){
-		return esService.delete(name);
-	}
+    @GetMapping("/delete")
+    public String delete(@RequestParam String name) {
+        return esService.delete(name);
+    }
 
-	@GetMapping("/analyze")
-	public String analyze(@RequestParam String text){
-		return esService.analyze(text);
-	}
+    @GetMapping("/analyze")
+    public String analyze(@RequestParam String text) {
+        return esService.analyze(text);
+    }
 
-	@GetMapping("/autocomplete")
-	@ResponseBody
-	public List<String> autoComplete(@RequestParam String prefix){
-		return esService.autoCompletion(prefix);
-	}
+    @GetMapping("/autocomplete")
+    @ResponseBody
+    public List<String> autoComplete(@RequestParam String prefix) {
+        return esService.autoCompletion(prefix);
+    }
 }

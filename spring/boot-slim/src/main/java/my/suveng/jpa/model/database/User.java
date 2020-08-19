@@ -13,18 +13,17 @@ import lombok.Data;
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(insertable = false, name = "user_id", nullable = false)
-  private Long userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(insertable = false, name = "user_id", nullable = false)
+    private Long userId;
 
-  @Column(name = "user_name")
-  private String userName = "";
+    @Column(name = "user_name")
+    private String userName = "";
 
-  @Column(name = "password")
-  private String password = "";
+    @Column(name = "password")
+    private String password = "";
 
-  
 }

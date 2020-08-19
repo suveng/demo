@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class ApiController {
-	@RequestMapping("/h")
-	public String h(){
-		return "h";
-	}
+    @RequestMapping("/h")
+    public String h() {
+        return "h";
+    }
 }

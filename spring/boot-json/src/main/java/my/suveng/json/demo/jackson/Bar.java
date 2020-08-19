@@ -10,11 +10,11 @@ import java.util.List;
  * @author suwenguang
  **/
 @Data
-@JsonIgnoreProperties(value = {"age", "houses"})
+@JsonIgnoreProperties(value = { "age", "houses" })
 public class Bar<T> {
-	private String name;
-	private Integer age;
-	private List<Long> houses;
-	private T foo;
-	private String testfilter;
+    private String name;
+    private Integer age;
+    private List<Long> houses;
+    private T foo;
+    private String testfilter;
 }

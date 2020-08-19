@@ -4,94 +4,91 @@ import java.util.List;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class DingTalkVo {
 
+    /**
+     * msgtype : text text : {"content":"我就是我, 是不一样的烟火"} at : {"atMobiles":["18320664028"],"isAtAll":false}
+     */
+    private String msgtype;
+    private DingTalkText text;
+    private DingTalkAt at;
 
-	/**
-	 * msgtype : text
-	 * text : {"content":"我就是我, 是不一样的烟火"}
-	 * at : {"atMobiles":["18320664028"],"isAtAll":false}
-	 */
-	private String msgtype;
-	private DingTalkText text;
-	private DingTalkAt at;
+    public DingTalkVo(String msgtype, String content, List<String> atMobiles, Boolean isAtALl) {
+        this.msgtype = msgtype;
+        this.text = new DingTalkText();
+        this.text.content = content;
+        this.at = new DingTalkAt();
+        this.at.atMobiles = atMobiles;
+        this.at.isAtAll = isAtALl;
+    }
 
+    public String getMsgtype() {
+        return msgtype;
+    }
 
-	public DingTalkVo(String msgtype, String content, List<String> atMobiles, Boolean isAtALl) {
-		this.msgtype = msgtype;
-		this.text = new DingTalkText();
-		this.text.content = content;
-		this.at = new DingTalkAt();
-		this.at.atMobiles = atMobiles;
-		this.at.isAtAll = isAtALl;
-	}
+    public void setMsgtype(String msgtype) {
+        this.msgtype = msgtype;
+    }
 
-	public String getMsgtype() {
-		return msgtype;
-	}
+    public DingTalkText getText() {
+        return text;
+    }
 
-	public void setMsgtype(String msgtype) {
-		this.msgtype = msgtype;
-	}
+    public void setText(DingTalkText text) {
+        this.text = text;
+    }
 
-	public DingTalkText getText() {
-		return text;
-	}
+    public DingTalkAt getAt() {
+        return at;
+    }
 
-	public void setText(DingTalkText text) {
-		this.text = text;
-	}
+    public void setAt(DingTalkAt at) {
+        this.at = at;
+    }
 
-	public DingTalkAt getAt() {
-		return at;
-	}
+    public static class DingTalkText {
+        /**
+         * content : 我就是我, 是不一样的烟火
+         */
 
-	public void setAt(DingTalkAt at) {
-		this.at = at;
-	}
+        private String content;
 
-	public static class DingTalkText {
-		/**
-		 * content : 我就是我, 是不一样的烟火
-		 */
+        public String getContent() {
+            return content;
+        }
 
-		private String content;
+        public void setContent(String content) {
+            this.content = content;
+        }
+    }
 
-		public String getContent() {
-			return content;
-		}
+    public static class DingTalkAt {
+        /**
+         * atMobiles : ["18320664028"] isAtAll : false
+         */
 
-		public void setContent(String content) {
-			this.content = content;
-		}
-	}
+        private boolean isAtAll;
+        private List<String> atMobiles;
 
-	public static class DingTalkAt {
-		/**
-		 * atMobiles : ["18320664028"]
-		 * isAtAll : false
-		 */
+        public boolean isIsAtAll() {
+            return isAtAll;
+        }
 
-		private boolean isAtAll;
-		private List<String> atMobiles;
+        public void setIsAtAll(boolean isAtAll) {
+            this.isAtAll = isAtAll;
+        }
 
-		public boolean isIsAtAll() {
-			return isAtAll;
-		}
+        public List<String> getAtMobiles() {
+            return atMobiles;
+        }
 
-		public void setIsAtAll(boolean isAtAll) {
-			this.isAtAll = isAtAll;
-		}
-
-		public List<String> getAtMobiles() {
-			return atMobiles;
-		}
-
-		public void setAtMobiles(List<String> atMobiles) {
-			this.atMobiles = atMobiles;
-		}
-	}
+        public void setAtMobiles(List<String> atMobiles) {
+            this.atMobiles = atMobiles;
+        }
+    }
 }

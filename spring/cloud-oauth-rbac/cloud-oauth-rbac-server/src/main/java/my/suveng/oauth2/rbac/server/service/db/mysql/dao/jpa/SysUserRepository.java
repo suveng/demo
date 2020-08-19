@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * jpa
+ * 
  * @author suwenguang
  **/
-public interface SysUserRepository extends JpaRepository<SysUser,Long> {
+public interface SysUserRepository extends JpaRepository<SysUser, Long> {
 }

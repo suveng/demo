@@ -8,7 +8,6 @@ import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
 
-
 /**
  * QMale is a Querydsl query type for Male
  */
@@ -42,4 +41,3 @@ public class QMale extends BeanPath<Male> {
     }
 
 }
-

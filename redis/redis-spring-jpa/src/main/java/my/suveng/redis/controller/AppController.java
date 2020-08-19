@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * '
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @RestController
 public class AppController {
-	@Autowired
-	private AppService appService;
+    @Autowired
+    private AppService appService;
 
-	@RequestMapping("/redis")
-	public String redis(){
-		appService.basicCrudOperations();
-		return "1";
-	}
+    @RequestMapping("/redis")
+    public String redis() {
+        appService.basicCrudOperations();
+        return "1";
+    }
 }

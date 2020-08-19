@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-	@Autowired
-	Service service;
+    @Autowired
+    Service service;
 
-	@RequestMapping("/pay")
-	public String pay(){
-		service.t1();
-		return "success";
-	}
+    @RequestMapping("/pay")
+    public String pay() {
+        service.t1();
+        return "success";
+    }
 }

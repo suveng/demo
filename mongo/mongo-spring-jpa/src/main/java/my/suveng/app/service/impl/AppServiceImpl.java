@@ -20,54 +20,57 @@ import java.sql.Struct;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @date 2019-09-01
+ * 
  * @version 1.0.0
  **/
 @Service
 public class AppServiceImpl implements AppService {
-	@Autowired
-	private FemaleRepository femaleRepository;
+    @Autowired
+    private FemaleRepository femaleRepository;
 
-	@Override
-	public Result save(Female vo) {
-		if (ObjectUtil.isEmpty(vo)) {
-			return ResultBuilder.build(CodeEnum.CLIENT_EXCEPTION, vo);
-		}
-		Female save = femaleRepository.save(vo);
-		return ResultBuilder.build(CodeEnum.SUCCESS, save);
-	}
+    @Override
+    public Result save(Female vo) {
+        if (ObjectUtil.isEmpty(vo)) {
+            return ResultBuilder.build(CodeEnum.CLIENT_EXCEPTION, vo);
+        }
+        Female save = femaleRepository.save(vo);
+        return ResultBuilder.build(CodeEnum.SUCCESS, save);
+    }
 
-	@Override
-	public Result delete(String id) {
-		if (StrUtil.isBlank(id)) {
-			return ResultBuilder.build(CodeEnum.CLIENT_EXCEPTION, "");
-		}
-		femaleRepository.deleteById(id);
-		return ResultBuilder.build(CodeEnum.SUCCESS, "");
-	}
+    @Override
+    public Result delete(String id) {
+        if (StrUtil.isBlank(id)) {
+            return ResultBuilder.build(CodeEnum.CLIENT_EXCEPTION, "");
+        }
+        femaleRepository.deleteById(id);
+        return ResultBuilder.build(CodeEnum.SUCCESS, "");
+    }
 
-	@Override
-	public Result list(FemaleVo vo) {
-		if (ObjectUtil.isEmpty(vo)) {
-			return ResultBuilder.build(CodeEnum.CLIENT_EXCEPTION, "");
-		}
-		if (ObjectUtil.isEmpty(vo.getPage())) {
-			vo.setPage(1);
-		}
-		if (ObjectUtil.isEmpty(vo.getSize())) {
-			vo.setSize(10);
-		}
+    @Override
+    public Result list(FemaleVo vo) {
+        if (ObjectUtil.isEmpty(vo)) {
+            return ResultBuilder.build(CodeEnum.CLIENT_EXCEPTION, "");
+        }
+        if (ObjectUtil.isEmpty(vo.getPage())) {
+            vo.setPage(1);
+        }
+        if (ObjectUtil.isEmpty(vo.getSize())) {
+            vo.setSize(10);
+        }
 
-		//分页
-		PageRequest pageRequest = PageRequest.of(vo.getPage() - 1, vo.getSize());
+        // 分页
+        PageRequest pageRequest = PageRequest.of(vo.getPage() - 1, vo.getSize());
 
-		//多条件- 精准查询,模糊查询,范围查询
-		Page<Female> res = null;
+        // 多条件- 精准查询,模糊查询,范围查询
+        Page<Female> res = null;
 
-		//时间范围
-		BooleanBuilder builder = new BooleanBuilder();
+        // 时间范围
+        BooleanBuilder builder = new BooleanBuilder();
 
-		return ResultBuilder.build(CodeEnum.SUCCESS,res.getContent());
-	}
+        return ResultBuilder.build(CodeEnum.SUCCESS, res.getContent());
+    }
 }

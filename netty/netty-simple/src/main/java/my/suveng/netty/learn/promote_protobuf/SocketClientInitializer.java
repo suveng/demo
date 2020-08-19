@@ -12,20 +12,22 @@ import my.suveng.netty.learn.protobuf.DataInfoPra;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class SocketClientInitializer extends ChannelInitializer<SocketChannel> {
-	@Override
-	protected void initChannel(SocketChannel ch) throws Exception {
-		ChannelPipeline pipeline = ch.pipeline();
+    @Override
+    protected void initChannel(SocketChannel ch) throws Exception {
+        ChannelPipeline pipeline = ch.pipeline();
 
-		//pipeline.addLast(new LoggingHandler(LogLevel.INFO));
-		pipeline.addLast(new ProtobufVarint32FrameDecoder());
-		pipeline.addLast(new ProtobufDecoder(MessageProto.Message.getDefaultInstance()));
-		pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
-		pipeline.addLast(new ProtobufEncoder());
-		pipeline.addLast(new MySocketClientHandler());
+        // pipeline.addLast(new LoggingHandler(LogLevel.INFO));
+        pipeline.addLast(new ProtobufVarint32FrameDecoder());
+        pipeline.addLast(new ProtobufDecoder(MessageProto.Message.getDefaultInstance()));
+        pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
+        pipeline.addLast(new ProtobufEncoder());
+        pipeline.addLast(new MySocketClientHandler());
 
-	}
+    }
 }

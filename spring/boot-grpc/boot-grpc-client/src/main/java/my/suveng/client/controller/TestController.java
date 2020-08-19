@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class TestController {
-	@Autowired
-	private ApiService apiService;
+    @Autowired
+    private ApiService apiService;
 
-	@GetMapping("/test/grpc")
-	public String tet(){
-		return apiService.grpc();
-	}
+    @GetMapping("/test/grpc")
+    public String tet() {
+        return apiService.grpc();
+    }
 }

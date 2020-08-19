@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 public class SpringComponent {
-	@Autowired
-	private StateMachine<StatEnums, EventEnums> stateMachine;
+    @Autowired
+    private StateMachine<StatEnums, EventEnums> stateMachine;
 
-	public void  send(){
-		stateMachine.start();
-		stateMachine.sendEvent(EventEnums.toReady);
-	}
+    public void send() {
+        stateMachine.start();
+        stateMachine.sendEvent(EventEnums.toReady);
+    }
 }

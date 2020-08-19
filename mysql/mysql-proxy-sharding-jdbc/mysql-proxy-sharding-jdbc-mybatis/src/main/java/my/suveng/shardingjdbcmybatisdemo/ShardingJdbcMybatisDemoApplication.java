@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("my.suveng")
 public class ShardingJdbcMybatisDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ShardingJdbcMybatisDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ShardingJdbcMybatisDemoApplication.class, args);
+    }
 
 }

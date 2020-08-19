@@ -23,44 +23,47 @@ import java.util.concurrent.Future;
 @Slf4j
 public class Service {
 
-	@GrpcClient("pay")
-	private PayServiceGrpc.PayServiceBlockingStub payServiceBlockingStub;
+    @GrpcClient("pay")
+    private PayServiceGrpc.PayServiceBlockingStub payServiceBlockingStub;
 
-	@GrpcClient("order")
-	private OrderServiceGrpc.OrderServiceBlockingStub orderServiceBlockingStub;
+    @GrpcClient("order")
+    private OrderServiceGrpc.OrderServiceBlockingStub orderServiceBlockingStub;
 
-	@Autowired
-	Tracer tracer;
+    @Autowired
+    Tracer tracer;
 
+    /**
+     * 异步是没问题的
+     *
+     */
+    @Async
+    public void t1() {
+        PayResponse result = payServiceBlockingStub
+                .getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
+        log.info("t1");
+    }
 
-	/**
-	 * 异步是没问题的
-	 *
-	 */
-	@Async
-	public void t1(){
-		PayResponse result = payServiceBlockingStub.getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
-		log.info("t1");
-	}
+    @Async
+    public void t2() {
+        OrderResponse orderResult = orderServiceBlockingStub
+                .getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
+        log.info("t2");
+    }
 
-	@Async
-	public void t2(){
-		OrderResponse orderResult = orderServiceBlockingStub.getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
-		log.info("t2");
-	}
+    @Async
+    public Future<String> at1() {
+        PayResponse result = payServiceBlockingStub
+                .getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
+        log.info("at1");
+        return AsyncResult.forValue("t1");
+    }
 
-	@Async
-	public Future<String> at1(){
-		PayResponse result = payServiceBlockingStub.getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
-		log.info("at1");
-		return AsyncResult.forValue("t1");
-	}
-
-	@Async
-	public Future<String> at2(){
-		OrderResponse orderResult = orderServiceBlockingStub.getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
-		log.info("at2");
-		return AsyncResult.forValue("t2");
-	}
+    @Async
+    public Future<String> at2() {
+        OrderResponse orderResult = orderServiceBlockingStub
+                .getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
+        log.info("at2");
+        return AsyncResult.forValue("t2");
+    }
 
 }

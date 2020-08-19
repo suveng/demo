@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class IstioCloudPayDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(IstioCloudPayDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(IstioCloudPayDemoApplication.class, args);
+    }
 
 }

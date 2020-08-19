@@ -13,14 +13,10 @@ import javax.annotation.PostConstruct;
  **/
 @Component
 public class HttpApiCounter {
-	/**
-	 * api请求次数
-	 * 这里设置指标的label值
-	 */
-	public static final Counter http_count = Counter.build()
-		.name("http_count")
-		.labelNames("url", "node","version","reboot_time")
-		.help("机器的url").register();
-
+    /**
+     * api请求次数 这里设置指标的label值
+     */
+    public static final Counter http_count = Counter.build().name("http_count")
+            .labelNames("url", "node", "version", "reboot_time").help("机器的url").register();
 
 }

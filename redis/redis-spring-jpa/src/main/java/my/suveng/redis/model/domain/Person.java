@@ -9,25 +9,26 @@ import org.springframework.data.redis.core.TimeToLive;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 @RedisHash("people")
 @Data
 public class Person {
 
-	@Id
-	String id;
+    @Id
+    String id;
 
-	@TimeToLive
-	private Long expiration;
+    @TimeToLive
+    private Long expiration;
 
-	String firstname;
-	String lastname;
+    String firstname;
+    String lastname;
 
-	Address address;
+    Address address;
 
-	public Person(String firstname, String lastname) {
-		this.firstname=firstname;
-		this.lastname=lastname;
-	}
+    public Person(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 }

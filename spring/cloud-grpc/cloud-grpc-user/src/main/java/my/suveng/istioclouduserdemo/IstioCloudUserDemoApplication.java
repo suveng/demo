@@ -9,10 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class IstioCloudUserDemoApplication {
 
-	public static void main(String[] args) throws InterruptedException {
-		SpringApplication.run(IstioCloudUserDemoApplication.class, args);
+    public static void main(String[] args) throws InterruptedException {
+        SpringApplication.run(IstioCloudUserDemoApplication.class, args);
 
-
-	}
+    }
 
 }

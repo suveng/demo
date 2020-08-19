@@ -22,42 +22,42 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class PayController {
-	public static  Trie trie;
-	@GrpcClient("pay")
-	private PayServiceGrpc.PayServiceBlockingStub payServiceBlockingStub;
+    public static Trie trie;
+    @GrpcClient("pay")
+    private PayServiceGrpc.PayServiceBlockingStub payServiceBlockingStub;
 
-	@GrpcClient("order")
-	private OrderServiceGrpc.OrderServiceBlockingStub orderServiceBlockingStub;
+    @GrpcClient("order")
+    private OrderServiceGrpc.OrderServiceBlockingStub orderServiceBlockingStub;
 
-	@GetMapping("/pay")
-	public IMessage<String> pay() {
-		OrderResponse orderResult = orderServiceBlockingStub.getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
-		PayResponse result = payServiceBlockingStub.getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
-		return Message.successWithData(result.toString());
-	}
+    @GetMapping("/pay")
+    public IMessage<String> pay() {
+        OrderResponse orderResult = orderServiceBlockingStub
+                .getRealNameByUsername(OrderRequest.newBuilder().setPay("true").build());
+        PayResponse result = payServiceBlockingStub
+                .getRealNameByUsername(PayRequest.newBuilder().setMoney("123").build());
+        return Message.successWithData(result.toString());
+    }
 
-	@GetMapping("/add")
-	public IMessage<String> add(){
-		trie = new Trie();
+    @GetMapping("/add")
+    public IMessage<String> add() {
+        trie = new Trie();
 
-		for (int i = 0; i < 100000; i++) {
-			String s = RandomUtil.randomNumbers(5);
-			trie.insert(s);
-		}
+        for (int i = 0; i < 100000; i++) {
+            String s = RandomUtil.randomNumbers(5);
+            trie.insert(s);
+        }
 
-		return Message.success();
-	}
+        return Message.success();
+    }
 
-	@GetMapping("/de")
-	public IMessage<String> de(){
-		for (int i = 0; i < 10000; i++) {
-			trie.delete(RandomUtil.randomNumbers(5));
-		}
+    @GetMapping("/de")
+    public IMessage<String> de() {
+        for (int i = 0; i < 10000; i++) {
+            trie.delete(RandomUtil.randomNumbers(5));
+        }
 
-
-		trie.removeRedundantNode();
-		return Message.success();
-	}
-
+        trie.removeRedundantNode();
+        return Message.success();
+    }
 
 }

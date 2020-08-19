@@ -12,20 +12,20 @@ import org.springframework.beans.factory.annotation.Autowired;
  **/
 class TestControllerTest extends ApplicationTests {
 
-	@Autowired
-	private TestController testController;
+    @Autowired
+    private TestController testController;
 
-	@BeforeEach
-	void setUp() {
-	}
+    @BeforeEach
+    void setUp() {
+    }
 
-	@AfterEach
-	void tearDown() {
-	}
+    @AfterEach
+    void tearDown() {
+    }
 
-	@Test
-	void hello() {
-		String hello = testController.hello();
-		System.out.println(hello);
-	}
+    @Test
+    void hello() {
+        String hello = testController.hello();
+        System.out.println(hello);
+    }
 }

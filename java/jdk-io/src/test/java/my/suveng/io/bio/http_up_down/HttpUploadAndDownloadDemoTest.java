@@ -17,41 +17,42 @@ import java.io.*;
  **/
 class HttpUploadAndDownloadDemoTest extends JavaIoApplicationTest {
 
-	@Test
-	void upload() throws InterruptedException, IOException {
-		Thread.sleep(1000 * 10);
-		RestTemplate restTemplate = new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
-		MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
-		File testFile = new File("/data/logs/test");
-		if (!testFile.exists()){
-			boolean newFile = testFile.createNewFile();
-			if (!newFile){
-				System.out.println("创建测试文件失败");
-				return;
-			}
-		}
+    @Test
+    void upload() throws InterruptedException, IOException {
+        Thread.sleep(1000 * 10);
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
+        File testFile = new File("/data/logs/test");
+        if (!testFile.exists()) {
+            boolean newFile = testFile.createNewFile();
+            if (!newFile) {
+                System.out.println("创建测试文件失败");
+                return;
+            }
+        }
 
-		FileWriter fileWriter = new FileWriter(testFile);
-		for (int i = 0; i < 100; i++) {
-			fileWriter.write(RandomUtil.randomString(64));
-		}
-		fileWriter.flush();
-		fileWriter.close();
+        FileWriter fileWriter = new FileWriter(testFile);
+        for (int i = 0; i < 100; i++) {
+            fileWriter.write(RandomUtil.randomString(64));
+        }
+        fileWriter.flush();
+        fileWriter.close();
 
-		FileInputStream value = new FileInputStream(testFile);
-		value.getFD().sync();
-		FileSystemResource fileSystemResource = new FileSystemResource(testFile);
-		params.add("file", fileSystemResource);
+        FileInputStream value = new FileInputStream(testFile);
+        value.getFD().sync();
+        FileSystemResource fileSystemResource = new FileSystemResource(testFile);
+        params.add("file", fileSystemResource);
 
-		HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(params,headers);
-		ResponseEntity<String> exchange = restTemplate.exchange("http://127.0.0.1:38089/http/upload", HttpMethod.POST, httpEntity, String.class);
-		System.out.println(exchange.getBody());
-	}
+        HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(params, headers);
+        ResponseEntity<String> exchange = restTemplate.exchange("http://127.0.0.1:38089/http/upload", HttpMethod.POST,
+                httpEntity, String.class);
+        System.out.println(exchange.getBody());
+    }
 
-	@Test
-	void download() throws InterruptedException {
-		Thread.sleep(1000 * 10);
+    @Test
+    void download() throws InterruptedException {
+        Thread.sleep(1000 * 10);
 
-	}
+    }
 }

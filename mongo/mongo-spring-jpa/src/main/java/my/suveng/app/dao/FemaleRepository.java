@@ -13,15 +13,18 @@ import java.util.List;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @date 2019-09-01
+ * 
  * @version 1.0.0
  **/
-public interface FemaleRepository extends MongoRepository<Female,String>, QuerydslPredicateExecutor<Female> {
-	Page<Female> findAllByCreateTimeBefore(Date createTime, Pageable pageable);
+public interface FemaleRepository extends MongoRepository<Female, String>, QuerydslPredicateExecutor<Female> {
+    Page<Female> findAllByCreateTimeBefore(Date createTime, Pageable pageable);
 
-	List<Female> findAllByCreateTimeAfter(Date createTime, Pageable pageable);
+    List<Female> findAllByCreateTimeAfter(Date createTime, Pageable pageable);
 
-	Page<Female> findByCreateTimeBetween(Date createTime, Date createTime2, Pageable pageable);
+    Page<Female> findByCreateTimeBetween(Date createTime, Date createTime2, Pageable pageable);
 
 }

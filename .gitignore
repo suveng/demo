@@ -85,3 +85,5 @@ crashlytics-build.properties
 **/mvn
 **/mvnw.cmd
 **/.mvn
+
+**/.cache

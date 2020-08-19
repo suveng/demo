@@ -8,28 +8,30 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * description: 服务器配置
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class HttpServer {
 
-	public static void main(String[] args) throws InterruptedException {
-		EventLoopGroup bossGroup = new NioEventLoopGroup();
-		EventLoopGroup workerGroup = new NioEventLoopGroup();
-		try {
-			//
-			ServerBootstrap serverBootstrap = new ServerBootstrap();
-			serverBootstrap.group(bossGroup, workerGroup);
-			serverBootstrap.channel(NioServerSocketChannel.class);
+    public static void main(String[] args) throws InterruptedException {
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        try {
+            //
+            ServerBootstrap serverBootstrap = new ServerBootstrap();
+            serverBootstrap.group(bossGroup, workerGroup);
+            serverBootstrap.channel(NioServerSocketChannel.class);
 
-			//初始化器
-			serverBootstrap.childHandler(new HttpServerInitializer());
+            // 初始化器
+            serverBootstrap.childHandler(new HttpServerInitializer());
 
-			ChannelFuture channelFuture = serverBootstrap.bind(30301).sync();
-			ChannelFuture sync = channelFuture.channel().closeFuture().sync();
-		} finally {
-			bossGroup.shutdownGracefully();
-			workerGroup.shutdownGracefully();
-		}
-	}
+            ChannelFuture channelFuture = serverBootstrap.bind(30301).sync();
+            ChannelFuture sync = channelFuture.channel().closeFuture().sync();
+        } finally {
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
+        }
+    }
 }

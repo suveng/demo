@@ -18,20 +18,19 @@ import java.util.ArrayList;
  **/
 public class UserDetailServiceImpl implements UserDetailsService {
 
-	@Resource
-	private PasswordEncoder passwordEncoder;
+    @Resource
+    private PasswordEncoder passwordEncoder;
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        if (StrUtil.isBlank(username)) {
+            throw new UsernameNotFoundException("用户名不能为空");
+        }
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		if (StrUtil.isBlank(username)) {
-			throw new UsernameNotFoundException("用户名不能为空");
-		}
+        // 权限列表
+        ArrayList<GrantedAuthority> authorities = new ArrayList<>();
 
-		//权限列表
-		ArrayList<GrantedAuthority> authorities = new ArrayList<>();
+        return new User("user", new BCryptPasswordEncoder().encode("123"), authorities);
 
-		return new User("user", new BCryptPasswordEncoder().encode("123"), authorities);
-
-	}
+    }
 }

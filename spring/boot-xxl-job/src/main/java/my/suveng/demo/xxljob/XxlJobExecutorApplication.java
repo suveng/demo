@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  **/
 @SpringBootApplication
 public class XxlJobExecutorApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(XxlJobExecutorApplication.class);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(XxlJobExecutorApplication.class);
+    }
 }

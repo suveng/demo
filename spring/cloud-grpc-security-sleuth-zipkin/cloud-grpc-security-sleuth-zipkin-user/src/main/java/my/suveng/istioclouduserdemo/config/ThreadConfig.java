@@ -12,25 +12,25 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Executor;
 
 /**
- * 异步线程池配置
- * 使用
+ * 异步线程池配置 使用
+ * 
  * @author suwenguang
  **/
 @Configuration
 @EnableAsync
 public class ThreadConfig extends AsyncConfigurerSupport {
-	@Autowired
-	private BeanFactory beanFactory;
+    @Autowired
+    private BeanFactory beanFactory;
 
-	@Override
-	public Executor getAsyncExecutor() {
-		ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
-		threadPoolTaskExecutor.setCorePoolSize(7);
-		threadPoolTaskExecutor.setMaxPoolSize(42);
-		threadPoolTaskExecutor.setQueueCapacity(11);
-		threadPoolTaskExecutor.setThreadNamePrefix("async-");
-		threadPoolTaskExecutor.initialize();
+    @Override
+    public Executor getAsyncExecutor() {
+        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+        threadPoolTaskExecutor.setCorePoolSize(7);
+        threadPoolTaskExecutor.setMaxPoolSize(42);
+        threadPoolTaskExecutor.setQueueCapacity(11);
+        threadPoolTaskExecutor.setThreadNamePrefix("async-");
+        threadPoolTaskExecutor.initialize();
 
-		return new LazyTraceThreadPoolTaskExecutor(beanFactory, threadPoolTaskExecutor);
-	}
+        return new LazyTraceThreadPoolTaskExecutor(beanFactory, threadPoolTaskExecutor);
+    }
 }

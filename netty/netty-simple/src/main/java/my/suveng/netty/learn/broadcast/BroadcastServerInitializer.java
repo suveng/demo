@@ -11,18 +11,20 @@ import io.netty.util.CharsetUtil;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class BroadcastServerInitializer extends ChannelInitializer<SocketChannel> {
-	@Override
-	protected void initChannel(SocketChannel ch) throws Exception {
-		ChannelPipeline pipeline = ch.pipeline();
+    @Override
+    protected void initChannel(SocketChannel ch) throws Exception {
+        ChannelPipeline pipeline = ch.pipeline();
 
-		pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
-		pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
-		pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-		//自定义handler
-		pipeline.addLast(new BroadcastServerHandler());
-	}
+        pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
+        pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
+        pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
+        // 自定义handler
+        pipeline.addLast(new BroadcastServerHandler());
+    }
 }

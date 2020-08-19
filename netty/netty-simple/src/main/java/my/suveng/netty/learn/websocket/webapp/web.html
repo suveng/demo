@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>client</title>
-</head>
-<body>
-
-<script>
+<!doctype html>
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>client</title> 
+    </head> 
+    <body> 
+        <script>
     var socket;
 
     if (window.WebSocket) {
@@ -53,21 +52,14 @@
     }
 
 
-</script>
 
-<form onsubmit="return false;">
-    <textarea name="message" id="message" cols="200" rows="10"></textarea>
-
-    <button onclick="send(this.form.message.value)">发送数据</button>
-
-    <h3>服务端输出:</h3>
-
-    <textarea name="response" id="response" cols="200" rows="10"></textarea>
-
-    <button onclick="javascript: document.getElementById('response').value='' ">清空内容</button>
-
-</form>
-
-
-</body>
+        </script> 
+        <form onsubmit="return false;"> 
+            <textarea name="message" id="message" cols="200" rows="10"></textarea> 
+            <button onclick="send(this.form.message.value)">发送数据</button> 
+            <h3>服务端输出:</h3> 
+            <textarea name="response" id="response" cols="200" rows="10"></textarea> 
+            <button onclick="javascript: document.getElementById('response').value='' ">清空内容</button> 
+        </form>  
+    </body>
 </html>

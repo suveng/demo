@@ -18,33 +18,26 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/**
-	 * 密码加密
-	 * @author suwenguang
-	 */
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder();
-	}
+    /**
+     * 密码加密
+     * 
+     * @author suwenguang
+     */
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-
-	/**
-	 * 配置用户,password还需要配置encoder
-	 * @author suwenguang
-	 */
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-			.passwordEncoder(passwordEncoder())
-			.withUser("admin")
-			.password(passwordEncoder().encode("123"))
-			.roles("ADMIN")
-			.and()
-			.withUser("user")
-			.password(passwordEncoder().encode("123"))
-			.roles("USER")
-		;
-	}
-
+    /**
+     * 配置用户,password还需要配置encoder
+     * 
+     * @author suwenguang
+     */
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("admin")
+                .password(passwordEncoder().encode("123")).roles("ADMIN").and().withUser("user")
+                .password(passwordEncoder().encode("123")).roles("USER");
+    }
 
 }

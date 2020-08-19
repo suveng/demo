@@ -11,19 +11,22 @@ import io.netty.util.CharsetUtil;
 
 /**
  * description:
+ * 
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class SocketServerInitializer extends ChannelInitializer<SocketChannel> {
-	@Override
-	protected void initChannel(SocketChannel ch) throws Exception {
-		ChannelPipeline pipeline = ch.pipeline();
+    @Override
+    protected void initChannel(SocketChannel ch) throws Exception {
+        ChannelPipeline pipeline = ch.pipeline();
 
-		//pipeline.addLast(new LoggingHandler(LogLevel.INFO));
-		pipeline.addLast("LengthFieldBasedFrameDecoder", new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
-		pipeline.addLast("LengthFieldPrepender", new LengthFieldPrepender(4));
-		pipeline.addLast("StringEncoder", new StringEncoder(CharsetUtil.UTF_8));
-		pipeline.addLast("StringDecoder", new StringDecoder(CharsetUtil.UTF_8));
-		pipeline.addLast("stringSocketHandler", new StringSocketServerHandler());
-	}
+        // pipeline.addLast(new LoggingHandler(LogLevel.INFO));
+        pipeline.addLast("LengthFieldBasedFrameDecoder",
+                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
+        pipeline.addLast("LengthFieldPrepender", new LengthFieldPrepender(4));
+        pipeline.addLast("StringEncoder", new StringEncoder(CharsetUtil.UTF_8));
+        pipeline.addLast("StringDecoder", new StringDecoder(CharsetUtil.UTF_8));
+        pipeline.addLast("stringSocketHandler", new StringSocketServerHandler());
+    }
 }

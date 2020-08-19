@@ -7,7 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
-public interface PersonRepository extends KeyValueRepository<Person,String>,CrudRepository<Person,String> {
+public interface PersonRepository extends KeyValueRepository<Person, String>, CrudRepository<Person, String> {
 }

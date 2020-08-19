@@ -10,111 +10,127 @@ import my.suveng.guava.service.TestService;
 /**
  *
  * @author suwenguang
+ * 
  * @version 1.0.0
  **/
 public class TestController {
 
-	private final TestService testService;
+    private final TestService testService;
 
-	public TestController() {
-		this.testService=TestService.SINGLE;
-	}
+    public TestController() {
+        this.testService = TestService.SINGLE;
+    }
 
-	/**
-	 * 获取test, optional使用demo
-	 * @see Optional
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public TestModel getOne(){
-		Optional<TestModel> one = testService.getOne();
-		return one.or(new TestModel());
-	}
+    /**
+     * 获取test, optional使用demo
+     * 
+     * @see Optional
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public TestModel getOne() {
+        Optional<TestModel> one = testService.getOne();
+        return one.or(new TestModel());
+    }
 
-	/**
-	 * object对象默认值替换空值
-	 *
- 	 * @see MoreObjects
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public TestModel getOneDefaultValue(){
-		return testService.getOneDefaultValue();
-	}
+    /**
+     * object对象默认值替换空值
+     *
+     * @see MoreObjects
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public TestModel getOneDefaultValue() {
+        return testService.getOneDefaultValue();
+    }
 
-	/**
-	 * guava strings的工具方法
-	 * @see com.google.common.base.Strings
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public TestModel stringMethods(){
-		return testService.stringMethods();
-	}
+    /**
+     * guava strings的工具方法
+     * 
+     * @see com.google.common.base.Strings
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public TestModel stringMethods() {
+        return testService.stringMethods();
+    }
 
+    /**
+     * 前置条件检查
+     * 
+     * @see Preconditions
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public void precondition() {
+        // 主要用于算法的参数检查, 一些集合或者数组的大小检查, 类型检查
+        Preconditions.checkElementIndex(9, 10);
+        Preconditions.checkArgument(true);
+        Preconditions.checkNotNull(new Object());
+        Preconditions.checkState(true);
 
-	/**
-	 * 前置条件检查
-	 * @see Preconditions
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public void precondition(){
-		//主要用于算法的参数检查, 一些集合或者数组的大小检查, 类型检查
-		Preconditions.checkElementIndex(9, 10);
-		Preconditions.checkArgument(true);
-		Preconditions.checkNotNull(new Object());
-		Preconditions.checkState(true);
+        // 数组越界
+        Preconditions.checkElementIndex(10, 10);
+        Preconditions.checkArgument(false);
+        Preconditions.checkNotNull(null);
+        Preconditions.checkState(false);
+    }
 
+    /**
+     * object常用方法
+     * 
+     * @see com.google.common.base.Objects
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public void objects() {
+        testService.objects();
+    }
 
-		//数组越界
-		Preconditions.checkElementIndex(10, 10);
-		Preconditions.checkArgument(false);
-		Preconditions.checkNotNull(null);
-		Preconditions.checkState(false);
-	}
+    /**
+     * 排序器
+     * 
+     * @see com.google.common.collect.Ordering
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public void ordering() {
+        testService.ordering();
+    }
 
-	/**
-	 * object常用方法
-	 * @see com.google.common.base.Objects
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public void objects(){
-		testService.objects();
-	}
-
-	/**
-	 * 排序器
-	 * @see com.google.common.collect.Ordering
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public void ordering(){
-		testService.ordering();
-	}
-
-
-	/**
-	 * 异常处理
-	 * @see Throwables 异常封装,用于抛出异常封装,可用于切面,结合aop做一些额外操作
-	 * @author suwenguang
-	 * @date 2019/11/8
-	 */
-	public void throwable(){
-		try {
-			throw new IllegalAccessException();
-		} catch (IllegalAccessException e) {
-			try {
-				Throwables.propagateIfInstanceOf(e,IllegalAccessException.class);
-			} catch (IllegalAccessException ex) {
-				ex.printStackTrace();
-			}
-		}catch (Throwable throwable){
-			throw Throwables.propagate(throwable);
-		}
-	}
-
-
+    /**
+     * 异常处理
+     * 
+     * @see Throwables 异常封装,用于抛出异常封装,可用于切面,结合aop做一些额外操作
+     * 
+     * @author suwenguang
+     * 
+     * @date 2019/11/8
+     */
+    public void throwable() {
+        try {
+            throw new IllegalAccessException();
+        } catch (IllegalAccessException e) {
+            try {
+                Throwables.propagateIfInstanceOf(e, IllegalAccessException.class);
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            }
+        } catch (Throwable throwable) {
+            throw Throwables.propagate(throwable);
+        }
+    }
 
 }

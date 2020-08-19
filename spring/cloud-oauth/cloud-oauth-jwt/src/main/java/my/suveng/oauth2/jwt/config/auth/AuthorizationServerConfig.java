@@ -20,77 +20,69 @@ import javax.sql.DataSource;
 
 /**
  * 认证中心配置
+ * 
  * @author suwenguang
  **/
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
+    /**
+     * 注入默认实现了UserDetailsService的实现类
+     */
+    @Autowired
+    private UserDetailsService userDetailsService;
 
-	/**
-	 * 注入默认实现了UserDetailsService的实现类
-	 */
-	@Autowired
-	private UserDetailsService userDetailsService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
-	@Autowired
-	private AuthenticationManager authenticationManager;
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        // 设置令牌
+        endpoints.userDetailsService(userDetailsService).tokenStore(tokenStore())
+                // 配置用于JWT私钥加密的增强器
+                .tokenEnhancer(jwtTokenEnhancer()).authenticationManager(authenticationManager);
+    }
 
-	@Override
-	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		// 设置令牌
-		endpoints
-				.userDetailsService(userDetailsService)
-				.tokenStore(tokenStore())
-				// 配置用于JWT私钥加密的增强器
-				.tokenEnhancer(jwtTokenEnhancer())
-				.authenticationManager(authenticationManager)
-		;
-	}
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        // 读取客户端配置
+        clients.jdbc(dataSource);
+    }
 
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()")//
+                .allowFormAuthenticationForClients()// 允许check_token
+        ;
+    }
 
-	@Override
-	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		// 读取客户端配置
-		clients.jdbc(dataSource);
-	}
+    @Autowired
+    private DataSource dataSource;
 
+    /**
+     * 配置token JWT存储
+     * 
+     * @author suwenguang
+     */
+    @Bean
+    public TokenStore tokenStore() {
+        return new JwtTokenStore(jwtTokenEnhancer());
+    }
 
-	@Override
-	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		security.tokenKeyAccess("permitAll()")
-				.checkTokenAccess("isAuthenticated()")//
-				.allowFormAuthenticationForClients()//允许check_token
-		;
-	}
-
-
-	@Autowired
-	private DataSource dataSource;
-
-	/**
-	 * 配置token JWT存储
-	 * @author suwenguang
-	 */
-	@Bean
-	public TokenStore tokenStore(){
-		return new JwtTokenStore(jwtTokenEnhancer());
-	}
-
-	/**
-	 * 配置JWT秘钥
-	 * @author suwenguang
-	 */
-	@Bean
-	protected JwtAccessTokenConverter jwtTokenEnhancer() {
-		// 配置jks文件
-		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("oauth-jwt.jks"), "suveng".toCharArray());
-		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-		converter.setKeyPair(keyStoreKeyFactory.getKeyPair("oauth-jwt"));
-		return converter;
-	}
-
-
-
+    /**
+     * 配置JWT秘钥
+     * 
+     * @author suwenguang
+     */
+    @Bean
+    protected JwtAccessTokenConverter jwtTokenEnhancer() {
+        // 配置jks文件
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("oauth-jwt.jks"),
+                "suveng".toCharArray());
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("oauth-jwt"));
+        return converter;
+    }
 
 }

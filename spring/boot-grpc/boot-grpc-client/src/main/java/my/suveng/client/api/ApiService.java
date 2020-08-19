@@ -17,18 +17,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class ApiService {
 
-	@GrpcClient("student")
-	StudentServiceGrpc.StudentServiceBlockingStub studentService;
+    @GrpcClient("student")
+    StudentServiceGrpc.StudentServiceBlockingStub studentService;
 
-	@GrpcClient("student")
-	StudentServiceTwoGrpc.StudentServiceTwoBlockingStub two;
+    @GrpcClient("student")
+    StudentServiceTwoGrpc.StudentServiceTwoBlockingStub two;
 
-
-	public String grpc() {
-		MyRequest hello = MyRequest.newBuilder().setUsername("hello").build();
-		MyResponse realNameByUsername = studentService.getRealNameByUsername(hello);
-		MyRequestTwo build = MyRequestTwo.newBuilder().setUsername("2").build();
-		MyResponseTwo twoRes = this.two.getRealNameByUsername(build);
-		return realNameByUsername+","+twoRes+"";
-	}
+    public String grpc() {
+        MyRequest hello = MyRequest.newBuilder().setUsername("hello").build();
+        MyResponse realNameByUsername = studentService.getRealNameByUsername(hello);
+        MyRequestTwo build = MyRequestTwo.newBuilder().setUsername("2").build();
+        MyResponseTwo twoRes = this.two.getRealNameByUsername(build);
+        return realNameByUsername + "," + twoRes + "";
+    }
 }
