@@ -6,6 +6,8 @@
     <artifactId>demo</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
+
+    <name>1.root</name>
     <modules>
         <module>mysql</module>
         <module>spring</module>

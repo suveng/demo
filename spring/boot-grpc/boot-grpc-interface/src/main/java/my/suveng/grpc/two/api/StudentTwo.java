@@ -16,12 +16,12 @@ public final class StudentTwo {
   }
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MyRequestTwo_descriptor;
-  static final
+  static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_MyRequestTwo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MyResponseTwo_descriptor;
-  static final
+  static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_MyResponseTwo_fieldAccessorTable;
 
@@ -29,7 +29,7 @@ public final class StudentTwo {
       getDescriptor() {
     return descriptor;
   }
-  private static final com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {

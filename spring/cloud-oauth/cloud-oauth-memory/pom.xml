@@ -12,7 +12,6 @@
 
     <artifactId>cloud-oauth-memory</artifactId>
     <version>1.0</version>
-    <name>17.oauth2-memory</name>
 
     <properties>
         <skipTests>true</skipTests>
