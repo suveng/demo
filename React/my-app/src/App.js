@@ -5,6 +5,7 @@ import './App.scss';
 import {Switch, Route, HashRouter} from 'react-router-dom'
 import Home from './views/Home'
 import About from './views/About'
+import AntDesignTest from "./views/AntDesignTest";
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
                     <Switch>
                         <Route component={Home} exact path = "/"/>
                         <Route component={About} path = "/about"/>
+                        <Route component={AntDesignTest} path = "/antdesign"/>
                     </Switch>
                 </HashRouter>
             </div>
