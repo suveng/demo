@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
 // 引入路由
 import {Switch, Route, HashRouter} from 'react-router-dom'
@@ -16,13 +16,16 @@ class App extends React.Component {
     render() {
 
         return (
-            <HashRouter>
-                <Switch>
-                    <Route component={Home} exact path = "/"/>
-                    <Route component={About} path = "/about"/>
-                </Switch>
-            </HashRouter>
-        )
+            <div class="testScss" >
+                <h1 >hello</h1>
+                <HashRouter>
+                    <Switch>
+                        <Route component={Home} exact path = "/"/>
+                        <Route component={About} path = "/about"/>
+                    </Switch>
+                </HashRouter>
+            </div>
+            )
     }
 
 
