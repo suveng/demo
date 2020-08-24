@@ -1,11 +1,7 @@
 import React from 'react';
-import './App.scss';
-
 // 引入路由
-import {Switch, Route, HashRouter} from 'react-router-dom'
-import Home from './views/Home'
-import About from './views/About'
-import AntDesignTest from "./views/AntDesignTest";
+import {HashRouter, Route, Switch} from 'react-router-dom'
+import LoginIndex from "./views/login/LoginIndex";
 
 class App extends React.Component {
 
@@ -17,17 +13,13 @@ class App extends React.Component {
     render() {
 
         return (
-            <div class="testScss" >
-                <h1 >hello</h1>
-                <HashRouter>
-                    <Switch>
-                        <Route component={Home} exact path = "/"/>
-                        <Route component={About} path = "/about"/>
-                        <Route component={AntDesignTest} path = "/antdesign"/>
-                    </Switch>
-                </HashRouter>
-            </div>
-            )
+            <HashRouter>
+                <Switch>
+                    <Route component={LoginIndex} exact path="/"/>
+                </Switch>
+            </HashRouter>
+
+        )
     }
 
 
