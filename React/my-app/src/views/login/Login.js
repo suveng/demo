@@ -13,6 +13,17 @@ class Login extends React.Component {
         console.log("finish");
     }
 
+    newValidate = (rule, val, callback) => {
+        if (!val) {
+            callback();
+        }
+        let validateResult = "err";  // 自定义规则
+        if (!validateResult) {
+            callback('请输入正确的内容！');
+        }
+        callback();
+    }
+
     render() {
         return (
             <Fragment>
@@ -47,7 +58,9 @@ class Login extends React.Component {
                                     {
                                         required: true,
                                         message: '密码不能为空',
-                                    },
+                                    },{
+                                    validator: this.newValidate
+                                    }
                                 ]}
                             >
                                 <Input
