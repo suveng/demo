@@ -1,16 +1,29 @@
 import React, {Fragment} from "react";
-import {Button, Form, Input, Row, Col} from "antd";
+import {Button, Col, Form, Input, Row, Spin, message} from "antd";
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {getToken} from '../../server/Auth'
+
 class Login extends React.Component {
 
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            loading: false,
+            finished: false
+        };
     }
 
     onFinish = () => {
-        console.log("finish");
+        console.log("finish")
+        // this.setState({
+        //     finished: true
+        // })
+    }
+    onFinishFailed = () => {
+        console.log("fail")
+        // this.setState({
+        //     finished: false
+        // })
     }
 
     newValidate = (rule, val) => {
@@ -24,10 +37,24 @@ class Login extends React.Component {
         return Promise.resolve();
     }
 
+    login = () => {
+
+        if (!this.state.finished){
+            message.error('表单验证失败!');
+            return;
+        }
+
+        let form = Form.useForm;
+        console.log(form)
+
+        getToken()
+
+
+    }
     render() {
         return (
             <Fragment>
-                <Form onFinish={this.onFinish()}>
+                <Form onFinish={this.onFinish()} onFinishFailed={this.onFinishFailed()}>
                     <Row>
                         <Col span={6}> </Col>
                         <Col span={10}>
@@ -58,8 +85,8 @@ class Login extends React.Component {
                                     {
                                         required: true,
                                         message: '密码不能为空',
-                                    },{
-                                    validator: this.newValidate
+                                    }, {
+                                        validator: this.newValidate
                                     }
                                 ]}
                             >
@@ -81,6 +108,7 @@ class Login extends React.Component {
                                     <Button
                                         type="primary"
                                         htmlType="submit"
+                                        onClick={this.login}
                                     >
                                         登录
                                     </Button>
@@ -89,29 +117,15 @@ class Login extends React.Component {
                         </Col>
                         <Col span={6}> </Col>
                     </Row>
+                    <Spin size={"large"} tip="Loading..." spinning={this.state.loading} style={{position: "fixed"}}/>
 
-                    <Row>
-                        <Col span={6}> </Col>
-                        <Col span={10}>
-                            <Form.Item shouldUpdate>
-                                {() => (
-                                    <Button
-                                        type="primary"
-                                        htmlType="submit"
-                                        onClick={getToken}
-                                    >
-                                        auth
-                                    </Button>
-                                )}
-                            </Form.Item>
-                        </Col>
-                        <Col span={6}> </Col>
-                    </Row>
 
                 </Form>
             </Fragment>
         );
     }
+
+
 }
 
 export default Login;

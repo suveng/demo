@@ -13,11 +13,11 @@ import querystring from "querystring";
 
 // import React from "react";
 
-export function getToken(){
+export function getToken(username,password){
     let data = {
         grant_type:"password",
-        username:"3698",
-        password:"123",
+        username: username,
+        password: password,
         scope:"app"
     };
     let key = "client";
