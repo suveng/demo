@@ -30,12 +30,10 @@ export function getToken(username,password){
             password: secret
         }
     });
-    basicAuth.request({
+    return basicAuth.request({
         url: '/api/user/center/oauth/token',
         method: "POST",
         data: querystring.stringify(data) // 表单传参
-    }).then(response => {
-        console.log(response);
     })
 
 }
