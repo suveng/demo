@@ -3,7 +3,9 @@ import {Button, Col, Form, Input, message, Row} from "antd";
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {getToken} from '../../server/Auth'
 import  '../../styles/login.scss'
-
+// redux
+import {connect} from "react-redux";
+import {add,update} from "../../redux/action/RootAction";
 
 class Login extends React.Component {
 
@@ -23,7 +25,7 @@ class Login extends React.Component {
     render() {
         return (
             <Fragment>
-                <Form onFinish={this.onFinish()} onFinishFailed={this.onFinishFailed()}>
+                <Form>
                     <Row>
                         <Col span={6}> </Col>
                         <Col span={10}>
@@ -105,13 +107,70 @@ class Login extends React.Component {
                         </Col>
                         <Col span={6}> </Col>
                     </Row>
+
+
+                    <Row>
+                        <Col span={6}> </Col>
+                        <Col span={10}>
+                            <Form.Item shouldUpdate>
+                                {() => (
+                                    <Button
+                                        block={true}
+                                        type="danger"
+                                        onClick={()=>{
+                                            console.log("add")
+                                            this.props.dispatch(add())
+                                        }}
+                                    >
+                                       redux add
+                                    </Button>
+                                )}
+                            </Form.Item>
+                        </Col>
+                        <Col span={6}> </Col>
+                    </Row>
+                    <Row>
+                        <Col span={6}> </Col>
+                        <Col span={10}>
+                            <Form.Item shouldUpdate>
+                                {() => (
+                                    <Button
+                                        block={true}
+                                        type="danger"
+                                        onClick={()=>{
+                                            console.log("update")
+                                            this.props.dispatch(update())
+                                        }}
+                                    >
+                                        redux update
+                                    </Button>
+                                )}
+                            </Form.Item>
+                        </Col>
+                        <Col span={6}> </Col>
+                    </Row>
+                    <Row>
+                        <Col span={6}> </Col>
+                        <Col span={10}>
+                            <Form.Item shouldUpdate>
+                                {() => (
+                                    <Button
+                                        block={true}
+                                        type="danger"
+                                        onClick={()=>{
+
+                                        }}
+                                    >
+                                        get
+                                    </Button>
+                                )}
+                            </Form.Item>
+                        </Col>
+                        <Col span={6}> </Col>
+                    </Row>
                 </Form>
             </Fragment>
         );
-    }
-    onFinish = () => {
-    }
-    onFinishFailed = () => {
     }
 
     newValidate = (rule, val) => {
@@ -125,7 +184,7 @@ class Login extends React.Component {
         return Promise.resolve();
     }
 
-    login = (e) => {
+    login = () => {
         this.setState({
             buttonDisabled: true
         })
@@ -171,9 +230,6 @@ class Login extends React.Component {
 
     }
 
-
-
-
 }
 
-export default Login;
+export default connect()(Login);
