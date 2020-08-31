@@ -192,7 +192,7 @@ brew install flink
 
 [flink配置文件](https://mp.weixin.qq.com/s?__biz=MzIxMTE0ODU5NQ==&mid=2650237495&idx=1&sn=9e4ae9bde1e56a6620041975a13f6c9c&scene=19#wechat_redirect)
 
-### 配置数据源DataSource
+### 配置DataSource
 
 [DataSource介绍](https://mp.weixin.qq.com/s?__biz=MzIxMTE0ODU5NQ==&mid=2650237500&idx=1&sn=ee850cfc108f7922a896c8e4da6c8065&scene=19#wechat_redirect)
 
@@ -214,6 +214,22 @@ brew install flink
 <u>如何自定义DataSource?</u>
 
 [自定义DataSource----zhiseng](https://mp.weixin.qq.com/s?__biz=MzIxMTE0ODU5NQ==&mid=2650237509&idx=1&sn=224ee608bee4c752dbc2b5b625328139&scene=19#wechat_redirect)
+
+
+
+查看flink版本
+
+```bash
+flink --version
+```
+
+
+
+查看flink对应的scala版本
+
+1. 查看flink版本
+2. 去官方网站, 查看对应版本的文档
+3. 找到从源码构建, 里面包含了scala的版本
 
 
 
