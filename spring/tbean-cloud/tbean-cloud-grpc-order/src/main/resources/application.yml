@@ -1,0 +1,25 @@
+spring:
+  # sharding jdbc 读写分离
+  shardingsphere:
+    masterslave:
+      name: ttbean
+      load-balance-algorithm-type: round_robin
+      master-data-source-name: ttbean-master
+      slave-data-source-names: ttbean-slave1
+    datasource:
+      names: ttbean-master,ttbean-slave1
+      ttbean-master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/admin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        username: sdk_dev
+        password: dave
+      ttbean-slave1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/admin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        username: sdktest_admin
+        password: 3rqsV!wdV3jIvO$B
+    props:
+      sql:
+        show: true

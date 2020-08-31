@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.qw</groupId>
+    <artifactId>tbean-cloud</artifactId>
+    <version>1.0.0</version>
+    <modules>
+        <module>tbean-cloud-grpc-api</module>
+        <module>tbean-cloud-grpc-dependency</module>
+        <module>tbean-cloud-grpc-pay</module>
+        <module>tbean-cloud-grpc-order</module>
+    </modules>
+
+    <packaging>pom</packaging>
+    <name>1.root</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.qw</groupId>
+                <artifactId>tbean-cloud-grpc-dependency</artifactId>
+                <version>1.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

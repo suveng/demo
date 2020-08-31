@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: http://192.168.9.220:8848
+      discovery:
+        server-addr: http://192.168.9.220:8848
+  application:
+    name: tbean-order
+  profiles:
+    active: dev
+  zipkin:
+    base-url: http://localhost:9411
+    enabled: false
+  sleuth:
+    sampler:
+      probability: 1
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 28080
+management:
+  server:
+    port: 28081 # 监控的端口
+    
+
+grpc:
+  server: # grpc 服务端配置
+    port: 28083
+  client: # grpc 客户端配置
+    pay:
+      address: 'static://127.0.0.1:18083' # rpc服务的地址
+      negotiation-type: plaintext
