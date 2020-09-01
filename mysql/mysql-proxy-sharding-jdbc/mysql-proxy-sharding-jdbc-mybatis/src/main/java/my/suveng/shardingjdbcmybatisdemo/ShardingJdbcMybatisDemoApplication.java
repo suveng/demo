@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("my.suveng")
+@MapperScan("my.suveng.shardingjdbcmybatisdemo.dao")
 public class ShardingJdbcMybatisDemoApplication {
 
     public static void main(String[] args) {

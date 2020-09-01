@@ -49,3 +49,30 @@ brew install kafka
 
 仔细查看了文件指向, 源文件还是存放在`/usr/local/Cellar` 中
 
+
+
+### shell脚本使用kafka
+
+#### 脚本发送消息
+
+进入bin目录
+
+`kafka-console-producer`
+
+```bash
+# 查看帮助
+kafka-console-producer --help
+# 我当前版本2.6
+# required 参数
+# --bootstrap-server kafka集群地址
+# --topic topic名称
+./kafka-console-producer --bootstrap-server kafka集群地址 --topic topic名称
+
+# 继续输入消息, 按回车发送消息
+```
+
+
+
+#### 脚本消费消息
+
+`kafka-console-consumer`
