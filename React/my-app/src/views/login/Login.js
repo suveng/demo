@@ -6,6 +6,8 @@ import  '../../styles/login.scss'
 // redux
 import {connect} from "react-redux";
 import {add,update} from "../../redux/action/RootAction";
+// withRouter
+import { withRouter } from "react-router-dom";
 
 class Login extends React.Component {
 
@@ -168,6 +170,26 @@ class Login extends React.Component {
                         </Col>
                         <Col span={6}> </Col>
                     </Row>
+
+                    <Row>
+                        <Col span={6}> </Col>
+                        <Col span={10}>
+                            <Form.Item shouldUpdate>
+                                {() => (
+                                    <Button
+                                        block={true}
+                                        type="danger"
+                                        onClick={()=>{
+                                            this.props.history.push("/index");
+                                        }}
+                                    >
+                                        跳转主页
+                                    </Button>
+                                )}
+                            </Form.Item>
+                        </Col>
+                        <Col span={6}> </Col>
+                    </Row>
                 </Form>
             </Fragment>
         );
@@ -232,4 +254,4 @@ class Login extends React.Component {
 
 }
 
-export default connect()(Login);
+export default connect()(withRouter(Login));

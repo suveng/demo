@@ -1,8 +1,8 @@
-package my.suveng.spring.kafka.demo.controller;
+package my.suveng.flink.controller;
 
 import cn.hutool.core.util.RandomUtil;
-import my.suveng.spring.kafka.demo.FlinkKafkaSourceApplicationTests;
-import my.suveng.spring.kafka.demo.send.KafkaTemplateSend;
+import my.suveng.flink.FlinkKafkaSourceApplicationTests;
+import my.suveng.flink.send.KafkaTemplateSend;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

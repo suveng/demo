@@ -1,4 +1,4 @@
-package my.suveng.spring.kafka.demo.config;
+package my.suveng.flink.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;

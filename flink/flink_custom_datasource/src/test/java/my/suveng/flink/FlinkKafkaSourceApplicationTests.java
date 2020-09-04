@@ -1,4 +1,4 @@
-package my.suveng.spring.kafka.demo;
+package my.suveng.flink;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

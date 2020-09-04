@@ -1,4 +1,4 @@
-package my.suveng.spring.kafka.demo.send;
+package my.suveng.flink.send;
 
 import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSON;

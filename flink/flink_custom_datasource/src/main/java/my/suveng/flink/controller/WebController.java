@@ -1,8 +1,8 @@
-package my.suveng.spring.kafka.demo.controller;
+package my.suveng.flink.controller;
 
 import cn.hutool.core.date.DateUtil;
 import lombok.extern.slf4j.Slf4j;
-import my.suveng.spring.kafka.demo.send.KafkaTemplateSend;
+import my.suveng.flink.send.KafkaTemplateSend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

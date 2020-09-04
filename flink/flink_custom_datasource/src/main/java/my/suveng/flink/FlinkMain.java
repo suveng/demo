@@ -1,4 +1,4 @@
-package my.suveng.spring.kafka.demo;
+package my.suveng.flink;
 
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
@@ -13,6 +13,24 @@ import java.util.Properties;
  **/
 public class FlinkMain {
 	public static void main(String[] args) throws Exception {
+		// 1. flink 程序使用 内置的kafka source
+		//builtInKafkaSource();
+		// 2. flink 程序使用 自定义的mysql source
+		customMySQLSource();
+	}
+
+	/**
+	 * 使用自定义的mysql datasource
+	 */
+	private static void customMySQLSource() {
+		//
+
+	}
+
+	/**
+	 * 使用内置的kafka datasource
+	 */
+	private static void  builtInKafkaSource() throws Exception {
 		// 不断读取kafka数据
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
