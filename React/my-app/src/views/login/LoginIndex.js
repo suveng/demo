@@ -6,9 +6,8 @@ import React from 'react';
 import {Layout} from 'antd';
 // 表单 icon
 import HeaderCompnent from "../layout/HeaderComponent";
-import RightSiderCompnent from "../layout/RightSiderComponent";
 import LeftSiderCompnent from "../layout/LeftSiderComponent";
-import FooterCompnent from "../layout/FooterComponent";
+import CommonFooter from "../layout/CommonFooter";
 import Login from "./Login";
 
 
@@ -28,18 +27,15 @@ class LoginIndex extends React.Component {
         return (
             <div>
                 <Layout>
-                    <HeaderCompnent/>
-                    <Layout>
-
-                        <RightSiderCompnent/>
+                    <LeftSiderCompnent/>
+                    <Layout className="login-content">
+                        <HeaderCompnent/>
                         <Content className='content-css'>
                             <Login/>
                         </Content>
-
-                        <LeftSiderCompnent/>
+                        <CommonFooter/>
                     </Layout>
 
-                    <FooterCompnent/>
                 </Layout>
 
 

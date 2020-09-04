@@ -5,20 +5,23 @@ import React from "react";
 // ant design
 import {Layout} from 'antd';
 // 布局
-const {Sider} = Layout;
+const {Footer} = Layout;
 
-class RightSiderCompnent extends React.Component {
+class CommonFooter extends React.Component {
 
     constructor(props, context) {
         super(props, context);
         this.state={};
+
     }
 
     render() {
         return (
-            <Sider className='right-sider-css' />
+            <Footer className='footer-css' style={{textAlign: "center"}}>
+               First React APP  ©2020 Created by suveng
+            </Footer>
         )
     }
 }
 
-export default RightSiderCompnent;
+export default CommonFooter;
