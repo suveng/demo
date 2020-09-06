@@ -8,6 +8,12 @@
 
 ### 静态路由
 
+#### 跳转前确认
+
+React Router 提供一个 routerWillLeave 生命周期钩子，这使得 React 组件可以拦截正在发生的跳转，或在离开 route 前提示用户
+
+
+
 
 
 ### 动态路由
