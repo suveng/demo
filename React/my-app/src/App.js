@@ -5,7 +5,6 @@ import LoginIndex from "./views/login/LoginIndex";
 import {Provider} from "react-redux";
 import {createStore} from "redux";
 import RootReducer from "./redux/reducer/RootReducer";
-import Welcome from "./views/welcome/Welcome";
 import Index from "./views/index/Index";
 
 let store = createStore(RootReducer)
@@ -26,8 +25,7 @@ class App extends React.Component {
                 <HashRouter>
                     <Switch>
                         <Route component={LoginIndex} exact path="/"/>
-                        <Route component={Index} exact path="/index"/>
-                        <Route component={Welcome} exact path="/welcome"/>
+                        <Route component={Index} path="/index"/>
                     </Switch>
                 </HashRouter>
             </Provider>

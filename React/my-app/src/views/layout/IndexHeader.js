@@ -23,7 +23,7 @@ class IndexHeader extends React.Component {
                     <Row style={{height: '100%'}}>
                         <Col style={{height: '100%'}}>
 
-                            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                            <Menu theme="dark" mode="horizontal">
                                 <SubMenu key="sub1" icon={<UserOutlined/>} title="用户">
                                     <Menu.Item key="1">设置</Menu.Item>
                                     <Menu.Item key="2">空间</Menu.Item>

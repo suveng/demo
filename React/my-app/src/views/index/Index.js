@@ -4,6 +4,7 @@ import {Layout} from 'antd';
 import CommonFooter from "../layout/CommonFooter";
 import IndexHeader from "../layout/IndexHeader";
 import IndexSider from "../layout/IndexSider";
+import ContentRouter from "../../router/ContentRouter";
 
 
 const {Content} = Layout;
@@ -23,7 +24,9 @@ class Index extends React.Component {
                     <IndexSider/>
                     <Layout>
                         <IndexHeader/>
-                        <Content> Content </Content>
+                        <Content>
+                            <ContentRouter/>
+                        </Content>
                         <CommonFooter/>
                     </Layout>
                 </Layout>

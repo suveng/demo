@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 import {Layout, Menu} from "antd";
 import RouterConfig from "../../router/RouterConfig";
+import {Link} from "react-router-dom";
 
 const {SubMenu} = Menu;
 const {Sider} = Layout;
@@ -64,7 +65,10 @@ class IndexSider extends React.Component {
      * @returns {JSX.Element}
      */
     renderMenu = ({title, key, icon}) => {
-        return <Menu.Item key={key} icon={icon && icon.render()} >{title}</Menu.Item>
+        return (
+        <Menu.Item key={key} icon={icon && icon.render()}>
+            <Link to={key}><span>{title}</span></Link>
+        </Menu.Item>)
     }
 }
 
