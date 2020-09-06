@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-class UserList extends React.Component {
+class Add extends React.Component {
 
     constructor(props, context) {
         super(props, context);
@@ -11,10 +11,10 @@ class UserList extends React.Component {
         return (
 
             <Fragment>
-                user list
+                user add
             </Fragment>
         )
     }
 }
 
-export default UserList
+export default Add

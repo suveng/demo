@@ -5,7 +5,7 @@ import LoginIndex from "./views/login/LoginIndex";
 import {Provider} from "react-redux";
 import {createStore} from "redux";
 import RootReducer from "./redux/reducer/RootReducer";
-import Index from "./views/index/Index";
+import Index from "./views/modules/Index";
 
 let store = createStore(RootReducer)
 

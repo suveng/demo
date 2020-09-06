@@ -5,9 +5,9 @@ import React from 'react';
 // ant design
 import {Layout} from 'antd';
 // 表单 icon
-import HeaderCompnent from "../layout/HeaderComponent";
-import LeftSiderCompnent from "../layout/LeftSiderComponent";
-import CommonFooter from "../layout/CommonFooter";
+import HeaderCompnent from "../../layout/LoginHeader";
+import LeftSiderCompnent from "../../layout/LoginLeftSider";
+import CommonFooter from "../../layout/CommonFooter";
 import Login from "./Login";
 
 

@@ -1,9 +1,9 @@
 import React, {Fragment} from "react";
 
 import {Layout} from 'antd';
-import CommonFooter from "../layout/CommonFooter";
-import IndexHeader from "../layout/IndexHeader";
-import IndexSider from "../layout/IndexSider";
+import CommonFooter from "../../layout/CommonFooter";
+import IndexHeader from "../../layout/IndexHeader";
+import IndexSider from "../../layout/IndexSider";
 import ContentRouter from "../../router/ContentRouter";
 
 

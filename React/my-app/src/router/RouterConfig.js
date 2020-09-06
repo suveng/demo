@@ -4,7 +4,7 @@ const RouterConfig = [
     {
       title: '控制台',
       icon: UserOutlined,
-      key: '/index'
+      key: '/index/console'
     },
     {
       title: '用户管理',

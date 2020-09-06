@@ -1,10 +1,11 @@
 import React, {Fragment} from "react";
 import {Layout, Menu} from "antd";
-import RouterConfig from "../../router/RouterConfig";
+import RouterConfig from "../router/RouterConfig";
 import {Link} from "react-router-dom";
 
 const {SubMenu} = Menu;
 const {Sider} = Layout;
+
 
 class IndexSider extends React.Component {
 

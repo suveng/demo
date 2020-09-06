@@ -1,5 +1,5 @@
 // css
-import './../../styles/layout.scss'
+import '../styles/layout.scss'
 
 import React from "react";
 // ant design
