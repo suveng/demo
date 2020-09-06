@@ -16,7 +16,7 @@ files.keys().map((key) => {
     jsonObj.path = path;
     jsonObj.component = component;
     AutoConfigRouter.push(jsonObj);
-    console.log(AutoConfigRouter)
+    return true;
 })
 
 
