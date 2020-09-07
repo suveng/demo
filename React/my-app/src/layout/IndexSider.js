@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import {Layout, Menu} from "antd";
-import RouterConfig from "../router/RouterConfig";
+import IndexSiderRouterConfig from "../router/IndexSiderRouterConfig";
 import {Link} from "react-router-dom";
 
 const {SubMenu} = Menu;
@@ -27,7 +27,7 @@ class IndexSider extends React.Component {
                         style={{height: '100%', borderRight: 0}}
                     >
                         {
-                            RouterConfig && RouterConfig.map((item) => {
+                            IndexSiderRouterConfig && IndexSiderRouterConfig.map((item) => {
                                 return item.child && item.child.length > 0 ? this.renderSubMenu(item) : this.renderMenu(item);
                             })
                         }

@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 
-const RouterConfig = [
+const IndexSiderRouterConfig = [
     {
       title: '控制台',
       icon: UserOutlined,
@@ -46,4 +46,4 @@ const RouterConfig = [
     }
   ]
 
-  export default RouterConfig;
+  export default IndexSiderRouterConfig;

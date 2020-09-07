@@ -25,6 +25,7 @@ class App extends React.Component {
                 <HashRouter>
                     <Switch>
                         <Route component={LoginIndex} exact path="/"/>
+                        <Route component={LoginIndex} exact path="/login"/>
                         <Route component={Index} path="/index"/>
                     </Switch>
                 </HashRouter>
