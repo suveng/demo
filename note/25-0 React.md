@@ -332,7 +332,7 @@ https://ant.design/docs/react/use-with-create-react-app-cn
 
 
 
-#### 内存对象
+##### 内存对象
 
 存储在react的对象中
 
@@ -344,7 +344,7 @@ https://ant.design/docs/react/use-with-create-react-app-cn
 
 - 全局失效
 
-#### cookie
+##### cookie
 
 1. cookie是存储在浏览器上的一小段数据，用来记录某些当页面关闭或者刷新后仍然需要记录的信息。在控制台用 「document.cookie」查看你当前正在浏览的网站的cookie。
 2. cookie可以使用 js 在浏览器直接设置（用于记录不敏感信息，如用户名）, 也可以在服务端通使用 HTTP 协议规定的 set-cookie 来让浏览器种下cookie，这是最常见的做法。（打开一个网站，清除全部cookie，然后刷新页面，在network的Response headers试试找一找set-cookie吧）
@@ -371,7 +371,7 @@ https://ant.design/docs/react/use-with-create-react-app-cn
 
 
 
-#### session storage 
+##### session storage 
 
 用来存储客户端临时信息的对象
 
@@ -390,7 +390,7 @@ https://ant.design/docs/react/use-with-create-react-app-cn
 
 
 
-#### local storage 
+##### local storage 
 
 本地存储
 
