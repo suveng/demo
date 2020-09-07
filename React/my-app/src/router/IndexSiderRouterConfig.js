@@ -3,7 +3,6 @@ import { UserOutlined } from '@ant-design/icons';
 const IndexSiderRouterConfig = [
     {
       title: '控制台',
-      icon: UserOutlined,
       key: '/index/console'
     },
     {
@@ -36,14 +35,6 @@ const IndexSiderRouterConfig = [
         {key: '/home/entry/form/step-form', title: '添加职位', }
       ]
     },
-    {
-      title: '请假',
-      key: '/home/about'
-    },
-    {
-      title: '加班',
-      key: '/home/abouta'
-    }
   ]
 
   export default IndexSiderRouterConfig;

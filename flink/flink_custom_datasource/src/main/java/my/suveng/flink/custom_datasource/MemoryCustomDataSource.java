@@ -1,5 +1,6 @@
 package my.suveng.flink.custom_datasource;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.checkpoint.CheckpointedFunction;
 import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
@@ -8,7 +9,11 @@ import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
  *
  * @author suwenguang
  **/
-public class MysqlCustomDataSource extends RichSourceFunction<String> {
+@Slf4j
+public class MemoryCustomDataSource extends RichSourceFunction<String> {
+
+	private volatile boolean isRunning = true;
+
 	/**
 	 * Starts the source. Implementations can use the {@link SourceContext} emit
 	 * elements.
@@ -62,7 +67,10 @@ public class MysqlCustomDataSource extends RichSourceFunction<String> {
 	 */
 	@Override
 	public void run(SourceContext<String> ctx) throws Exception {
-
+		while (isRunning) {
+			// collect 收集数据
+			ctx.collect(String.valueOf(System.currentTimeMillis() % 10));
+		}
 	}
 
 	/**
@@ -82,16 +90,19 @@ public class MysqlCustomDataSource extends RichSourceFunction<String> {
 	 */
 	@Override
 	public void cancel() {
-
+		//	中断 执行的回调
+		//	1. 肯定在中断前调用此方法
+		log.info("中断");
 	}
 
 	@Override
 	public void open(Configuration parameters) throws Exception {
-		super.open(parameters);
+		log.info("开始");
+		//super.open(parameters);
 	}
 
 	@Override
 	public void close() throws Exception {
-		super.close();
+		log.info("结束");
 	}
 }

@@ -1,5 +1,6 @@
 package my.suveng.flink;
 
+import my.suveng.flink.custom_datasource.MemoryCustomDataSource;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -16,14 +17,17 @@ public class FlinkMain {
 		// 1. flink 程序使用 内置的kafka source
 		//builtInKafkaSource();
 		// 2. flink 程序使用 自定义的mysql source
-		customMySQLSource();
+		customDataSource();
 	}
 
 	/**
-	 * 使用自定义的mysql datasource
+	 * 使用自定义的  datasource
 	 */
-	private static void customMySQLSource() {
+	private static void customDataSource() throws Exception {
 		//
+		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+		env.addSource(new MemoryCustomDataSource()).print();
+		env.execute("自定义数据源");
 
 	}
 

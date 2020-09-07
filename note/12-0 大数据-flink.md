@@ -238,9 +238,19 @@ flink --version
    - RichSourceFuction
 2. 实现SourceFuction 接口
    - run() : 不断的产生数据
-   - cancel(): 关闭产生数据
+   - cancel(): 中断前的回调
+   - open() 生命周期, 启动打开数据源的方法
+   - close() 生命周期, 关闭数据源的方法
 
-### 配置DataSink
+RichSourceFuction 抽象类 实现 SourceFuction接口
+
+RichSourceFuction的子类
+
+- MessageAcknowledgingSourceBase 抽象类  消息队列场景, 基于消息ID
+- MultipleIdsMessageAcknowledgingSourceBase 抽象类 支持两种 ID 应答模型：session id 和 unique message id
+- ContinuousFileMonitoringFunction 监视文件
+
+### 配置DataSink 
 
 1. 内置的sink
 2. 自定义sink
