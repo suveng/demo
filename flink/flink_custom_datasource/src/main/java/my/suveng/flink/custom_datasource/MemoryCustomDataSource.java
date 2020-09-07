@@ -5,6 +5,8 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.checkpoint.CheckpointedFunction;
 import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  *
  * @author suwenguang
@@ -70,6 +72,7 @@ public class MemoryCustomDataSource extends RichSourceFunction<String> {
 		while (isRunning) {
 			// collect 收集数据
 			ctx.collect(String.valueOf(System.currentTimeMillis() % 10));
+			Thread.sleep(1000);
 		}
 	}
 

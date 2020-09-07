@@ -1,6 +1,7 @@
 package my.suveng.flink;
 
 import my.suveng.flink.custom_datasource.MemoryCustomDataSource;
+import my.suveng.flink.custom_sink.LogCustomSink;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -29,7 +30,7 @@ public class FlinkService {
 	/**
 	 * 使用内置的kafka datasource
 	 */
-	private  void  builtInKafkaSource() throws Exception {
+	public  void  builtInKafkaSource() throws Exception {
 		// 不断读取kafka数据
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
@@ -53,4 +54,19 @@ public class FlinkService {
 
 		env.execute("Flink add data source");
 	}
+
+	/**
+	 * 自定义source 自定义sink
+	 */
+	public void custom_source_custom_sink() throws Exception {
+		final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
+
+		DataStreamSource<String> dataStreamSource = env.addSource(new MemoryCustomDataSource());
+
+		dataStreamSource.addSink(new LogCustomSink());
+
+
+		env.execute("custom_source_custom_sink");
+	}
+
 }
