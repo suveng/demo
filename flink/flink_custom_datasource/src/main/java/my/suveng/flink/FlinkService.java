@@ -5,25 +5,20 @@ import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
+import org.springframework.stereotype.Service;
 
 import java.util.Properties;
 
 /**
- * flink 程序
+ *
  * @author suwenguang
  **/
-public class FlinkMain {
-	public static void main(String[] args) throws Exception {
-		// 1. flink 程序使用 内置的kafka source
-		//builtInKafkaSource();
-		// 2. flink 程序使用 自定义的mysql source
-		customDataSource();
-	}
-
+@Service
+public class FlinkService {
 	/**
 	 * 使用自定义的  datasource
 	 */
-	private static void customDataSource() throws Exception {
+	void customDataSource() throws Exception {
 		//
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 		env.addSource(new MemoryCustomDataSource()).print();
@@ -34,7 +29,7 @@ public class FlinkMain {
 	/**
 	 * 使用内置的kafka datasource
 	 */
-	private static void  builtInKafkaSource() throws Exception {
+	private  void  builtInKafkaSource() throws Exception {
 		// 不断读取kafka数据
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
