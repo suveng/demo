@@ -318,6 +318,88 @@ https://ant.design/docs/react/use-with-create-react-app-cn
 
 
 
-### 数据存储redux
+### 数据存储
 
 
+
+#### 存储方式
+
+- 内存对象
+- cookie
+- session storage
+- local storage
+- redux
+
+
+
+##### 内存对象
+
+存储在react的对象中
+
+优点: 
+
+- 简单方便
+
+缺点:
+
+- 全局失效
+
+##### cookie
+
+1. cookie是存储在浏览器上的一小段数据，用来记录某些当页面关闭或者刷新后仍然需要记录的信息。在控制台用 「document.cookie」查看你当前正在浏览的网站的cookie。
+2. cookie可以使用 js 在浏览器直接设置（用于记录不敏感信息，如用户名）, 也可以在服务端通使用 HTTP 协议规定的 set-cookie 来让浏览器种下cookie，这是最常见的做法。（打开一个网站，清除全部cookie，然后刷新页面，在network的Response headers试试找一找set-cookie吧）
+3. 每次网络请求 Request headers 中都会带上cookie。所以如果 cookie 太多太大对传输效率会有影响。
+4. 一般浏览器存储cookie 最大容量为4k，所以大量数据不要存到cookie。
+5. 设置cookie时的参数：
+
+- - path：表示 cookie 影响到的路径，匹配该路径才发送这个 cookie。expires 和 maxAge：告诉浏览器 cookie 时候过期，maxAge 是 cookie 多久后过期的相对时间。不设置这两个选项时会产生 session cookie，session cookie 是 transient 的，当用户关闭浏览器时，就被清除。一般用来保存 session 的 session_id。
+  - secure：当 secure 值为 true 时，cookie 在 HTTP 中是无效，在 HTTPS 中才有效
+  - httpOnly：浏览器不允许脚本操作 document.cookie 去更改 cookie。一般情况下都应该设置这个为 true，这样可以避免被 xss 攻击拿到 cookie。[[cookie 参数\]](https://link.zhihu.com/?target=https%3A//github.com/alsotang/node-lessons/tree/master/lesson16)[[简述 Cookie 是什么\]](https://zhuanlan.zhihu.com/p/22396872?refer=study-fe)
+
+优点: 
+
+- 全局使用
+- 时效性极高的扩展性和可用性
+
+缺点: 
+
+- 容量小, 4k
+
+- 每个特定的域名下最多生成20个cookie
+- 安全问题, 截取cookie伪造相同请求
+- 状态不能保存在客户端
+
+
+
+##### session storage 
+
+用来存储客户端临时信息的对象
+
+
+
+优点:
+
+- 相比cookie,容量大, 5m
+
+缺点:
+
+- 只能存储字符串类型的对象
+- 遵守同源策略
+
+- sessionStorage有期限，当窗口或浏览器关闭时就会被销毁
+
+
+
+##### local storage 
+
+本地存储
+
+优点: 
+
+- 同源的不同窗口下可共享，在不同浏览器中不可共享
+- 时间不限, 除非被清除了
+- 容量大 , 5m
+
+缺点: 
+
+- 有风险被清除, 最好不存重要数据到客户端
